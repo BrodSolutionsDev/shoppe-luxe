@@ -1,0 +1,27 @@
+{{#if product_results.products}}
+    <ul class="productGrid" {{#if settings.data_tag_enabled}} data-list-name="Quick Search Results" {{/if}}>
+        {{#each (limit product_results.products 6)}}
+        <li class="product">
+                {{> components/products/card
+                        settings=../settings
+                        alternate=true
+                        show_compare=../show_compare
+                        theme_settings=../theme_settings
+                        customer=../customer
+                        event="list"
+                        position=(add @index 1)
+                }}
+        </li>
+        {{/each}}
+    </ul>
+    {{#if (length product_results.products) '>' 6}}
+    <div class="view-all-btn">
+        <a hre="javascript:void(0);" class="button view-all">view all products</a>
+    </div>
+  {{/if}}
+{{else}}
+    <p class="quickSearchMessage">
+        {{{lang 'search.results.quick_count' count=pagination.product_results.total search_query=(sanitize forms.search.query) }}}
+    </p>
+{{/if}}
+

@@ -1,0 +1,33 @@
+{{#partial "full-width"}}
+    <div class="cat-top-main-banner primary-bgwhite">
+
+        <div class="category-top-banner mb-45">
+            <div class="breadcrumb-row">
+                <div class="container-lg">
+                {{> components/common/breadcrumbs breadcrumbs=breadcrumbs}}
+                </div>
+            </div>
+
+            <div class="container content">
+                <h1 class="page-heading">{{lang 'account.returns.heading'}}</h1>
+            </div>
+        </div>
+  </div>
+{{/partial}}
+{{#partial "page"}}
+<div class="account">
+    
+    
+    {{> components/account/navigation account_page='returns'}}
+    <div class="account-row">
+        <p>
+            {{lang 'account.returns.successful'}}
+        </p>
+        {{#if return.instructions}}
+            <h3>{{lang 'account.returns.instructions'}}</h3>
+            <p>{{nl2br return.instructions}}</p>
+        {{/if}}
+    </div>
+</div>
+{{/partial}}
+{{> layout/base}}

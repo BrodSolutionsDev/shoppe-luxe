@@ -1,0 +1,98 @@
+---
+brand:
+    products:
+        limit: {{theme_settings.brandpage_products_per_page}}
+---
+{{inject "brandProductsPerPage" theme_settings.brandpage_products_per_page}}
+{{inject "ProductsPerPage" theme_settings.brandpage_products_per_page}}
+{{inject "brandUrl" brand.url}}
+
+{{#partial "head"}}
+    {{#if pagination.brand.previous}}
+        <link rel="prev" href="{{pagination.brand.previous}}">
+    {{/if}}
+    {{#if pagination.brand.next}}
+        <link rel="next" href="{{pagination.brand.next}}">
+    {{/if}}
+{{/partial}}
+
+{{#partial "page"}}
+<div class="page-inner">
+
+
+<div class="page">
+    <aside class="page-sidebar" id="faceted-search-container">
+        {{> components/brand/sidebar}}
+    </aside>
+    <div class="page-content-right">
+        {{> components/common/breadcrumbs breadcrumbs=breadcrumbs}}
+        {{#if brand.image}}
+            <div class="brand-image-container">
+                {{> components/common/responsive-img
+                    image=brand.image
+                    fallback_size=theme_settings.thumb_size
+                    lazyload='disabled'
+                }}
+            </div>
+        {{/if}}
+        <div class="category-title">
+            <h1 class="page-heading">{{brand.name}}</h1>
+            {{{region name="brand_below_header"}}}
+        </div>
+        {{#if banners.top}}
+        <div class="banners-home mt-80">
+            
+            <div class="banners" data-banner-location="top">
+                
+                {{#each (limit banners.top_metadata 1)}}
+                <div class="banner" data-event-type="promotion" data-entity-id="{{this.id}}" data-name="{{this.banner-name}}" data-position="{{this.location}}" data-banner-id="{{this.banner-name}}">
+                    <div data-event-type="promotion-click">
+                        {{{this.content}}}
+                    </div>
+                </div>
+                {{/each}}
+                
+            </div>
+            
+        </div>
+    {{/if}}
+        <div class="page-content" id="product-listing-container">
+            {{#if brand.search_error }}
+                <p>{{lang 'search.errorMessage'}}</p>
+            {{else}}
+                {{#if brand.products}}
+                    {{> components/brand/product-listing}}
+                {{else}}
+                    <p>{{lang 'brands.no_products'}}</p>
+                {{/if}}
+                {{{region name="brand_below_content"}}}
+            {{/if}}
+        </div>
+    </div>
+    {{#if banners.bottom}}
+        <div class="banners-home mt-80">
+           
+            {{#if settings.data_tag_enabled}}
+            <div class="banners bottomBanner" data-banner-location="bottom">
+                {{#each (limit banners.bottom_metadata 1)}}
+                    <div class="banner" data-event-type="promotion" data-entity-id="{{this.id}}" data-name="{{this.banner-name}}" data-position="{{this.location}}" data-name="{{this.banner-name}}">
+                        <div data-event-type="promotion-click">
+                            {{{this.content}}}
+                        </div>
+                    </div>
+                {{/each}}
+            </div>
+            {{else}}
+                <div class="banners" data-banner-location="bottom">
+                    <div class="banner">
+                        {{{limit banners.bottom 1}}}
+                    </div>
+                </div>
+            {{/if}}
+           
+        </div>
+      {{/if}}
+</div>
+</div>
+{{/partial}}
+{{> layout/base}}

@@ -1,0 +1,119 @@
+// Contact us page
+
+
+// Account page
+.account{
+    ul{
+        > li{
+            &:before{
+                display: none;
+            }
+            + li{
+                margin-top: 0;
+            }
+        }
+    }
+}
+.page-content{
+    p{
+        &:empty{
+            display: none;
+        }
+    }
+    
+    .form , form{
+        margin-bottom: 20px;
+    }
+    table{
+        &:not(.cart){
+            margin-bottom: 20px;
+        }
+    }
+}
+.contact-map{
+    margin-bottom: 30px;
+}
+.gift-certificate-form{
+    .form-fieldset{
+        padding: 0px;
+    }
+    .form-checkbox , .form-radio{
+        & + .form-label{
+            font-size: 16px;
+            @include mobile-small{
+                font-size: 14px;
+            }
+        }
+    }
+}
+#gift-certificate-balance{
+    .form-prefixPostfix {
+        .form-input{
+            @media(min-width: 667px){
+                width: auto;
+            }
+        }
+        .button{
+            @media(min-width: 667px){
+                width: auto;
+                margin-top: 0px;
+                margin-left: 12px;
+            }
+        }
+    }
+}
+.type-newsletter_subscribe{
+    .cat-top-main-banner{
+        padding-top: 65px;
+    }
+}
+.type-giftcertificates{
+    .modal-body{
+        @include mobile{
+            padding: 50px 25px;
+            overflow-x: auto;
+        }
+    }
+}
+.type-404{
+    .page-content--centered{
+        max-width: 50%;
+        @include tablet-small{
+            max-width: 100%;
+        }
+    }
+}
+div#contact-us-success {
+    text-align: center;
+}
+.type-search{
+    .banners-home{
+        display: inline-block;
+        width: 100%;
+    }
+}
+.documentation-content {
+    h3 {
+        span {
+            position: relative;
+            &:after {
+                display: block;
+                content: '';
+                width: 100%;
+                height: 2px;
+                background-color: $color-primary;
+                position: absolute;
+                bottom: -6px;
+                left: 0;
+                right: 0;
+                margin: 0 auto;
+                transition: all .2s linear;
+            }
+        }
+    }
+    p {
+        strong {
+            color: $color-secondary;
+        }
+    }
+}

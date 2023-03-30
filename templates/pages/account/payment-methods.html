@@ -1,0 +1,26 @@
+{{#partial "full-width"}}
+    <div class="cat-top-main-banner primary-bgwhite">
+
+        <div class="category-top-banner mb-45">
+            <div class="breadcrumb-row">
+                <div class="container-lg">
+                {{> components/common/breadcrumbs breadcrumbs=breadcrumbs}}
+                </div>
+            </div>
+
+            <div class="container content">
+                <h1 class="page-heading">{{lang 'account.payment_methods.heading' }}</h1>
+            </div>
+        </div>
+  </div>
+{{/partial}}
+{{#partial "page"}}
+    {{> components/account/navigation account_page='payment_methods'}}
+
+    <div class="account account--fixedLarge">
+        <div class="account-body">
+            {{> components/account/payment-methods-list }}
+        </div>
+    </div>
+{{/partial}}
+{{> layout/base}}

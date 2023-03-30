@@ -1,0 +1,131 @@
+---
+category:
+    shop_by_price: true
+    products:
+        limit: {{theme_settings.categorypage_products_per_page}}
+---
+{{inject "categoryProductsPerPage" theme_settings.categorypage_products_per_page}}
+{{inject "ProductsPerPage" theme_settings.categorypage_products_per_page}}
+{{#partial "head"}}
+{{#if pagination.category.previous}}
+<link rel="prev" href="{{pagination.category.previous}}">
+{{/if}}
+{{#if pagination.category.next}}
+<link rel="next" href="{{pagination.category.next}}">
+{{/if}}
+{{/partial}}
+
+{{#partial "page"}}
+
+
+
+<div class="page-inner">
+    <div class="page">
+        <div class="page-sidebar">
+            <div class="sidebarBlock category-sidebar">
+
+
+                <h2 class="sidebarBlock-heading">Categories <button id="close">&#x2715</button></h2>
+                {{!-- <div class="icon active">
+                    <svg>
+                        <use xlink:href="#icon-toggle-down" />
+                    </svg>
+                </div> --}}
+
+                {{> components/custom/bs-sidebar-navigation}}
+            </div>
+            {{#if category.faceted_search_enabled}}
+            <aside id="faceted-search-container">
+                {{> components/custom/bs-category-image}}
+                {{> components/category/sidebar}}
+            </aside>
+            {{else if category.subcategories}}
+            <aside id="faceted-search-container">
+                {{> components/category/sidebar}}
+            </aside>
+            {{else if category.shop_by_price}}
+            {{#if theme_settings.shop_by_price_visibility}}
+            <aside id="faceted-search-container">
+                {{> components/category/sidebar}}
+            </aside>
+            {{/if}}
+            {{/if}}
+        </div>
+
+        <div class="page-content-right">
+            {{> components/common/breadcrumbs breadcrumbs=breadcrumbs}}
+            <div class="category-title">
+                {{#unless theme_settings.hide_category_page_heading }}
+                <h1 class="page-heading">{{category.name}}</h1>
+                {{{region name="category_below_header"}}}
+                {{/unless}}
+                {{{category.description}}}
+            </div>
+            {{#if banners.top}}
+            <div class="banners-home mt-80">
+
+                <div class="banners" data-banner-location="top">
+
+                    {{#each (limit banners.top_metadata 1)}}
+                    <div class="banner" data-event-type="promotion" data-entity-id="{{this.id}}"
+                        data-name="{{this.banner-name}}" data-position="{{this.location}}"
+                        data-banner-id="{{this.banner-name}}">
+                        <div data-event-type="promotion-click">
+                            {{{this.content}}}
+                        </div>
+                    </div>
+                    {{/each}}
+
+                </div>
+
+            </div>
+            {{/if}}
+            {{> components/custom/categories/subcategories}}
+            <div class="page-content" id="product-listing-container">
+                {{> components/custom/categories/product-listing}}
+                {{{region name="category_below_content"}}}
+            </div>
+        </div>
+    </div>
+    {{#if banners.bottom}}
+    <div class="banners-home mt-80">
+
+        {{#if settings.data_tag_enabled}}
+        <div class="banners bottomBanner" data-banner-location="bottom">
+            {{#each (limit banners.bottom_metadata 1)}}
+            <div class="banner" data-event-type="promotion" data-entity-id="{{this.id}}"
+                data-name="{{this.banner-name}}" data-position="{{this.location}}" data-name="{{this.banner-name}}">
+                <div data-event-type="promotion-click">
+                    {{{this.content}}}
+                </div>
+            </div>
+            {{/each}}
+        </div>
+        {{else}}
+        <div class="banners" data-banner-location="bottom">
+            <div class="banner">
+                {{{limit banners.bottom 1}}}
+            </div>
+        </div>
+        {{/if}}
+
+    </div>
+    {{/if}}
+</div>
+{{/partial}}
+{{> layout/base}}
+<script>
+  const filtersBtn = document.getElementById('showFilters');
+  const filtersCloseBtn = document.getElementById('close');
+  const sidebar = document.querySelector('.page-sidebar');
+
+  filtersBtn.addEventListener('click', () => {
+      if (sidebar.className === "page-sidebar-opened") sidebar.className = "page-sidebar";
+      else sidebar.className = "page-sidebar-opened";
+  });
+
+  filtersCloseBtn.addEventListener('click', () => {
+      if (sidebar.className === "page-sidebar-opened") sidebar.className = "page-sidebar";
+      else sidebar.className = "page-sidebar-opened";
+  });
+</script>

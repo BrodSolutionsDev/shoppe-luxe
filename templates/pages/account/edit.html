@@ -1,0 +1,31 @@
+{{#partial "full-width"}}
+    <div class="cat-top-main-banner primary-bgwhite">
+
+        <div class="category-top-banner mb-45">
+            <div class="breadcrumb-row">
+                <div class="container-lg">
+                {{> components/common/breadcrumbs breadcrumbs=breadcrumbs}}
+                </div>
+            </div>
+
+            <div class="container content">
+                <h1 class="page-heading">{{lang 'account.settings.heading' }}</h1>
+            </div>
+        </div>
+  </div>
+{{/partial}}
+{{inject 'passwordRequirements' settings.password_requirements}}
+{{#partial "page"}}
+<div class="account account--fixed">
+    
+    {{> components/account/navigation account_page='settings'}}
+    {{#if forms.edit_account.error}}
+    {{> components/common/alert/alert-error forms.edit_account.error}}
+    {{/if}}
+    {{#if forms.edit_account.success}}
+    {{> components/common/alert/alert-success forms.edit_account.success}}
+    {{/if}}
+    {{> components/account/edit-account}}
+</div>
+{{/partial}}
+{{> layout/base}}

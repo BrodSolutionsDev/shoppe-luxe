@@ -1,0 +1,26 @@
+{{#partial "full-width"}}
+    <div class="cat-top-main-banner primary-bgwhite">
+
+        <div class="category-top-banner mb-45">
+            <div class="breadcrumb-row">
+                <div class="container-lg">
+                {{> components/common/breadcrumbs breadcrumbs=breadcrumbs}}
+                </div>
+            </div>
+
+            <div class="container content">
+                <h1 class="page-heading">{{lang 'account.wishlists.heading' }}</h1>
+            </div>
+        </div>
+  </div>
+{{/partial}}
+{{#partial "page"}}
+{{#if settings.show_wishlist}}
+    <div class="account account--fixedLarge">
+        
+        {{> components/account/navigation account_page='wishlists'}}
+        {{> components/account/wishlist-list}}
+    </div>
+{{/if}}
+{{/partial}}
+{{> layout/base}}

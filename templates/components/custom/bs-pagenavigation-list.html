@@ -1,0 +1,52 @@
+{{#if children}}
+<a class="navPages-action has-subMenu{{#if name '==' title}} activePage{{/if}}" href="{{url}}">
+    <span>{{name}}</span>
+    <i class="icon navPages-action-moreIcon" aria-hidden="true">
+        <svg><use xlink:href="#icon-chevron-down" /></svg>
+    </i>
+</a>
+
+<ul class="navPage-subMenu-simplelist custom-scroll">
+    <div class="simple-megamenu-inner">
+        
+            {{#each children}}
+            <li class="navPages-item navPages-item-page">
+                <!-- THIRD LEVEL STARTS -->
+                {{#if children}}
+                <a href="{{url}}" class="needsclick navPages-action has-subMenu{{#if name '==' title}} activePage{{/if}}">
+                    {{name}}
+                    <i class="icon" aria-hidden="true">
+                        <svg><use xlink:href="#icon-chevron-down" /></svg>
+                    </i>
+                </a>
+                <ul class="nav-submenu nav-third-level">
+                    {{#each children}}
+                    <li class="navPages-item navPages-item-page">
+        
+                      <!-- FOURTH LEVEL STARTS -->
+                      
+                      <a href="{{url}}" class="needsclick navPages-action has-subMenu{{#if name '==' title}} activePage{{/if}}">
+                          {{name}}
+                      </a>                    
+                      
+        
+                    </li>
+                    {{/each}}
+                </ul>
+                {{else}}
+                <a href="{{url}}" class="needsclick navPages-action has-subMenu{{#if name '==' title}} activePage{{/if}}">{{name}}</a>
+                {{/if}}
+                <!-- THIRD LEVEL STARTS -->
+            </li>
+            {{/each}}
+       </div>
+    </ul>
+
+{{else}}
+<a class="navPages-action  {{#if name '==' title}} activePage{{/if}}"
+   href="{{url}}"
+   aria-label="{{name}}"
+>
+    <span>{{name}}</span>
+</a>
+{{/if}}

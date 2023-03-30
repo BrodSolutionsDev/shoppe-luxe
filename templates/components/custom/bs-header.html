@@ -1,0 +1,110 @@
+<a href="#main-content" class="skip-to-main-link">{{lang 'header.skip_to_main'}}</a>
+
+{{#if theme_settings.header_style '==' 'header1'}}
+
+<header class="header {{#unless theme_settings.sticky-header}} sticky-header {{/unless}}" sticky="{{theme_settings.sticky-header}}" role="banner">
+    
+    <div class="header-main">
+        <div class="container-lg">
+            <div class="custom-row flex">
+                <div class="grid mobilemenu-icon">
+                    <a href="#" class="mobileMenu-toggle" data-mobile-menu-toggle="menu">
+                        <span class="mobileMenu-toggleIcon">Toggle menu</span>
+                    </a>
+                </div>
+                <div class="grid">
+                    {{#if page_type '===' 'default'}}
+                        <div class="header-logo header-logo--{{theme_settings.logo-position}}">
+                            {{> components/common/store-logo}}
+                        </div>
+                    {{else}}
+                        <div class="header-logo header-logo--{{theme_settings.logo-position}}">
+                            {{> components/common/store-logo}}
+                        </div>
+                    {{/if}}
+                </div>
+                <div class="navPages-container grid" id="menu" data-menu>
+                    {{> components/custom/bs-navigation-menu navigation-link=./theme_settings.category-menu-name}}
+                    
+                </div>
+                <div class="grid">
+                    {{> components/custom/bs-navigation}}                
+                </div>
+            </div>
+        </div>
+    </div>
+</header>
+
+    {{> components/custom/bs-navigation-mobile}}   
+
+{{/if}}
+
+{{#if theme_settings.header_style '==' 'header2'}}
+
+<header class="header {{#unless theme_settings.sticky-header}} sticky-header {{/unless}} {{#if theme_settings.header_style '==' 'header2'}}headerstyletwo{{/if}}" sticky="{{theme_settings.sticky-header}}" role="banner">
+    <div class="pencilbar">
+        <div class="container-lg">
+            <div class="custom-row flex">
+                {{#if theme_settings.shippingtext}}
+                    <div class="grid">
+                        <p class="shipping-text">{{theme_settings.shippingtext}}</p>
+                    </div>
+                {{/if}}
+                {{#or customer (unless theme_settings.restrict_to_login)}}
+                    <div class="grid">
+                        {{> components/common/currency-selector}}
+                    </div>
+                {{/or}}
+            </div>
+        </div>
+        
+    </div>
+    <div class="header-main">
+        
+        <div class="container-lg">
+            <div class="custom-row flex">
+                <div class="grid mobilemenu-icon">
+                    <a href="#" class="mobileMenu-toggle" data-mobile-menu-toggle="menu">
+                        <span class="mobileMenu-toggleIcon">Toggle menu</span>
+                    </a>
+                </div>
+               
+                <div class="grid flex flex-center">
+                    <div class="desktopmenu-icon">
+                        <a href="javascript:void(0);" class="desktopMenu-toggle" >
+                            <span class="mobileMenu-toggleIcon">Toggle menu</span>
+                        </a>
+                    </div>
+                    {{#if page_type '===' 'default'}}
+                        <div class="header-logo header-logo--{{theme_settings.logo-position}} {{#if theme_settings.layout '==' 'jewelry'}} jewelry-variant-logo {{/if}}">
+                            {{> components/common/store-logo}}
+                        </div>
+                    {{else}}
+                        <div class="header-logo header-logo--{{theme_settings.logo-position}} {{#if theme_settings.layout '==' 'jewelry'}} jewelry-variant-logo {{/if}}">
+                            {{> components/common/store-logo}}
+                        </div>
+                    {{/if}}
+                </div>
+                <div class="navPages-container grid" id="menu" data-menu>
+                    {{> components/custom/bs-navigation-menu navigation-link=./theme_settings.category-menu-name}}
+                    
+                </div>
+                <div class="grid">
+                    {{> components/custom/bs-navigation}}                
+                </div>
+                <div id="headerSidebar" class="header-side-bar custom-scroll"> 
+                    {{> components/custom/bs-header-sidebar}}
+                    
+                </div>
+                <div class="headersidebar-overlay"></div>
+            </div>
+        </div>
+    </div>
+</header>
+
+    {{> components/custom/bs-navigation-mobile}}   
+
+{{/if}}
+
+{{{region name="header_bottom--global"}}}
+{{{region name="header_bottom"}}}

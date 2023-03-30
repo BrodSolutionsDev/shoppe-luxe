@@ -1,0 +1,39 @@
+<div class="search-wrapper">
+    <div class="search-close">
+        <svg class="icon">
+            <use xlink:href="#icon-faceted-close" />
+        </svg>
+    </div>
+    <div class="container">
+        <form class="form" id="headerQuickSearchForm" onsubmit="return false" data-url="{{urls.search}}" data-quick-search-form>
+            <fieldset class="form-fieldset">
+                <div class="form-field">
+                    <label class="is-srOnly" for="{{name}}">{{lang "search.quick_search.input_label"}}</label>
+                    <button class="search-btn" type="submit" name="button" onclick="document.getElementById('headerQuickSearchForm').submit();">
+                        <svg><use xlink:href="#icon-header-search"></use></svg>
+                    </button>
+                    <input class="form-input"
+                        data-search-quick
+                        name="{{name}}"
+                        id="{{name}}"
+                        data-error-message="{{lang 'search.error.empty_field'}}"
+                        placeholder="{{lang 'search.quick_search.input_placeholder'}}"
+                        autocomplete="off"
+                    >                   
+                    <div class="search-cancle">
+                        <div class="close-search">Cancel</div>
+                    </div>
+                </div>
+            </fieldset>
+        </form>
+        <div class="searchloader" style="display: none;">
+        <img class="lazyload" data-sizes="auto" src="{{cdn 'img/loading.svg'}}">
+        </div>
+        <section class="quickSearchResults" data-bind="html: results"></section>  
+        <p role="status"
+        aria-live="polite"
+        class="aria-description--hidden"
+        data-search-aria-message-predefined-text="{{{lang 'search.results.quick_count_live'}}}"
+        ></p>
+    </div>
+</div>

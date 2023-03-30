@@ -1,0 +1,58 @@
+.header{
+
+    &.sticky-header {
+        -webkit-animation-name: slideInDown;
+        animation-name: slideInDown;
+        -webkit-animation-duration: 1.2s;
+        animation-duration: 1.2s;
+        -webkit-animation-fill-mode: both;
+        animation-fill-mode: both;
+        -webkit-transition: 0.5s all ease;
+        -o-transition: 0.5s all ease;
+        transition: 0.5s all ease;
+        left: 0;
+        position: fixed;
+        box-shadow: 0px 4px 20px rgba($color-textBase,0.1);
+       // border-bottom: 1px solid rgba(217, 213, 228, 0.5);
+        top: 0;
+        .pencilbar{
+          display: none;
+        }
+        .headersidebar-overlay{
+          top:80px;
+          @include tablet{
+            top:75px;
+    
+        }
+        }
+    }
+}
+@-webkit-keyframes slideInDown {
+    0% {
+      -webkit-transform: translateY(-100%);
+      transform: translateY(-100%);
+      visibility: visible;
+      opacity: 0;
+    }
+
+    100% {
+      -webkit-transform: translateY(0);
+      transform: translateY(0);
+      opacity: 1;
+    }
+  }
+  
+  @keyframes slideInDown {
+    0% {
+      -webkit-transform: translateY(-100%);
+      transform: translateY(-100%);
+      visibility: visible;
+      opacity: 0;
+    }
+
+    100% {
+      -webkit-transform: translateY(0);
+      transform: translateY(0);
+      opacity: 1;
+    }
+  }

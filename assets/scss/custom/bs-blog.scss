@@ -1,0 +1,134 @@
+
+/* ========== BLOG GRID STYLE ========== */
+
+.blog-grid-style{
+    @include display-flex(flex); @include row; @include flex-wrap(wrap);
+    @include tablet-small{
+        margin-bottom: 50px;
+    }
+    .blog-item{
+        width: 25%; @include col; margin: 0 0 32px 0;
+
+        @include desktop-small{
+            width: 33.33%;
+        }
+        @include tablet-small{
+            width: 50%;
+        }
+        @include mobile-small{
+            width: 100%; margin-bottom: 0;
+        }
+
+        + .blog-item{
+            @include mobile-small{
+                margin-top: 30px;
+            }
+        }
+    }
+
+    .blog{
+        margin: 0; border: 1px solid $input-border-color; height: 100%;
+
+        + .blog{
+            border-top: none; padding-top: 0; margin-top: 0;
+        }
+    }
+
+    .blog-thumbnail{
+        width: 100%; margin: 0; max-width: 100%;
+
+        a{
+            padding: 0; border: none; display: block; height: 250px; overflow: hidden;
+        }
+        &.blog-no-image{
+            a{
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                svg{
+                    width: 60px;
+                }
+            }
+        }
+        img{
+            object-position: center center; object-fit: cover; height: 100%;
+        }
+    }
+    .blog-title{
+        font-size: 18px;
+        line-height: normal;
+    }
+    .blog-post-figure{
+        width: 100%;
+    }
+    .blog-post-body{
+        padding: 25px 20px;
+        width: 100%;
+    }
+    .blog-date, .blog-author , .blog-post{
+        text-align: center;
+    }
+}
+
+/* ========== BLOG DETAILS STYLE ========== */
+
+.posting{
+    .blog-post-figure{
+        width: 100%;        
+    }
+    .blog-thumbnail{
+        width: 100%;
+        max-width: 800px;
+        margin: 0 auto;
+        &:hover{
+            img{
+                transform: scale(1);
+            }
+        }
+    }
+    .blog-header{
+     text-align: center;   
+     margin-top: 25px;
+    }
+    .blog-date, .blog-author{
+        text-align: center;
+    }
+}
+.blog {
+    .tags{
+        margin: 0;
+    }
+    .socialLinks{
+        
+            @include justify-content(center);
+        
+    }
+}
+.tags{    
+    li{
+        padding: 0px;
+        margin-top: 10px;
+        &:before{
+            display: none;
+        }
+        & + li{
+            margin-left: 8px;
+            
+        }
+        a{
+            padding: 5px 10px;
+            background-color: $theme-secondary-whitecolor;
+        }
+    }
+
+}
+.type-blog_post{
+    .cat-top-main-banner {
+        ol.breadcrumbs{
+            @include tablet-small{
+                white-space: nowrap;
+                overflow-x: auto;
+            }
+        }
+    }
+}

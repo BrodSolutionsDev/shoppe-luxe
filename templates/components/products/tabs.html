@@ -1,0 +1,8 @@
+{{#if product.similar_by_views}}
+    <div class="container">
+    <h2 class="page-heading" >{{lang 'products.similar_by_views'}}</h2>
+    </div>
+
+    {{> components/products/carousel products=product.similar_by_views columns=4 list="Customers Also Viewed"}}
+
+{{/if}}

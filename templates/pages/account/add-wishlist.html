@@ -1,0 +1,34 @@
+{{#partial "full-width"}}
+    <div class="cat-top-main-banner primary-bgwhite">
+
+        <div class="category-top-banner mb-45">
+            <div class="breadcrumb-row">
+                <div class="container-lg">
+                {{> components/common/breadcrumbs breadcrumbs=breadcrumbs}}
+                </div>
+            </div>
+
+            <div class="container content">
+                <h1 class="page-heading"> {{#if forms.wishlist.id}}
+                    {{lang 'account.wishlists.edit'}}
+                {{else}}
+                    {{#if forms.wishlist.action}}
+                        {{lang 'account.wishlists.new'}}
+                    {{else}}
+                        {{lang 'account.wishlists.heading'}}
+                    {{/if}}
+                {{/if}}</h1>
+            </div>
+        </div>
+  </div>
+{{/partial}}
+{{#partial "page"}}
+    <div class="account">
+        {{#if settings.show_wishlist}}
+            
+            {{> components/account/navigation account_page='wishlists'}}
+            {{> components/account/add-wishlist}}
+        {{/if}}
+    </div>
+{{/partial}}
+{{> layout/base}}

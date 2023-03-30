@@ -1,0 +1,13 @@
+<div data-animation-in="fadeIn" class="animated fadeIn heroCarousel-content{{#and (if heading '==' false) (if text '==' false)}} heroCarousel-content--empty{{/and}}">
+    <div class="hercarousel-content-inner">
+        {{#if text}}
+            <p data-animation-in="slideInUp" class="animated slideInUp heroCarousel-description" aria-label="{{{text}}}">{{{text}}}</p>
+        {{/if}}
+        {{#if heading}}
+            <h1 data-animation-in="slideInUp" class="animated slideInUp heroCarousel-title" aria-label="{{{heading}}}">{{{heading}}}</h1>
+        {{/if}}
+        {{#if button_text}}
+            <a href="{{url}}" data-animation-in="slideInUp" aria-label="{{#if this.alt_text.length '!=' 0}}{{this.alt_text}}{{else}}{{lang 'carousel.slide_number' slide_number=(add @index 1)}}{{/if}}, {{button_text}}" class="animated slideInUp heroCarousel-action button">{{{button_text}}}</a>
+        {{/if}}
+    </div>
+</div>

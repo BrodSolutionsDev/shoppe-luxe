@@ -1,0 +1,27 @@
+{{#partial "full-width"}}
+<div class="cat-top-main-banner primary-bgwhite">
+
+    <div class="category-top-banner mb-45">
+        <div class="breadcrumb-row">
+            <div class="container-lg">
+                
+            </div>
+        </div>
+
+        <div class="container content">
+            <h1 class="page-heading">{{lang 'newsletter.unsubscribed_heading'}}</h1>
+        </div>
+    </div>
+</div>
+{{/partial}}
+{{#partial "page"}}
+
+<section class="page">
+    <div class="page-content page-content--centered">
+        
+        {{> components/common/alert/alert-success (lang 'newsletter.unsubscribed_message' store_name=settings.store_name)}}
+    </div>
+</section>
+
+{{/partial}}
+{{> layout/base}}

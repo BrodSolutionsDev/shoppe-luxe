@@ -1,0 +1,26 @@
+{{#if price.sale_price_without_tax}}
+    <div class="discount-salebadge">
+        {{#if price.non_sale_price_without_tax}}
+            {{assignVar "Price" price.non_sale_price_without_tax.value}}
+        {{/if}}
+        {{#if price.rrp_without_tax}}
+            {{assignVar "Price" price.rrp_without_tax.value}}
+        {{/if}}
+        <span>
+            {{toAbbr (toFixed (multiply (divide (subtract (getVar "Price") price.sale_price_without_tax.value) (getVar "Price")) 100) 1)}}%
+        </span>
+    </div>
+{{/if}}
+{{#if price.sale_price_with_tax}}
+    <div class="discount-salebadge">
+        {{#if price.non_sale_price_with_tax}}
+            {{assignVar "Price" price.non_sale_price_with_tax.value}}
+        {{/if}}
+        {{#if price.rrp_with_tax}}
+            {{assignVar "Price" price.rrp_with_tax.value}}
+        {{/if}}
+        <span>
+            {{toAbbr (toFixed (multiply (divide (subtract (getVar "Price") price.sale_price_with_tax.value) (getVar "Price")) 100) 1)}}%
+        </span>
+    </div>
+{{/if}}

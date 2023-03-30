@@ -1,0 +1,15 @@
+{{#if theme_settings.toplevelcategory}}
+<div class="shopby-section mb-45">
+    <div class="container flex">
+    <label>Shop by:</label>
+    <ul>
+        {{#each categories}}
+           
+                    <li><a href="{{url}}">{{name}}</a></li>
+               
+            
+        {{/each}}
+    </ul>
+    </div>
+</div>
+{{/if}}

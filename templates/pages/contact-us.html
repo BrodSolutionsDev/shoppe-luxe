@@ -1,0 +1,39 @@
+{{#partial "full-width"}}
+    <div class="cat-top-main-banner primary-bgwhite">
+
+        <div class="category-top-banner mb-45">
+            <div class="breadcrumb-row">
+                <div class="container-lg">
+                {{> components/common/breadcrumbs breadcrumbs=breadcrumbs}}
+                </div>
+            </div>
+
+            <div class="container content">
+                {{#unless theme_settings.hide_contact_us_page_heading }}
+                <h1 class="page-heading">{{page.title}}</h1>
+            {{/unless}}
+            </div>
+        </div>
+  </div>
+{{/partial}}
+{{#partial "page"}}
+
+
+
+<section class="page">
+
+    <div id="contact-us-page" class="page-content page-content--centered">
+        {{#if forms.contact.success}}
+            <div id="contact-us-success">{{{lang 'forms.contact_us.successful' shopPath=urls.home}}}</div>
+        {{else}}
+            <p>{{{page.content}}}</p>
+            {{> components/page/contact-us-form}}
+        {{/if}}
+
+    </div>
+
+</section>
+
+{{/partial}}
+
+{{> layout/base}}

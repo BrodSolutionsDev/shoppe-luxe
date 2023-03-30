@@ -1,0 +1,8 @@
+{{#each product.custom_fields}}
+                    <li class="bs-customfield-row grid">
+                        <div class="bs-customfield-inner">
+                            <dt class="productView-info-name">{{name}}:</dt>
+                            <dd class="productView-info-value">{{{ sanitize value}}}</dd>
+                        </div>
+                    </li>
+                {{/each}}

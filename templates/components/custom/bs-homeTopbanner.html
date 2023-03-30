@@ -1,0 +1,260 @@
+{{#if theme_settings.promotionalbannerdisplay}}
+    <div class="hometopbanner {{#if theme_settings.promotionalbannerstyle '==' 'promostionalbannerstyle1'}} promostionalbannerstyle1 {{else if theme_settings.promotionalbannerstyle '==' 'promostionalbannerstyle2'}} promostionalbannerstyle2 {{else if theme_settings.promotionalbannerstyle '==' 'promostionalbannerstyle3'}} promostionalbannerstyle3 {{/if}}">
+        <div class="custom-row">
+            <div class="grid">
+                <div class="hometopbannerinner bigbanner firstbanner{{#if theme_settings.promobannerfirsttype '==' 'withbackground' }} middle-text{{/if}}{{#or theme_settings.BannerImageFirstheading theme_settings.BannerImageFirstText theme_settings.BannerImageFirstLink}}{{else}} placeholderbg{{/or}}">
+                    {{#if theme_settings.promobannerfirsttype '==' 'withimage'}}
+                        {{#or theme_settings.BannerImageFirst theme_settings.BannerImageFirstheading theme_settings.BannerImageFirstText theme_settings.BannerImageFirstLink}}
+                            {{#if theme_settings.BannerImageFirst}}
+                                <div class="hommebannerimg">
+                                    <a href="{{theme_settings.BannerImageFirstLink}}" aria-label="PromoBannerImg">
+                                        <img class="lazyload" data-sizes="auto" src="/product_images/uploaded_images/{{theme_settings.BannerImageFirst}}" data-src="/product_images/uploaded_images/{{theme_settings.BannerImageFirst}}" alt="" {{#if theme_settings.promotionalbannerstyle '==' 'promostionalbannerstyle3'}} width="512" height="792"{{else}} width="376" height="792" {{/if}} loading="lazy">
+                                    </a>
+                                </div>
+                            {{/if}}
+                            
+                            {{#or theme_settings.BannerImageFirstheading theme_settings.BannerImageFirstText theme_settings.BannerImageFirstLink}}
+                                <div class="homebanner-info">
+                                    {{#if theme_settings.BannerImageFirstheading}}
+                                    <h3>{{theme_settings.BannerImageFirstheading}}</h3>
+                                    {{/if}}
+                                    {{#if theme_settings.BannerImageFirstText}}
+                                    <p>{{theme_settings.BannerImageFirstText}}</p>
+                                    {{/if}}
+                                    <a href="{{theme_settings.BannerImageFirstLink}}" class="border-link">Shop Now</a>
+                                </div>
+                            {{/or}}
+                        {{else}}
+                            <div  class="homebanner-info">
+                                <svg><use xlink:href="#icon-bs-placeholder"></use></svg>
+                            </div>
+                        {{/or}}
+                    {{ else if theme_settings.promobannerfirsttype '==' 'withbackground' }}
+                            {{#or theme_settings.BannerImageFirstheading theme_settings.BannerImageFirstText theme_settings.BannerImageFirstLink}}
+                                <div class="homebanner-info">
+                                    {{#if theme_settings.BannerImageFirstheading}}
+                                    <h3>{{theme_settings.BannerImageFirstheading}}</h3>
+                                    {{/if}}
+                                    {{#if theme_settings.BannerImageFirstText}}
+                                    <p>{{theme_settings.BannerImageFirstText}}</p>
+                                    {{/if}}
+                                    <a href="{{theme_settings.BannerImageFirstLink}}" class="border-link">Shop Now</a>
+                                </div>
+                            {{/or}}
+                    {{else}}
+                        <div  class="homebanner-info">
+                            <svg><use xlink:href="#icon-bs-placeholder"></use></svg>
+                        </div>
+                    {{/if}}
+                </div>
+            </div>
+        
+            <div class="grid">
+                <div class="custom-row">
+                    <div class="grid">
+                        <div class="hometopbannerinner secondbanner smallbanner{{#if theme_settings.promobannersecondtype '==' 'withbackground' }} middle-text{{/if}}{{#or theme_settings.BannerImageSecondheading theme_settings.BannerImageSecondText theme_settings.BannerImageSecondLink}}{{else}} placeholderbg{{/or}}">
+                            {{#if theme_settings.promobannersecondtype '==' 'withimage'}}
+                                {{#or theme_settings.BannerImageSecond theme_settings.BannerImageSecondheading theme_settings.BannerImageSecondText theme_settings.BannerImageSecondLink}}
+                                    {{#if theme_settings.BannerImageSecond}}
+                                        <div class="hommebannerimg">
+                                            <a href="{{theme_settings.BannerImageSecondLink}}" aria-label="PromoBannerImg">
+                                                <img class="lazyload" data-sizes="auto" src="/product_images/uploaded_images/{{theme_settings.BannerImageSecond}}" data-src="/product_images/uploaded_images/{{theme_settings.BannerImageSecond}}" alt="" width="784" height="380" loading="lazy">
+                                            </a>
+                                        </div>
+                                    
+                                    {{/if}}
+                                    {{#or theme_settings.BannerImageSecondheading theme_settings.BannerImageSecondText theme_settings.BannerImageSecondLink}}
+                                        <div class="homebanner-info">
+                                            {{#if theme_settings.BannerImageSecondheading}}
+                                            <h3>{{theme_settings.BannerImageSecondheading}}</h3>
+                                            {{/if}}
+                                            {{#if theme_settings.BannerImageSecondText}}
+                                            <p>{{theme_settings.BannerImageSecondText}}</p>
+                                            {{/if}}
+                                            <a href="{{theme_settings.BannerImageSecondLink}}" class="border-link">Shop Now</a>
+                                        </div>
+                                    {{/or}}
+                                {{else}}
+                                    <div  class="homebanner-info">
+                                        <svg><use xlink:href="#icon-bs-placeholder"></use></svg>
+                                    </div>
+                                {{/or}}
+                            {{ else if theme_settings.promobannersecondtype '==' 'withbackground' }}
+                                {{#or theme_settings.BannerImageSecondheading theme_settings.BannerImageSecondText theme_settings.BannerImageSecondLink}}
+                                    <div class="homebanner-info">
+                                        {{#if theme_settings.BannerImageSecondheading}}
+                                        <h3>{{theme_settings.BannerImageSecondheading}}</h3>
+                                        {{/if}}
+                                        {{#if theme_settings.BannerImageSecondText}}
+                                        <p>{{theme_settings.BannerImageSecondText}}</p>
+                                        {{/if}}
+                                        <a href="{{theme_settings.BannerImageSecondLink}}" class="border-link">Shop Now</a>
+                                    </div>
+                                    {{else}}
+                                    <div  class="homebanner-info">
+                                        <svg><use xlink:href="#icon-bs-placeholder"></use></svg>
+                                    </div>
+                                {{/or}}
+                            {{else}}
+                                <div  class="homebanner-info">
+                                    <svg><use xlink:href="#icon-bs-placeholder"></use></svg>
+                                </div>
+                            {{/if}}
+                        </div>
+                    </div>
+                    <div class="grid">
+                        <div class="hometopbannerinner thirdbanner smallbanner{{#if theme_settings.promobannerthirdtype '==' 'withbackground' }} middle-text{{/if}}{{#or theme_settings.BannerImageThirdheading theme_settings.BannerImageThirdText theme_settings.BannerImageThirdLink}}{{else}} placeholderbg{{/or}}">
+                            {{#if theme_settings.promobannerthirdtype '==' 'withimage'}}
+                                {{#or theme_settings.BannerImageThird theme_settings.BannerImageThirdheading theme_settings.BannerImageThirdText theme_settings.BannerImageThirdLink}}
+                                    {{#if theme_settings.BannerImageThird}}
+                                        <div class="hommebannerimg">
+                                            <a href="{{theme_settings.BannerImageThirdLink}}" aria-label="PromoBannerImg">
+                                                <img class="lazyload" data-sizes="auto" src="/product_images/uploaded_images/{{theme_settings.BannerImageThird}}" data-src="/product_images/uploaded_images/{{theme_settings.BannerImageThird}}" alt="" width="784" height="380" loading="lazy">
+                                            </a>
+                                        </div>
+                                    
+                                    {{/if}}
+                                    {{#or theme_settings.BannerImageThirdheading theme_settings.BannerImageThirdText theme_settings.BannerImageThirdLink}}
+                                        <div class="homebanner-info">
+                                            {{#if theme_settings.BannerImageThirdheading}}
+                                            <h3>{{theme_settings.BannerImageThirdheading}}</h3>
+                                            {{/if}}
+                                            {{#if theme_settings.BannerImageThirdText}}
+                                            <p>{{theme_settings.BannerImageThirdText}}</p>
+                                            {{/if}}
+                                            <a href="{{theme_settings.BannerImageThirdLink}}" class="border-link">Shop Now</a>
+                                        </div>
+                                    {{/or}}
+                                {{else}}
+                                    <div  class="homebanner-info">
+                                        <svg><use xlink:href="#icon-bs-placeholder"></use></svg>
+                                    </div>
+                                {{/or}}
+                            {{ else if theme_settings.promobannerthirdtype '==' 'withbackground' }}
+                                {{#or theme_settings.BannerImageThirdheading theme_settings.BannerImageThirdText theme_settings.BannerImageThirdLink}}
+                                    <div class="homebanner-info">
+                                        {{#if theme_settings.BannerImageThirdheading}}
+                                        <h3>{{theme_settings.BannerImageThirdheading}}</h3>
+                                        {{/if}}
+                                        {{#if theme_settings.BannerImageThirdText}}
+                                        <p>{{theme_settings.BannerImageThirdText}}</p>
+                                        {{/if}}
+                                        <a href="{{theme_settings.BannerImageThirdLink}}" class="border-link">Shop Now</a>
+                                    </div>
+                                    {{else}}
+                                    <div  class="homebanner-info">
+                                        <svg><use xlink:href="#icon-bs-placeholder"></use></svg>
+                                    </div>
+                                {{/or}}
+                            {{else}}
+                                <div  class="homebanner-info">
+                                    <svg><use xlink:href="#icon-bs-placeholder"></use></svg>
+                                </div>
+                            {{/if}}
+                        </div>
+                    </div>
+                    <div class="grid">
+                        <div class="hometopbannerinner fourthbanner smallbanner {{#if theme_settings.promobannerfourthtype '==' 'withbackground' }} middle-text{{/if}} {{#or theme_settings.BannerImageFourheading theme_settings.BannerImageFourText theme_settings.BannerImageFourLink}}{{else}}placeholderbg{{/or}}">
+                            {{#if theme_settings.promobannerfourthtype '==' 'withimage'}}
+                                {{#if theme_settings.BannerImageFour}}
+                                    <div class="hommebannerimg">
+                                        <a href="{{theme_settings.BannerImageFourLink}}" aria-label="PromoBannerImg">
+                                            <img class="lazyload" data-sizes="auto" src="/product_images/uploaded_images/{{theme_settings.BannerImageFour}}" data-src="/product_images/uploaded_images/{{theme_settings.BannerImageFour}}" alt="" width="784" height="380" loading="lazy">
+                                        </a>
+                                    </div>
+                                    
+                                {{/if}}
+                                {{#or theme_settings.BannerImageFourheading theme_settings.BannerImageFourText theme_settings.BannerImageFourLink}}
+                                    <div class="homebanner-info">
+                                        {{#if theme_settings.BannerImageFourheading}}
+                                        <h3>{{theme_settings.BannerImageFourheading}}</h3>
+                                        {{/if}}
+                                        {{#if theme_settings.BannerImageFourText}}
+                                        <p>{{theme_settings.BannerImageFourText}}</p>
+                                        {{/if}}
+                                        <a href="{{theme_settings.BannerImageFourLink}}" class="border-link">Shop Now</a>
+                                    </div>
+                                    {{else}}
+                                    <div  class="homebanner-info">
+                                        <svg><use xlink:href="#icon-bs-placeholder"></use></svg>
+                                    </div>
+                                {{/or}}
+                            {{ else if theme_settings.promobannerfourthtype '==' 'withbackground' }}
+                                {{#or theme_settings.BannerImageFourheading theme_settings.BannerImageFourText theme_settings.BannerImageFourLink}}
+                                    <div class="homebanner-info">
+                                        {{#if theme_settings.BannerImageFourheading}}
+                                        <h3>{{theme_settings.BannerImageFourheading}}</h3>
+                                        {{/if}}
+                                        {{#if theme_settings.BannerImageFourText}}
+                                        <p>{{theme_settings.BannerImageFourText}}</p>
+                                        {{/if}}
+                                        <a href="{{theme_settings.BannerImageFourLink}}" class="border-link">Shop Now</a>
+                                    </div>
+                                    {{else}}
+                                    <div  class="homebanner-info">
+                                        <svg><use xlink:href="#icon-bs-placeholder"></use></svg>
+                                    </div>
+                                {{/or}}
+                            {{else}}
+                                <div  class="homebanner-info">
+                                    <svg><use xlink:href="#icon-bs-placeholder"></use></svg>
+                                </div>
+                            {{/if}}
+                        </div>
+                    </div>
+                    <div class="grid">
+                        <div class="hometopbannerinner fifthbanner smallbanner {{#if theme_settings.promobannerfivethtype '==' 'withbackground' }} middle-text{{/if}} {{#or theme_settings.BannerImageFiveheading theme_settings.BannerImageFiveText theme_settings.BannerImageFiveLink}}{{else}}placeholderbg{{/or}}">
+                            {{#if theme_settings.promobannerfivethtype '==' 'withimage'}}
+                                {{#or theme_settings.BannerImageFive theme_settings.BannerImageFiveheading theme_settings.BannerImageFiveText theme_settings.BannerImageFiveLink}}
+                                    {{#if theme_settings.BannerImageFive}}
+                                        <div class="hommebannerimg">
+                                            <a href="{{theme_settings.BannerImageFiveLink}}" aria-label="PromoBannerImg">
+                                                <img class="lazyload" data-sizes="auto" src="/product_images/uploaded_images/{{theme_settings.BannerImageFive}}" data-src="/product_images/uploaded_images/{{theme_settings.BannerImageFive}}" alt="" width="784" height="380" loading="lazy">
+                                            </a>
+                                        </div>
+                                    
+                                    {{/if}}
+                                    {{#or theme_settings.BannerImageFiveheading theme_settings.BannerImageFiveText theme_settings.BannerImageFiveLink}}
+                                        <div class="homebanner-info">
+                                            {{#if theme_settings.BannerImageFiveheading}}
+                                            <h3>{{theme_settings.BannerImageFiveheading}}</h3>
+                                            {{/if}}
+                                            {{#if theme_settings.BannerImageFiveText}}
+                                            <p>{{theme_settings.BannerImageFiveText}}</p>
+                                            {{/if}}
+                                            <a href="{{theme_settings.BannerImageFiveLink}}" class="border-link">Shop Now</a>
+                                        </div>
+                                    {{/or}}
+                                {{else}}
+                                    <div  class="homebanner-info">
+                                        <svg><use xlink:href="#icon-bs-placeholder"></use></svg>
+                                    </div>
+                                {{/or}}
+                            {{ else if theme_settings.promobannerfivethtype '==' 'withbackground' }}
+                                {{#or theme_settings.BannerImageFiveheading theme_settings.BannerImageFiveText theme_settings.BannerImageFiveLink}}
+                                    <div class="homebanner-info">
+                                        {{#if theme_settings.BannerImageFiveheading}}
+                                        <h3>{{theme_settings.BannerImageFiveheading}}</h3>
+                                        {{/if}}
+                                        {{#if theme_settings.BannerImageFiveText}}
+                                        <p>{{theme_settings.BannerImageFiveText}}</p>
+                                        {{/if}}
+                                        <a href="{{theme_settings.BannerImageFiveLink}}" class="border-link">Shop Now</a>
+                                    </div>
+                                    {{else}}
+                                    <div  class="homebanner-info">
+                                        <svg><use xlink:href="#icon-bs-placeholder"></use></svg>
+                                    </div>
+                                {{/or}}
+                            {{else}}
+                                <div  class="homebanner-info">
+                                    <svg><use xlink:href="#icon-bs-placeholder"></use></svg>
+                                </div>
+                            {{/if}}
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+{{/if}}

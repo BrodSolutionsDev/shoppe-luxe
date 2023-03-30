@@ -1,0 +1,33 @@
+{{#partial "full-width"}}
+    <div class="cat-top-main-banner primary-bgwhite">
+
+        <div class="category-top-banner mb-45">
+            <div class="breadcrumb-row">
+                <div class="container-lg">
+                {{> components/common/breadcrumbs breadcrumbs=breadcrumbs}}
+                </div>
+            </div>
+
+            <div class="container content">
+                <h1 class="page-heading">{{lang 'page_not_found.page_heading'}}</h1>
+            </div>
+        </div>
+  </div>
+{{/partial}}
+{{#partial "page"}}
+
+
+
+<div class="page">
+    <section class="page-content page-content--centered">
+
+        <p class="u-textAlignCenter">
+            {{lang 'page_not_found.message'}}
+        </p>
+
+        {{> components/common/search-box}}
+    </section>
+</div>
+
+{{/partial}}
+{{> layout/base}}

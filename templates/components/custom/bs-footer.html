@@ -1,0 +1,149 @@
+ <footer class="footer mt-80 pt-70" role="contentinfo">
+    <div class="container">
+        <div class="custom-row flex">
+            <div class="grid">
+                <h3 class="footer-title footer-toggle-title footer-info-heading">Contact Us
+                    <svg>
+                        <use xlink:href="#icon-footer-down-arrow" />
+                    </svg>
+                </h3>
+                <ul class="footer-info-list footer-contact">
+                    {{#if settings.address}}
+                    <li>
+                        <span class="footer-icon">
+                            <svg>
+                             <use xlink:href="#icon-footer-location" />
+                            </svg>
+                        </span>
+                        <span class="footer-address">{{nl2br settings.address}}</span>
+                    </li>
+                    {{/if}}
+                    {{#if theme_settings.footer_mail_hide}}
+                    <li>
+                        <span class="footer-icon">
+                            <svg>
+                                <use xlink:href="#icon-footer-envelope" />
+                            </svg>
+                        </span>
+                        <a href="mailto:{{theme_settings.footer_mail_id}}">{{theme_settings.footer_mail_id}}</a>
+                    </li>
+                    {{/if}}
+                    {{#if settings.phone_number}}
+                        <li>
+                            <span class="footer-icon">
+                                <svg>
+                                    <use xlink:href="#icon-footer-call" />
+                                </svg>
+                            </span>
+                            <a href="tel:{{settings.phone_number}}">{{settings.phone_number}}</a>
+                        </li>
+                    {{/if}}
+                </ul>
+            </div>
+            <div class="grid">
+                <h3 class="footer-title footer-toggle-title footer-info-heading">{{lang 'footer.information'}}
+                    <svg>
+                        <use xlink:href="#icon-footer-down-arrow" />
+                    </svg>
+                </h3>
+                <ul class="footer-info-list">
+                    {{#each pages}}
+                        {{#if name '!=' 'Common style'}}
+                            <li>
+                                <a href="{{url}}">{{name}}</a>
+                            </li>
+                        {{/if}}
+                    {{/each}}
+                </ul>
+            </div>
+            <div class="grid">
+                <h3 class="footer-title footer-toggle-title footer-info-heading">{{lang 'footer.shop_by_category'}}
+                    <svg>
+                        <use xlink:href="#icon-footer-down-arrow" />
+                    </svg>
+                </h3>
+                <ul class="footer-info-list">
+                
+                    {{#each (limit categories 5)}}
+                            <li>
+                                <a href="{{url}}">{{name}}</a>
+                            </li>
+                    {{/each}}
+                    {{#if (length categories) '>' 5 }}
+                    <li class="last-list">
+                        <a href="/categories">{{lang 'common.view_all'}}</a>
+                    </li>
+                    {{/if}}
+                </ul>
+            </div>
+            <div class="grid">
+                <h3 class="footer-title footer-toggle-title footer-info-heading">{{lang 'footer.brands'}}
+                    <svg>
+                        <use xlink:href="#icon-footer-down-arrow" />
+                    </svg>
+                </h3>
+                <ul class="footer-info-list">
+                    {{#each (limit shop_by_brand 5)}}
+                            <li>
+                                <a href="{{url}}">{{name}}</a>
+                            </li>
+                    {{/each}}
+                    
+                  
+                    {{#if (length shop_by_brand) '>' 5 }}
+                            <li class="last-list"><a href="{{urls.brands}}">{{lang 'common.view_all'}}</a></li>
+                        {{/if}}
+                  
+                </ul>
+            </div>
+            <div class="grid newsletter-box">
+                {{#if settings.show_newsletter_box}}
+                    {{> components/common/subscription-form}}
+                {{/if}}
+            </div>
+            
+            <div class="grid footer-social">
+                
+                <article class="footer-info-col--social
+                    footer-info-col--{{#if theme_settings.social_icon_placement_bottom '===' 'bottom_left'}}left{{else}}right{{/if}}"
+                    data-section-type="footer-webPages">
+                        {{> components/common/social-links}}
+                </article>
+                
+            </div>
+            
+        </div>
+
+       
+        
+    </div>
+    <div class="footer-bottom  {{#if theme_settings.header_style '==' 'header2'}} jewelry-footer-bottom {{/if}} {{#if (length currency_selector.currencies) '>' 1}}{{else}}fullwidth{{/if}}">
+        <div class="container">
+            <div class="custom-row">
+                {{#if theme_settings.layout '!==' 'jewelry'}}
+                {{#or customer (unless theme_settings.restrict_to_login)}}
+               
+                {{#if (length currency_selector.currencies) '>' 1}}
+                    <div class="grid footer-currency">
+                       {{> components/common/currency-selector}}
+                    </div>
+                {{/if}}
+                {{/or}}
+                {{/if}}
+                {{#or theme_settings.show_powered_by theme_settings.show_copyright_footer}}
+               
+                    <div class="footer-copyright grid">
+                       
+                        <p class="powered-by"> {{#if theme_settings.show_copyright_footer}} &copy; {{moment format="YYYY"}} {{settings.store_name}} {{/if}} {{#if theme_settings.show_powered_by}} {{lang 'footer.powered_by'}} <a href="https://www.brodsolutions.com/" rel="nofollow">Brod Solutions</a>{{/if}} </p>
+                        
+                    </div>
+                    {{/or}}
+                
+                {{> components/common/payment-icons}}
+                
+                
+            </div>
+        </div>
+    </div>
+    {{{region name="ssl_site_seal--global"}}}
+</footer>

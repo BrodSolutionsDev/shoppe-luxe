@@ -1,0 +1,40 @@
+<!-- <script>
+
+  document.addEventListener('load', function() {
+    document.querySelector('.sub-category-block').slick({
+      'slidesToShow': 3
+    })
+  })
+  </script> -->
+  {{#if category}}
+  {{#if category.subcategories}}
+  <div class="sub-category-wrap clearfix">
+    <h3>Sub Categories</h3>
+    <div class="sub-category-block custom-row clearfix align-center">
+      <!-- <div class="sub-category-block custom-row clearfix align-center" data-slick='{"slidesToShow": 3, "slidesToScroll": 3, "dots": false, "infinite": true}' style="width: 100%"> -->
+      {{#each category.subcategories}}
+      <div class="grid sub-category-item clearfix">
+        <div class="category-image-inner scale-img">
+          <a class="sub-category-img-block" href="{{url}}" alt="{{name}}" title="{{name}}">
+            <div class="sub-category-img ">
+              {{#if image}}
+              <img class="lazyload" data-sizes="auto" src="{{getImage image 'sub-category-img'}}"
+                data-src="{{getImage image 'sub-category-img'}}" alt="" width="250" height="250" loading="lazy" />
+              {{else}}
+              <img class="sub-no-img" src="{{cdn 'assets/img/noImage.jpg'}}" alt="No Image" title="No Image" width="250"
+                height="250" loading="lazy">
+              {{/if}}
+            </div>
+          </a>
+          <p class="sub-category-name">
+            <a href="{{url}}">{{name}}</a>
+          </p>
+        </div>
+      </div>
+      {{/each}}
+      <div id="custom-slick-arrows"></div>
+    </div>
+  </div>
+  {{/if}}
+  {{/if}}
+  

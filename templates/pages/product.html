@@ -1,0 +1,57 @@
+---
+product:
+    videos:
+        limit: {{theme_settings.productpage_videos_count}}
+    reviews:
+        limit: {{theme_settings.productpage_reviews_count}}
+    related_products:
+        limit: {{theme_settings.productpage_related_products_count}}
+    similar_by_views:
+        limit: {{theme_settings.productpage_similar_by_views_count}}
+---
+{{inject 'productId' product.id}}
+
+{{#partial "page"}}
+    <div class="page-inner">
+    {{> components/common/breadcrumbs breadcrumbs=breadcrumbs}}
+
+    {{#each product.shipping_messages}}
+        {{> components/common/alert/alert-info message}}
+    {{/each}}
+
+    <div>
+        {{> components/products/product-view}}
+
+        {{{region name="product_below_content"}}}
+      
+        <div class="bs-tabing-section mt-120">
+            <article class="productView-description">
+                    {{#if theme_settings.show_product_details_tabs}}
+                        {{> components/custom/bs-description-tabs}}
+                    {{else}}
+                        {{> components/custom/bs-description}}
+                    {{/if}}
+                   
+                    {{#all settings.show_product_reviews theme_settings.show_product_reviews (if theme_settings.show_product_details_tabs '!==' true)}}
+                        {{> components/products/reviews reviews=product.reviews product=product urls=urls}}
+                    {{/all}}
+        
+            </article>
+            <div class="bs-related-product">
+                {{> components/custom/bs-realted-product}}
+            </div>
+        </div>
+        
+       
+    </div>
+    {{{region name="product_above_customer_also_view"}}}
+
+    {{> components/products/schema}}
+</div>
+{{/partial}}
+{{#partial "page-full"}}
+    <div class="bs-customer-also-view">
+    {{> components/products/tabs}}
+    </div>
+{{/partial}}
+{{> layout/base}}

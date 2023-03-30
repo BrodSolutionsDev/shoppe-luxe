@@ -1,0 +1,42 @@
+---
+cart: true
+product:
+    summary: 120
+---
+{{inject 'cancelButtonText' (lang 'common.cancel')}}
+{{#partial "page"}}
+{{inject 'invalidEntryMessage' (lang 'cart.invalid_entry_message')}}
+<div class="page-inner">
+<div class="page">
+
+    <div class="page-content" data-cart>
+        {{> components/common/breadcrumbs breadcrumbs=breadcrumbs}}
+
+        {{> components/cart/page-title}}
+
+        <div data-cart-status>
+            {{> components/cart/status-messages}}
+        </div>
+
+        {{#if cart.items.length}}
+            <div class="loadingOverlay"></div>
+            <div data-cart-content class="cart-content-padding-right">
+                {{> components/cart/content}}
+            </div>
+            <div class="cart-bottom">
+                <div class="cart-totals-wrap" data-cart-totals>
+                    <div class="cart-total-cont">
+                        {{> components/cart/totals}}
+                    </div>
+                </div>
+            </div>
+            {{{region name="cart_below_totals"}}}
+        {{else}}
+            <h3 tabindex="0">{{lang 'cart.checkout.empty_cart'}}</h3>
+        {{/if}}
+
+    </div>
+</div>
+</div>
+{{/partial}}
+{{> layout/base}}

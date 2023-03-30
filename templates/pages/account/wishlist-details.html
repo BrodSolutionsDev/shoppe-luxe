@@ -1,0 +1,47 @@
+{{#partial "full-width"}}
+    <div class="cat-top-main-banner primary-bgwhite">
+
+        <div class="category-top-banner mb-45">
+            <div class="breadcrumb-row">
+                <div class="container-lg">
+                    {{#if wishlist.is_editable}}
+                        {{> components/common/breadcrumbs breadcrumbs=breadcrumbs}}
+                    {{/if}}
+                </div>
+            </div>
+
+            <div class="container content">
+                <h1 class="page-heading">{{lang 'account.wishlists.view_heading' name=wishlist.name}}</h1>
+            </div>
+        </div>
+  </div>
+{{/partial}}
+{{#partial "page"}}
+<div class="account" data-pagination-wishlist>
+
+    
+    
+    {{#if wishlist.is_editable}}
+        {{> components/account/navigation account_page='wishlists'}}
+    {{/if}}
+
+    {{#if wishlist.is_editable}}
+        {{#if wishlist.is_public '>' 0}}
+            <div class="panel share-wishlist">
+                <div class="panel-body">
+                    <h5>{{lang 'account.wishlists.share_intro'}}</h5>
+                    <input class="form-input" value="{{settings.base_url}}{{wishlist.share_url}}" readonly>
+                </div>
+            </div>
+        {{/if}}
+    {{/if}}
+
+    {{#if wishlist.items}}
+        {{> components/account/wishlist-item-list show_remove=wishlist.is_editable}}
+    {{else}}
+        {{> components/common/alert/alert-info (lang 'account.wishlists.empty_wishlist')}}
+    {{/if}}
+
+</div>
+{{/partial}}
+{{> layout/base}}

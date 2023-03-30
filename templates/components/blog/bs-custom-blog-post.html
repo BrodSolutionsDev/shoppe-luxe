@@ -1,0 +1,53 @@
+<article class="blog">
+  <div class="content">
+  <div class="blog-img-pan">
+          {{#if thumbnail}}
+          <figure class="blog-thumbnail">
+            
+            <a href="{{url}}">
+              {{> components/common/responsive-img
+                  image=thumbnail
+                  fallback_size=theme_settings.blog_size
+                  lazyload=theme_settings.lazyload_mode
+                  class="thumbnail"
+              }}
+            </a>
+          
+        </figure>
+             
+          {{else}}
+          <figure class="blog-thumbnail blog-no-image">
+            <a href="{{post.url}}">
+              <svg><use xlink:href="#icon-bs-placeholder"></use></svg>
+            </a>
+           
+      </figure>
+          
+          {{/if}}
+
+            </div>
+            
+            
+        
+          <div class="blog-post-custom">
+            <p class="blog-date">{{date_published}}</p>
+             <h2 class="blog-title">
+                <a href="{{url}}" class="recent-blog-title">{{title}}</a>
+              </h2>
+              <div class="blog-post">
+                  {{#if body}}
+                      {{{body}}}
+                  {{else}}
+                      
+                      {{{summary}}}
+
+                  {{/if}}
+              </div>
+              {{#if show_read_more}}
+              <div class="btn">
+                  <a class="link-flash link-effect" href="{{url}}" aria-label="{{post.title}} {{lang 'blog.read_more'}}" data-hover="Read More">Read now</a>
+                  </div>
+              {{/if}}
+          </div>
+          </div>
+</article>

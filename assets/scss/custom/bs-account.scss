@@ -1,0 +1,675 @@
+/* ========== LOGIN PAGE ========== */
+
+.login{
+    margin: 0; max-width: 100%;
+}
+
+.login-row{
+    margin-top: 35px; @include display-flex(flex); @include flex-wrap(wrap);
+    @include align-item(center); margin-left: auto; margin-right: auto;
+
+    &:after, &:before{
+        display: none;
+    }
+
+    @include tablet{
+        max-width: 100%; margin-top: 0;
+    }
+}
+
+.login-form{
+    padding-left: 0; padding-right: 16px; margin: 0; float: none; width: 50%;
+
+    @include tablet-small{
+        width: 100%; padding: 0; margin-bottom: 30px; padding-bottom: 30px; border-bottom: 1px solid $input-border-color;
+    }
+
+    .form-actions{
+        .forgot-password{
+            display: inline-block; vertical-align: middle; margin-left: 20px;
+            text-decoration: underline; 
+            @media(max-width:551px){
+                margin-left: 0px;
+            }
+        }
+        .button{
+            display: inline-block; vertical-align: middle;
+        }
+    }
+}
+.new-customer{
+    padding-left: 16px; padding-right: 0; float: none; width: 50%;
+
+    @include tablet-small{
+        width: 100%; padding: 0;
+    }
+
+    .panel-header{
+        background: $theme-secondary-whitecolor; padding: 20px 30px 0;
+    }
+    .panel-body{
+        background: $theme-secondary-whitecolor; padding: 20px 30px 30px; margin-bottom: 0;
+    }
+}
+
+.new-customer-intro{
+    margin-bottom: 10px;
+}
+.new-customer-fact-list{
+    margin-left: 0px;
+
+    li{
+        + li{
+            margin-top: 5px;
+        }
+    }
+}
+
+
+/* ========== CREATE ACCOUNT PAGE ========== */
+
+.type-createaccount{
+    .account--fixed{
+        .account-body{
+            margin-left: 0; margin-right: 0;
+        }
+    }
+}
+.g-recaptcha{
+    & > div{
+        margin-left: auto;
+        margin-right: auto;
+    }
+}
+
+/* ========== RESET PASSWORD PAGE ========== */
+
+.type-forgotpassword{
+    .page-heading{
+        + p{
+            text-align: center; max-width: 60%; margin-left: auto; margin-right: auto;
+
+            @include tablet-small{
+                max-width: 100%;
+            }
+        }
+    }
+    .forgot-password-form{
+        .form-prefixPostfix {
+            @include flex-wrap(wrap);
+            .form-input{
+                width: auto;
+                @media(max-width:1260px){
+                    width: auto;
+                }
+                @include mobile-small{
+                    width: 100%;                
+                }
+            }
+            .button{
+                height: unset;
+                order: 0;
+                margin: 0px;
+                margin-left: 10px;
+                @media(max-width:1260px){
+                    width: auto;
+                    margin-top: 0px;
+                    margin-left: 10px;
+                }
+                @include mobile-small{
+                    width: 100%;                
+                    margin-left: 0px;
+                    margin-top:10px;
+                }
+            }
+        }
+    }
+    
+    
+}
+
+.forgot-password-form{
+    margin-top: 35px;
+    margin-bottom: 0px;
+}
+
+/* ========== ACCOUNT NAVIGATION ========== */
+.gift-navigation{
+    margin-bottom: 40px;
+}
+.navBar--account , .account-navigation{
+    display: block;
+    margin-bottom: 40px;
+    .navBar-item{
+        display: inline-block;
+        @include tablet-small{
+            margin-bottom: 10px;
+        }
+        @media(max-width:800px){    
+            margin: 0 6px 10px;
+        }
+        &.is-active{
+            color: $color-primary;
+            border: none;
+            .navBar-action{
+                color: $color-primary;
+            }
+        }
+        .navBar-action{
+            color: $color-textBase;
+            position: relative;
+            &:after{
+                display: block;
+                content: '';
+                width: 0px;
+                height: 2px;
+                background-color: $color-primary;
+                position: absolute;
+                bottom: -5px;
+                left: 0px;
+                right: 0;
+                margin: 0 auto;
+                transition: all 0.2s linear;
+                opacity: 0;                
+                visibility: hidden;
+            }
+            &:hover{
+                color: $color-primary;
+                &:after{
+                    width: 100%;            
+                    transition: all 0.2s linear;
+                    opacity: 1;                
+                    visibility: visible;
+                    @media(max-width:1100px){
+                        display: none;
+                    }
+                }            
+            }
+           
+        }
+        .navBar-action-color--active{
+            color: $color-primary;
+        }
+    }
+}
+.navBar--account{
+    .navBar-item{
+        margin: 0 12px;
+        @include desktop-xs{
+          margin: 0 5px;
+        }
+        @include tablet-small{
+            margin-bottom: 8px;
+        }
+    }
+}
+/* ========== ACCOUNT PAGES COMMON ELEMENT========== */
+
+.account{
+    margin-bottom: 0px;
+    .form{
+        margin-bottom: 0px;
+    }
+    &.account--fixed, &.account--fixedSmall, &.account--fixedLarge{
+        //width: 100%;
+        @include tablet-small{
+            width: 100%;
+        }
+    }
+}
+
+.account-heading{
+    font-size: 20px; font-weight: 600; padding-bottom: 10px; margin-bottom: 20px;border-bottom-color: $input-border-color;
+}
+.account{
+    h2:not(.page-heading){
+        @extend .account-heading; margin-bottom: 30px;
+    }
+}
+
+/* ========== ORDER LISTING PAGES ========== */
+
+.account-listItem{
+    padding: 20px 0 15px;
+    &:first-child{
+        padding-top: 0px;
+    }
+    @include tablet-small{
+        padding: 25px 0;
+    }
+}
+.account-product-title{
+    font-size: 16px; margin-bottom: 5px;
+
+    @include mobile{
+        font-size: 14px;
+    }
+}
+
+.account-orderStatus{
+    @include mobile{
+        position: relative; margin-bottom: 10px;@include display-flex(flex);@include align-item(center);
+    }
+}
+
+.account-orderStatus-label{
+    padding: 8px 10px; font-size: 12px; background: lighten($theme-primary-black, 80%);
+    font-weight: 600;
+    @include mobile-small{
+        margin-bottom: 0px;
+    }
+}
+.account-body{
+    margin: 0px;
+    .form{
+        margin-bottom: 0px;
+    }
+    .form-actions{
+        margin-top: 0px
+    }
+}
+.account-content{
+    @include col;
+}
+.account-sidebar{
+    @include col;
+
+    @include tablet-small{
+        float: none; width: 100%; clear: both;
+    }
+}
+.account-content--fixedSmall{
+    width: 60%;
+
+    @include tablet-small{
+        width: 100%; float: none;
+    }
+}
+.account-sidebar-block{
+    font-size: $fontSize-root;
+    & + .account-sidebar-block{
+        margin-top: 25px;
+    }
+    ul{
+        margin-bottom: 0px;
+    }
+    li{
+        padding: 0px;
+    }
+}
+.account-product--alignMiddle{
+    .account-product-checkItem, .account-product-figure{
+        left: auto;
+    }
+    .account-product-body{
+        padding-left: 30px;
+    }
+}
+.account-product-body{
+
+    @include mobile{
+        padding-bottom: 0;
+    }
+
+    .definitionList{
+        font-size: 12px;
+
+        + p{
+            margin-top: 20px;
+        }
+    }
+}
+.account-product-figure{
+    &:after{
+        display: none;
+    }
+}
+.account-order-address{
+    li{
+        margin-top: 5px;
+    }
+}
+.definitionList-value{
+    margin-bottom: 4px;
+}
+
+.account-orderTotal{
+    @include tablet-small{
+        float: none; width: 100%; margin-top: 0;
+    }
+}
+
+.account-product-figure:after{
+    display: none;
+}
+.account-product-title{
+    font-size: 18px;
+    margin-bottom: 5px;
+}
+.account-product-description{
+    margin-bottom: 8px;
+}
+.account-product-detail{
+    .account-product-detail-heading{
+        font-size: 14px;
+        font-weight: 600;
+        color: $color-textBase;
+    }
+    span{
+        font-size: 14px;
+    }
+}
+.account-orderStatus-action{
+    color: $color-textBase;
+    &:hover{
+        color: $color-secondary;
+    }
+}
+.account-orderStatus-label{
+    background-color: $theme-whitebase-color;
+    color: $color-secondary;
+    font-family: $body-font-family;
+}
+
+.account-heading{
+    font-size: 24px;
+    border-bottom-color: $input-border-color;
+
+    @include mobile{
+        font-size: 20px;
+    }
+}
+.type-account_order{
+    .account-content{
+        .account-heading{
+            margin-bottom: 0px;
+        }
+    }
+    
+}
+.account-list{
+    margin-bottom: 0px;
+}
+.account-listItem{
+    border-bottom-color: $input-border-color;
+}
+.account-product--alignMiddle {
+    .account-product-checkItem{
+        left: 0px;
+        @include mobile{
+            vertical-align: top;
+        }
+        & + .account-product-figure{
+            left: 0px;
+            & + .account-product-body{
+                padding-left: 30px;
+            }
+        }
+    }
+    .account-product-figure{
+        left: 30px;
+        & + .account-product-body{
+            padding-left: 60px;
+        }
+    }
+}
+.account-product-body {
+    .definitionList{
+        font-size: 12px;
+        line-height: 26px;
+    }
+    .definitionList-key{
+        font-weight: 600;
+    }
+}
+.account-sidebar{
+    @include tablet-small{
+        width: 100%;
+    }
+}
+
+.account-orderTotal {
+    font-size: 16px;
+    margin-top: 0;
+    @include mobile{
+        width: 100%;
+    }
+    .account-orderTotal-value{
+        border-bottom-color: $input-border-color;
+        &:last-child{
+            font-size: 20px;
+            font-weight: 600;
+        }
+    }
+    .account-orderTotal-key{
+        font-weight: 600;
+        color: $color-textBase;
+    }
+    .account-orderTotal-key, .account-orderTotal-value{
+        padding: 15px 0;
+    }
+}
+
+/* ========== MESSAGE PAGE ========== */
+
+.account-message{
+    .account-product-title{
+        color: $body-font-color;
+    }
+}
+.messages-list{
+    margin-bottom: 30px;
+    .account-orderStatus{
+        position: relative;
+        @include tablet-small{
+            font-size: 14px;
+        }
+
+        @include mobile{
+            float: none;
+            margin-top: 0px;
+            margin-bottom: 6px;
+        }
+    }
+    .account-listItem{
+        padding: 15px 0;
+        &:first-child{
+            padding-top: 0px;
+        }
+    }
+    .account-product-title{
+        color: $color-secondary;
+    }
+    p{
+        color: $color-secondary;
+        margin: 0px;
+        &.is-read{
+            color: $color-textBase;
+        }
+        & + p{
+            margin-top: 10px;
+        }
+    }
+}
+
+/* ========== address list ========= */
+.addressList{
+    @include row;
+    margin-bottom: 0px;
+    .address{
+        @include  col;
+    }
+    .panel--address {
+        .panel-body{
+            padding: 20px;
+            padding-bottom: 76px;
+            background-color: $theme-lightengrey;
+            min-height: 286px;
+            @include mobile-small{
+                padding-bottom: 25px;
+            }
+            .address-title{
+
+            }
+            .address-details--postal{
+                font-size: 14px;
+                margin-bottom: 0;
+                li{
+                    padding: 0px;
+                }
+            }
+            .form-actions{
+                @include mobile-small{
+                    margin: 0px;
+                }
+                    
+                .button{
+                    margin-bottom: 0px;
+                    & + .button{
+                        @media(max-width:551px){
+                            margin-top: 10px;
+                        }
+                    }
+                }
+            }
+        }
+        &.panel--newAddress{
+            .panel-body{
+                background-color: transparent;
+                border-color: $input-border-color;
+            }
+        }
+    }
+}
+
+/* ========== WISHLIST PAGE ========== */
+
+.wishlists-table{
+    max-width: 100%;
+    thead{
+        tr{
+            th{
+                @include mobile-small{
+                    font-size: 14px;
+                    font-weight: 600;
+                }
+            }
+        }
+    }
+    th{
+      
+        & + th{
+            border-left: none;
+        }
+    }
+    .table-actions{
+        width: 100px;
+        .form-fieldset{
+            @include display-flex(flex);
+            @include flex-wrap(wrap);
+            @include justify-content(flex-end);
+        }
+        .button{
+            margin: 0; display: block; width: 60px; padding: 10px 0px;
+            @include display-flex(flex);
+            @include align-item(center);
+            @include justify-content(center);
+            svg{
+                fill: transparent;
+                stroke: $buttonStyle-default-color;
+                width: 18px;
+                height: 18px;
+            }
+            &:hover{
+                svg{
+                   stroke: $buttonStyle-default-colorHover;
+                }
+            }
+            &.button--primary{
+                svg{
+                    fill: transparent;
+                    stroke: $buttonStyle-primary-color;
+                }
+                &:hover{
+                    svg{
+                        stroke:$buttonStyle-primary-colorHover;
+                    }
+                }
+            }
+            + .button{
+                margin-left: 0; margin-top: 10px;
+            }
+        }
+    }
+}
+.share-wishlist{
+    max-width: 60%; margin-bottom: 50px;
+
+    @include tablet-small{
+        max-width: 100%;
+    }
+
+    .panel-body{
+        background: $theme-secondary-whitecolor; padding: 30px;
+
+        h5{
+            font-size: 16px; margin-bottom: 15px;
+        }
+
+        @include mobile{
+            padding: 20px;
+        }
+    }
+    .form-input[readonly]{
+        background: $color-white;
+    }
+}
+.type-wishlist{
+    .productGrid{
+        .product{
+            position: relative;
+
+            .form{
+                position: absolute; margin: 0; top: 8px; right: 20px;
+                .button{
+                    background-image: url("data:image/svg+xml,%0A%3Csvg width='12' height='12' viewBox='0 0 12 12' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M11 11L1 1M11 1L1 11' stroke='%23ffffff' stroke-linecap='round'/%3E%3C/svg%3E%0A");
+                    font-size: 0;
+                    background-repeat: no-repeat;
+                    background-position: center center;
+                    padding: 10px 10px;
+                    line-height: normal;
+                    border-radius: 50%;
+                    &:hover , &:focus{
+                        background-image: url("data:image/svg+xml,%0A%3Csvg width='12' height='12' viewBox='0 0 12 12' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M11 11L1 1M11 1L1 11' stroke='%2301bc82' stroke-linecap='round'/%3E%3C/svg%3E%0A");
+                    }
+                }
+            }
+        }
+    }
+}
+
+/* ========= addreturn ======== */
+.account--addReturn{
+    table{
+        margin: 0px;
+        &.table{
+            margin-bottom: 30px;
+        }
+        th{
+            font-size: 16px;
+            & + th{
+                border-left: none;
+            }
+        }
+    }
+}
+.type-account_orderstatus{
+    .pagination {
+        .pagination-list{
+            .pagination-item{
+                width: auto;
+                height: auto;
+            }
+        }
+    }
+}

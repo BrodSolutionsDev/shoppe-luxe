@@ -1,0 +1,58 @@
+<div id="add-to-cart-wrapper" class="add-to-cart-wrapper" {{#unless product.can_purchase}}style="display: none"{{/unless}}>
+
+
+    {{#if theme_settings.show_product_quantity_box}}
+        {{inject 'productQuantityErrorMessage'  (lang 'products.quantity_error_message')}}
+        <div class="form-field form-field--increments">
+                <div class="form-increment" data-quantity-change>
+                    <button class="button button--icon" data-action="dec">
+                        <span class="is-srOnly">{{lang 'products.quantity_decrease' name=product.title}}</span>
+                        <i class="icon" aria-hidden="true">
+                            <svg>
+                                <use xlink:href="#icon-qty-minus"/>
+                            </svg>
+                        </i>
+                    </button>
+                    <input class="form-input form-input--incrementTotal"
+                           id="qty[]"
+                           name="qty[]"
+                           type="tel"
+                           value="{{#if product.min_purchase_quantity}}{{product.min_purchase_quantity}}{{else}}1{{/if}}"
+                           data-quantity-min="{{product.min_purchase_quantity}}"
+                           data-quantity-max="{{product.max_purchase_quantity}}"
+                           min="1"
+                           pattern="[0-9]*"
+                           aria-live="polite" aria-label="Quantity">
+                    <button class="button button--icon" data-action="inc">
+                        <span class="is-srOnly">{{lang 'products.quantity_increase' name=product.title}}</span>
+                        <i class="icon" aria-hidden="true">
+                            <svg>
+                                <use xlink:href="#icon-qty-plus"/>
+                            </svg>
+                        </i>
+                    </button>
+                </div>
+        </div>
+    {{/if}}
+
+   
+    {{#or customer (unless settings.hide_price_from_guests)}}
+        <div class="form-action">
+            <!-- <input
+                    id="form-action-addToCart"
+                    data-wait-message="{{lang 'products.adding_to_cart'}}"
+                    class="button button--primary {{#if product.pre_order}}bs-pre-order{{/if}}"
+                    type="submit"
+                    value="{{#if product.pre_order}}{{lang 'products.pre_order'}}{{else}}{{lang 'products.add_to_cart'}}{{/if}}"> -->
+            <button 
+                id="form-action-addToCart"
+                data-wait-message="{{lang 'products.adding_to_cart'}}"
+                class="button button--primary {{#if product.pre_order}}bs-pre-order{{/if}}"
+                type="submit"
+            >
+            {{#if product.pre_order}}{{lang 'products.pre_order'}}{{else}}{{lang 'products.add_to_cart'}}{{/if}}
+            </button>
+            <span class="product-status-message aria-description--hidden">{{lang 'products.adding_to_cart'}} {{lang 'category.add_cart_announcement'}}</span>
+        </div>
+    {{/or}}
+</div>

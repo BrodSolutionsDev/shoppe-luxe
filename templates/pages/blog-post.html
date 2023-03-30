@@ -1,0 +1,18 @@
+{{#partial "full-width"}}
+    <div class="cat-top-main-banner primary-bgwhite">
+
+        <div class="category-top-banner mb-45">
+            <div class="breadcrumb-row">
+                <div class="container-lg">
+                {{> components/common/breadcrumbs breadcrumbs=breadcrumbs}}
+                </div>
+            </div>
+        </div>
+  </div>
+{{/partial}}
+{{#partial "page"}}
+
+{{> components/blog/posting post=blog.post show_tags=true}}
+
+{{/partial}}
+{{> layout/base}}

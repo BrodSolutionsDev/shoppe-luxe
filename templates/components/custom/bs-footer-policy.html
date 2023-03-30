@@ -1,0 +1,49 @@
+{{#if theme_settings.Footer_bottom_policy}}
+<div class="bs-footer-top-policy mt-80">
+    <div class="container">
+        <div class="custom-row">
+            {{#or theme_settings.FooterpolicyheadFirst theme_settings.FooterpolicyinfoFirst}}
+            <div class="grid">
+               
+                <div class="footer-policy-category">
+                    <h5>{{theme_settings.FooterpolicyheadFirst}}</h5>
+                    <p>{{theme_settings.FooterpolicyinfoFirst}}</p>
+                </div>
+                
+            </div>
+            {{/or}}
+            {{#or theme_settings.FooterpolicyheadSecond theme_settings.FooterpolicyinfoSecond}}
+            <div class="grid">
+               
+                <div class="footer-policy-category">
+                    <h5>{{theme_settings.FooterpolicyheadSecond}}</h5>
+                    <p>{{theme_settings.FooterpolicyinfoSecond}}</p>
+                </div>
+                
+            </div>
+            {{/or}}
+            {{#or theme_settings.FooterpolicyheadThird theme_settings.FooterpolicyinfoThird}}
+            <div class="grid">
+               
+                <div class="footer-policy-category">
+                    <h5>{{theme_settings.FooterpolicyheadThird}}</h5>
+                    <p>{{theme_settings.FooterpolicyinfoThird}}</p>
+                </div>
+                
+            </div>
+            {{/or}}
+            {{#or theme_settings.FooterpolicyheadFour theme_settings.FooterpolicyinfoFour}}
+            <div class="grid">
+                
+                <div class="footer-policy-category">
+                <h5>{{theme_settings.FooterpolicyheadFour}}</h5>
+                    <p>{{theme_settings.FooterpolicyinfoFour}}</p>
+                </div>
+                
+            </div>
+            {{/or}}
+        </div>
+    </div>
+</div>
+
+{{/if}}

@@ -1,0 +1,34 @@
+{{#partial "full-width"}}
+    <div class="cat-top-main-banner primary-bgwhite">
+
+        <div class="category-top-banner mb-45">
+            <div class="breadcrumb-row">
+                <div class="container-lg">
+                {{> components/common/breadcrumbs breadcrumbs=breadcrumbs}}
+                </div>
+            </div>
+
+            <div class="container content">
+               <h1 class="page-heading">{{lang 'account.addresses.heading' }}</h1>
+            </div>
+        </div>
+  </div>
+{{/partial}}
+{{#partial "page"}}
+    
+    
+    {{> components/account/navigation account_page='addresses'}}
+
+    <div class="account account--fixedLarge">
+        <div class="account-body">
+            {{#if customer.error}}
+                {{>components/common/alert/alert-error customer.error}}
+            {{/if}}
+            {{#if customer.success}}
+                {{>components/common/alert/alert-success customer.success}}
+            {{/if}}
+            {{> components/account/address-list }}
+        </div>
+    </div>
+{{/partial}}
+{{> layout/base}}

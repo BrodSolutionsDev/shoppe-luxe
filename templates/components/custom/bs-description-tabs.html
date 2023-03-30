@@ -1,0 +1,85 @@
+<div class="bs-description-tabs">
+    {{#if product.description}}
+    <div class="bs-description-tabrow">
+        <div class="tab">
+            <h2 class="tab-title">{{lang 'products.description'}}</h2>
+            <div class="icon">
+                <svg>
+                    <use xlink:href="#icon-pdp-tab-arrow" />
+                </svg>
+            </div>
+        </div>
+        <div class="tab-content">
+            {{{product.description}}}
+        </div>
+    </div>
+    {{/if}}   
+    {{#if theme_settings.show_custom_fields_tabs '!==' true}}
+        {{#if product.custom_fields}}
+        <div class="bs-description-tabrow">
+            <div class="tab">
+                <h2 class="tab-title">Additional Information</h2>
+                <div class="icon">
+                    <svg>
+                        <use xlink:href="#icon-pdp-tab-arrow" />
+                    </svg>
+                </div>
+            </div>
+            <div class="tab-content bs-customfield">
+                
+                <div class="custom-row">
+                    {{> components/custom/bs-custom-fields }}
+                </div>
+                
+            </div>
+        </div>
+        {{/if}}
+    {{/if}}
+    {{#if product.videos.list.length}}
+    <div class="bs-description-tabrow">
+        <div class="tab">
+            <h2 class="tab-title"> {{lang 'products.videos.header'}}</h2>
+            <div class="icon">
+                <svg>
+                    <use xlink:href="#icon-pdp-tab-arrow" />
+                </svg>
+            </div>
+        </div>
+        <div class="tab-content">
+            {{> components/custom/bs-videos product.videos}}
+        </div>
+    </div>
+    {{/if}}
+    {{#if product.warranty}}
+        <div class="bs-description-tabrow">
+            <div class="tab">
+                <h2 class="tab-title">{{lang 'products.warranty'}}</h2>
+                <div class="icon">
+                    <svg>
+                        <use xlink:href="#icon-pdp-tab-arrow" />
+                    </svg>
+                </div>
+            </div>
+            <div class="tab-content">
+                {{{product.warranty}}}
+            </div>
+        </div>
+    {{/if}}
+       
+        
+</div>
+{{#all settings.show_product_reviews theme_settings.show_product_reviews product.reviews.total}}
+        <div class="bs-product-review" id="reviewSection">
+            {{!-- <div class="tab">
+                <h2 class="tab-title">{{lang 'products.reviews.header' total=product.reviews.total}}</h2>
+                <div class="icon">
+                    <svg>
+                        <use xlink:href="#icon-pdp-tab-arrow" />
+                    </svg>
+                </div>
+            </div>--}}
+            <div class="tab-content">
+                {{> components/products/reviews reviews=product.reviews product=product urls=urls}}
+            </div>
+        </div>
+    {{/all}}   

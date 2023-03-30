@@ -1,0 +1,17 @@
+<nav class="navPages">
+    <ul class="navPages-list{{#if theme_settings.navigation_design '!==' 'simple'}} navPages-list-depth-max{{/if}} {{#if theme_settings.megamenu}}{{else}}simplemenu{{/if}} sf-menu">
+        
+        
+        
+        {{#unless theme_settings.hide_content_navigation}}
+           {{#each pages}}
+                {{#or (if name '==' 'Page') (if name '==' 'Contact') (if name '==' 'Sale') (if name '==' 'Common') (if name '==' 'Theme Features')}}
+                    <li class="navPages-item navPages-item-page">
+                        {{> components/custom/bs-pagenavigation-list title=../page.title}}
+                    </li>
+                {{/or}}
+             {{/each}}
+        {{/unless}}
+    </ul>
+    
+</nav>
