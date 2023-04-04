@@ -426,6 +426,10 @@
           {
             "value": "header2",
             "label": "Layout2"
+          },
+          {
+            "value": "header3",
+            "label": "Layout3"
           }
         ]
       },
