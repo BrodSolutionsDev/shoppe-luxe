@@ -30,6 +30,7 @@ body {
     font-weight: normal;
     line-height: 23px;
     -webkit-font-smoothing: subpixel-antialiased;
+    overflow: hidden;
     &.hasAdminBar {
         & > * {
             &:not(footer){

@@ -80,6 +80,16 @@
         @include justify-content(space-between);
         @include align-item(center);
     }
+    .custom-col {
+        @include align-item(center);
+        @include flex-direction(column);
+    }
+    @media only screen and (max-width: 1024px) {
+        .custom-col {
+            @include flex-direction(row);
+        @include align-item(center);
+        }
+    }
     .grid{
         //width: 186px;
         width: 350px;
@@ -1595,5 +1605,18 @@ nav.navUser{
                 }
             }
         }
+    }
+}
+
+// Brad's Changes
+@media only screen and (min-width: 801px) {
+    .header3-userNav {
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        max-width: 1632px;
+        width: 100% !important;
+        margin: 0 auto;
+        transform: translate(-50%, -50%);
     }
 }
