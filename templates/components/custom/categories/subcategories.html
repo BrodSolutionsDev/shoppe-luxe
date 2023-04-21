@@ -1,20 +1,24 @@
-<!-- <script>
+{{#if category}}
+{{#if category.subcategories}}
+<div class="sub-category-wrap clearfix">
+  <h3>Sub Categories</h3>
+  <div class="sub-category-block custom-row clearfix align-center" style="width: 100%;">
 
-  document.addEventListener('load', function() {
-    document.querySelector('.sub-category-block').slick({
-      'slidesToShow': 3
-    })
-  })
-  </script> -->
-  {{#if category}}
-  {{#if category.subcategories}}
-  <div class="sub-category-wrap clearfix">
-    <h3>Sub Categories</h3>
-    <div class="sub-category-block custom-row clearfix align-center">
-      <!-- <div class="sub-category-block custom-row clearfix align-center" data-slick='{"slidesToShow": 3, "slidesToScroll": 3, "dots": false, "infinite": true}' style="width: 100%"> -->
-      {{#each category.subcategories}}
-      <div class="grid sub-category-item clearfix">
-        <div class="category-image-inner scale-img">
+
+
+
+
+    <section class="slider-wrapper">
+      <button class="slide-arrow" id="slide-arrow-prev">
+        &#8249;
+      </button>
+      <span id="numOfSlides"></span>
+      <button class="slide-arrow" id="slide-arrow-next">
+        &#8250;
+      </button>
+      <ul class="slides-container" id="slides-container">
+        {{#each category.subcategories}}
+        <li class="slide">
           <a class="sub-category-img-block" href="{{url}}" alt="{{name}}" title="{{name}}">
             <div class="sub-category-img ">
               {{#if image}}
@@ -29,12 +33,40 @@
           <p class="sub-category-name">
             <a href="{{url}}">{{name}}</a>
           </p>
-        </div>
-      </div>
-      {{/each}}
-      <div id="custom-slick-arrows"></div>
-    </div>
+        </li>
+        {{/each}}
+      </ul>
+    </section>
   </div>
   {{/if}}
   {{/if}}
-  
+  <script>
+    const slidesContainer = document.getElementById("slides-container");
+    const slide = document.querySelector(".slide");
+    const prevButton = document.getElementById("slide-arrow-prev");
+    const nextButton = document.getElementById("slide-arrow-next");
+
+    nextButton.addEventListener("click", () => {
+      const slideWidth = slide.clientWidth;
+      slidesContainer.scrollLeft += slideWidth;
+    });
+
+    prevButton.addEventListener("click", () => {
+      const slideWidth = slide.clientWidth;
+      slidesContainer.scrollLeft -= slideWidth;
+    });
+
+
+
+    const numOfSlides = document.querySelectorAll(".sub-category-img").length;
+    const maxSlides = (numOfSlides % 3);
+    let slideCounter = 1;
+    nextButton.addEventListener("click", function () {
+      if (slideCounter <= maxSlides) slideCounter += 1;
+      console.log(slideCounter)
+    });
+    prevButton.addEventListener("click", function () {
+      if (slideCounter >= 2) slideCounter -= 1;
+      console.log(slideCounter)
+    });
+  </script>
