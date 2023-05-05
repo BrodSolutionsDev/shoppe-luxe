@@ -10,7 +10,6 @@
     <tbody class="cart-list">
         {{#each cart.items}}
             <tr class="cart-item" data-item-row>
-                
                 <td class="cart-item-block cart-item-figure">
                     {{#if type '==' 'GiftCertificate'}}
                         <img
@@ -103,6 +102,7 @@
                 </td>
 
                 <td class="cart-item-block cart-item-info cart-item-quantity">
+
                     <label class="form-label cart-item-label" for="qty-{{id}}">{{lang 'products.quantity'}}</label>
                     <div class="form-increment">
                         {{#if can_modify}}
