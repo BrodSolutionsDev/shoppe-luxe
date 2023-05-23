@@ -1,0 +1,11 @@
+<section class="productCarousel"
+    data-list-name="{{list}}" style="height: fit-content;">
+    {{#each products}}
+    <div data-product-slide class="productCarousel-slide">
+        {{> components/products/card settings=../settings theme_settings=../theme_settings show_compare="show_compare" customer=../customer event="list" position=(add @index 1) p_type="related"}}
+    </div>
+    {{/each}}
+    {{#if products.length '>' 1}}
+        {{> components/carousel-content-announcement}}
+    {{/if}}
+</section>

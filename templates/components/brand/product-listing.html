@@ -1,0 +1,38 @@
+{{inject 'noCompareMessage' (lang 'compare.no_compare')}}
+
+<div class="product-top-actions">
+    
+    <div class="product-left-section">
+        
+        <form class="result-per-page actionBar show-product" method="get" data-sort-by>
+            {{> components/custom/bs-product-per-page products_per_page=products_per_page}}
+       </form>
+       <div class="CustomProductCount">      
+        <p id="totalProducts"></p>
+    </div>
+    </div>
+    <div class="product-right-action">
+        {{> components/custom/bs-product-view-button}}
+        {{> components/products/filter sort=pagination.brand.sort}}
+        <div class="mobile-filter">
+            <span class="filter-icon">
+                <svg class="icon">
+                    <use xlink:href="#icon-bs-filter" />
+                </svg>
+            </span>
+            <span>
+                Filter
+            </span>
+        </div>
+    </div>
+</div>
+
+<div {{#if settings.data_tag_enabled}} data-list-name="Brand: {{brand.name}}" {{/if}}>
+    {{#if theme_settings.product_list_display_mode '===' 'grid'}}
+        {{> components/products/grid products=brand.products show_compare=brand.show_compare theme_settings=theme_settings event="list"}}
+    {{else}}
+        {{> components/products/list products=brand.products show_compare=brand.show_compare theme_settings=theme_settings event="list"}}
+    {{/if}}
+</div>
+
+{{> components/common/paginator pagination.brand}}

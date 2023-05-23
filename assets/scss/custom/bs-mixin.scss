@@ -1,0 +1,190 @@
+/* ========== media mixin ========== */
+@function get-vw($target) {
+  $vw-context: (2880*.01) * 1px;
+  @return ($target/$vw-context) * 1vw;
+}
+
+@mixin vw {
+    @media screen and (min-width:1260px) {
+        @content;
+    }
+}
+@mixin desktop-Xlg{
+  @media screen and (max-width:1900px) {
+      @content;
+  }
+}
+
+@mixin desktop-lg{
+  @media screen and (max-width:1580px) {
+      @content;
+  }
+}
+
+@mixin desktop-small{
+  @media screen and (max-width:1439px) {
+      @content;
+  }
+}
+
+@mixin desktop-xs{
+  @media screen and (max-width:1300px) {
+      @content;
+  }
+}
+
+@mixin tablet{
+    @media screen and (max-width:1259px) {
+        @content;
+    }
+}
+
+@mixin tablet-small {
+    @media screen and (max-width:1023px) {
+        @content;
+    }
+}
+
+@mixin mobile {
+    @media screen and (max-width:767px) {
+        @content;
+    }
+}
+
+@mixin mobile-small {
+    @media screen and (max-width:666px) {
+        @content;
+    }
+}
+
+/* ========== common mixin ========== */
+
+@mixin col{
+    padding-left: 16px;
+    padding-right: 16px;
+    @media(max-width:1023px){
+      padding: 0 8px;
+    }
+    
+}
+@mixin row{
+    margin-left: -16px;
+    margin-right: -16px;
+    @media(max-width:1023px){
+      margin: 0 -8px;
+    }
+}
+
+@mixin border-radius($radius) {
+  -webkit-border-radius: $radius;
+  -moz-border-radius: $radius;
+  border-radius: $radius;
+}
+
+@mixin box-shadow($shadow) {
+  -webkit-box-shadow: $shadow;
+  -moz-box-shadow: $shadow;
+  box-shadow: $shadow;
+}
+
+@mixin transition($trans) {
+  -webkit-transition: $trans;
+  -moz-transition: $trans;
+  transition: $trans;
+}
+
+@mixin transform($transforms) {
+	-webkit-transform: $transforms;
+	-moz-transform: $transforms;
+	-ms-transform: $transforms;
+	transform: $transforms;
+}
+
+@mixin rotate ($deg) {
+	@include transform(rotate(#{$deg}deg));
+}
+
+@mixin translate ($x, $y) {
+	@include transform(translate($x, $y));
+}
+
+@mixin flex-basis($flex-basis){
+  -webkit-flex-basis:($flex-basis);
+  flex-basis:($flex-basis);
+}
+
+@mixin display-flex($flex){
+  display: -webkit-box;
+  display: -moz-box;
+  display: -ms-flexbox;
+  display: -webkit-flex;
+  display: $flex;
+}
+
+@mixin align-item($align-item){
+  -webkit-box-align: $align-item;
+  -moz-box-align: $align-item;
+  -ms-flex-align: $align-item;
+  -webkit-align-items: $align-item;
+  align-items: $align-item;
+}
+
+@mixin align-self($align-self){
+  -webkit-align-self: $align-self;
+  align-self: $align-self;
+}
+
+@mixin justify-content($justify-content){
+  -webkit-justify-content: $justify-content;
+  justify-content: $justify-content;
+}
+
+@mixin flex-wrap($flex-wrap){
+  flex-wrap: $flex-wrap;
+  -webkit-flex-wrap: $flex-wrap;
+}
+
+@mixin flex-direction($flex-direction){
+  flex-direction: $flex-direction;
+  -webkit-flex-direction: $flex-direction;
+}
+@keyframes fadeIn {
+  from {
+    opacity: 0.1;
+  }
+
+  to {
+    opacity: 1;
+  }
+}
+@keyframes slidedots {
+  from {
+    width: 0px;
+  }
+
+  to {
+    opacity: 100%;
+  }
+}
+
+@keyframes run {
+  0%   {width: 0px}
+  100% {width: 100%;}
+}
+@keyframes slideleft {
+  0% {
+    opacity: 0;
+  left:0px;
+    left:0px;
+  }
+
+  100% {
+    opacity: 1;
+    left:208px;
+    left:208px;
+  }
+}
+@keyframes compare-notification-fadin {
+  0%    { opacity: 0; }
+  100%  { opacity: 0.8; }
+}

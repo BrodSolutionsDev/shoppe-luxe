@@ -1,0 +1,33 @@
+<div class="recent-blog-post">
+    <div class="container">
+    <div class="blog-list-section">
+        <div class="blog-list-title">
+          {{#if theme_settings.Blog_section_title}}
+            <h2 class="page-heading">{{theme_settings.Blog_section_title}}</h2>
+          {{/if}}
+          <a href="/blog/">view all</a>
+        </div>
+          <div class="custom-row">
+           
+            <div class="bs-blog-left">
+            {{#each blog.recent_posts}}
+              {{#if @index '==' 0}}
+              <div class="grid bigblogimg">
+                {{> components/blog/bs-custom-blog-post blog=blog.recent_posts columns=3 settings=../settings}}
+              </div>
+              {{/if}}
+            {{/each}}
+            </div>
+            <div class="bs-blog-right">
+          {{#each blog.recent_posts}}
+            {{#and (if @index '>' 0) (if @index '<' 3)}}
+            <div class="grid">
+              {{> components/blog/bs-custom-blog-post blog=blog.recent_posts columns=3 settings=../settings}}
+            </div>
+            {{/and}}
+          {{/each}}
+          </div>
+        </div>
+    </div>
+    </div>
+</div>

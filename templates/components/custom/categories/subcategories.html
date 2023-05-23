@@ -1,0 +1,72 @@
+{{#if category}}
+{{#if category.subcategories}}
+<div class="sub-category-wrap clearfix">
+  <h3>Sub Categories</h3>
+  <div class="sub-category-block custom-row clearfix align-center" style="width: 100%;">
+
+
+
+
+
+    <section class="slider-wrapper">
+      <button class="slide-arrow" id="slide-arrow-prev">
+        &#8249;
+      </button>
+      <span id="numOfSlides"></span>
+      <button class="slide-arrow" id="slide-arrow-next">
+        &#8250;
+      </button>
+      <ul class="slides-container" id="slides-container">
+        {{#each category.subcategories}}
+        <li class="slide">
+          <a class="sub-category-img-block" href="{{url}}" alt="{{name}}" title="{{name}}">
+            <div class="sub-category-img ">
+              {{#if image}}
+              <img class="lazyload" data-sizes="auto" src="{{getImage image 'sub-category-img'}}"
+                data-src="{{getImage image 'sub-category-img'}}" alt="" width="250" height="250" loading="lazy" />
+              {{else}}
+              <img class="sub-no-img" src="{{cdn 'assets/img/noImage.jpg'}}" alt="No Image" title="No Image" width="250"
+                height="250" loading="lazy">
+              {{/if}}
+            </div>
+          </a>
+          <p class="sub-category-name">
+            <a href="{{url}}">{{name}}</a>
+          </p>
+        </li>
+        {{/each}}
+      </ul>
+    </section>
+  </div>
+  {{/if}}
+  {{/if}}
+  <script>
+    const slidesContainer = document.getElementById("slides-container");
+    const slide = document.querySelector(".slide");
+    const prevButton = document.getElementById("slide-arrow-prev");
+    const nextButton = document.getElementById("slide-arrow-next");
+
+    nextButton.addEventListener("click", () => {
+      const slideWidth = slide.clientWidth;
+      slidesContainer.scrollLeft += slideWidth;
+    });
+
+    prevButton.addEventListener("click", () => {
+      const slideWidth = slide.clientWidth;
+      slidesContainer.scrollLeft -= slideWidth;
+    });
+
+
+
+    const numOfSlides = document.querySelectorAll(".sub-category-img").length;
+    const maxSlides = (numOfSlides % 3);
+    let slideCounter = 1;
+    nextButton.addEventListener("click", function () {
+      if (slideCounter <= maxSlides) slideCounter += 1;
+      console.log(slideCounter)
+    });
+    prevButton.addEventListener("click", function () {
+      if (slideCounter >= 2) slideCounter -= 1;
+      console.log(slideCounter)
+    });
+  </script>

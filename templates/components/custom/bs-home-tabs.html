@@ -1,0 +1,36 @@
+<div class="h-product-row  mb-120">
+    
+        <div id="responsiveTabsDemo">
+            <ul>
+            {{#if products.featured}}
+                <li><a href="#tab-1">{{lang 'products.featured' }}</a></li>
+            {{/if}}
+            {{#if products.new}}
+                <li><a href="#tab-2">{{lang 'products.new' }}</a></li>
+            {{/if}}
+            {{#if products.top_sellers}}
+                <li><a href="#tab-3">{{lang 'products.top' }}</a></li>
+            {{/if}}
+            
+            </ul>
+            {{#if products.featured}}
+                <div id="tab-1">
+                {{> components/custom/bs-featured products=products.featured columns=theme_settings.homepage_featured_products_column_count}}
+                </div>
+            {{/if}}
+                {{{region name="home_below_featured_products"}}}
+            {{#if products.new}}
+                <div id="tab-2" style='display: none;'>
+                {{> components/custom/bs-new products=products.new columns=theme_settings.homepage_new_products_column_count}}
+                </div>
+            {{/if}}
+            {{{region name="home_below_new_products"}}}
+            {{#if products.top_sellers}}
+               <div id="tab-3" style='display: none;'>
+                    {{> components/custom/bs-top products=products.top_sellers columns=theme_settings.homepage_top_products_column_count}}
+                </div>
+            {{/if}}
+            {{{region name="home_below_top_products"}}}
+        </div>
+    
+</div>    

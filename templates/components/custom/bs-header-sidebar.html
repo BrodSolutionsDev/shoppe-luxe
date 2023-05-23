@@ -1,0 +1,9 @@
+
+
+  <ul class="navPages-list{{#if theme_settings.navigation_design '!==' 'simple'}} navPages-list-depth-max{{/if}} {{#if theme_settings.megamenu}}{{else}}simplemenu{{/if}}">
+  {{#each categories}}
+    <li class="navPages-item test {{../theme_settings.megamenu}}">
+      {{> components/custom/bs-navigation-list}}
+    </li>
+  {{/each}}
+  </ul>

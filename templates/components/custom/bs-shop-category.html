@@ -1,0 +1,64 @@
+<div class="container">
+    <div class="custom-row">
+        {{#or theme_settings.CategoryFirstLink theme_settings.CategoryFirstImage theme_settings.CategoryFirstName theme_settings.categoryfirsttext}}
+        <div class="grid">
+            <div class="shop-category scale-img">
+                <a href="{{theme_settings.CategoryFirstLink}}">
+                    <div class="shop-categoryimg">
+                        <img class="lazyload" data-sizes="auto" src="/product_images/uploaded_images/{{theme_settings.CategoryFirstImage}}" data-src="/product_images/uploaded_images/{{theme_settings.CategoryFirstImage}}" alt="" width="376" height="280" loading="lazy">
+                    </div>
+                    <div class="shop-categoryinfo">
+                        <h5>{{theme_settings.CategoryFirstName}}</h5>
+                        <p class="product-count">{{theme_settings.categoryfirsttext}}</p>
+                    </div>
+                </a>
+            </div>
+        </div>
+        {{/or}}
+        {{#or theme_settings.CategorySecondLink theme_settings.CategorySecondImage theme_settings.CategorySecondName theme_settings.categorysecondtext}}
+        <div class="grid">
+            <div class="shop-category scale-img">
+                <a href="{{theme_settings.CategorySecondLink}}">
+                    <div class="shop-categoryimg">
+                        <img class="lazyload" data-sizes="auto" src="/product_images/uploaded_images/{{theme_settings.CategorySecondImage}}" data-src="/product_images/uploaded_images/{{theme_settings.CategorySecondImage}}" alt="" width="376" height="280" loading="lazy">
+                    </div>
+                    <div class="shop-categoryinfo">
+                        <h5>{{theme_settings.CategorySecondName}}</h5>
+                        <p class="product-count">{{theme_settings.categorysecondtext}}</p>
+                    </div>
+                </a>
+            </div>
+        </div>
+        {{/or}}
+        {{#or theme_settings.CategoryThirdLink theme_settings.CategoryThirdImage theme_settings.CategoryThirdName theme_settings.categorythirdtext}}
+        <div class="grid">
+            <div class="shop-category scale-img">
+                <a href="{{theme_settings.CategoryThirdLink}}">
+                    <div class="shop-categoryimg">
+                        <img class="lazyload" data-sizes="auto" src="/product_images/uploaded_images/{{theme_settings.CategoryThirdImage}}" data-src="/product_images/uploaded_images/{{theme_settings.CategoryThirdImage}}" alt="" width="376" height="280" loading="lazy">
+                    </div>
+                    <div class="shop-categoryinfo">
+                        <h5>{{theme_settings.CategoryThirdName}}</h5>
+                        <p class="product-count">{{theme_settings.categorythirdtext}}</p>
+                    </div>
+                </a>
+            </div>
+        </div>
+        {{/or}}
+        {{#or theme_settings.CategoryFourLink theme_settings.CategoryFourImage theme_settings.CategoryFourName theme_settings.categoryfourtext}}
+        <div class="grid">
+            <div class="shop-category scale-img">
+                <a href="{{theme_settings.CategoryFourLink}}">
+                    <div class="shop-categoryimg">
+                        <img class="lazyload" data-sizes="auto" src="/product_images/uploaded_images/{{theme_settings.CategoryFourImage}}" data-src="/product_images/uploaded_images/{{theme_settings.CategoryFourImage}}" alt="" width="376" height="280" loading="lazy">
+                    </div>
+                    <div class="shop-categoryinfo">
+                        <h5>{{theme_settings.CategoryFourName}}</h5>
+                        <p class="product-count">{{theme_settings.categoryfourtext}}</p>
+                    </div>
+                </a>
+            </div>
+        </div>
+        {{/or}}
+    </div>
+</div>

@@ -1,0 +1,63 @@
+.type-compare {
+    .comparTableCustom{
+        overflow-x: scroll;
+       
+    }
+}
+.compareTable-headingText{
+    position: inherit;
+    top: inherit;
+}
+.compareTable-product{
+    padding: 15px;
+    .card-body{
+        padding-top: 0px;
+        margin-top: 18px;
+        padding-bottom: 0px;
+        min-height: auto;
+    }
+    .brandName{
+        margin-bottom: 3px;
+        a{
+            color: $theme-semilightgrey;
+            &:hover{
+                color: $color-secondary;
+            }
+        }
+    }
+    .compareTable-removeProduct{
+        width: 26px;
+        height: 26px;
+        @include display-flex(flex);
+        @include align-item(center);
+        @include justify-content(center);
+        background-color: $color-primary;
+        border: 1px solid $color-primary;
+        top: 8px;
+        right: 8px;
+        padding-left: 0px;
+        svg{
+            width: 18px;
+            height: 18px;
+            fill: $color-white;
+            margin-top: 0px;
+        }
+        &:hover{
+            background-color: $theme-whitecolor;
+            svg{
+                fill: $color-primary;
+            }
+        }
+    }
+}
+.compareTable-row{
+    th{
+        width: 319px;        
+    }
+    th,td{
+        padding: 15px;
+    }
+}
+.compareTable-action{
+    padding: 15px;
+}

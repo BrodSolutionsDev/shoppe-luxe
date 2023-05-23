@@ -1,0 +1,113 @@
+.navUser-item--cart{
+    .dropdown-menu{
+        max-width: 280px;
+        min-width: 280px;
+        border: none;
+        box-shadow: 0px 4px 16px rgba(0, 0, 0, 0.16);
+        padding: 16px;
+        &::before , &::after{
+            display: none !important;
+        }
+        
+        ul{
+            li{
+                @include display-flex(flex);
+                @include align-item(center);
+                margin: 0px;
+                & + li{
+                    margin-top: 16px;
+                    border: none;
+                }
+                &:before{
+                    display: none;
+                }
+                
+            }
+        }
+        .previewCartItem-image{
+            background-color: $theme-productbg;
+            width: 72px;
+            img{
+                mix-blend-mode: darken;
+            }
+        }
+        .previewCartItem-content{
+            padding: 0px;
+            padding-left: 16px;
+            width: calc(100% - 72px);            
+        }
+        .previewCartItem-brand{
+            display: none;
+        }
+        .previewCartItem-name{
+            font-weight: 400;
+            font-size: 14px;
+            color: $color-secondary;
+            line-height: 23px;
+            margin-bottom: 4px;
+            @include desktop-lg{
+                font-size: 15px;
+                margin-bottom: 0;
+            }
+            a{
+                color: stencilColor("navPages-color");
+                &:hover{
+                    color: $color-primary;
+                }
+            }
+        }
+        .previewCartItem-price{
+            font-weight: 600;
+            font-size: 14px;
+            line-height: 23px;
+            color: $navPage-subMenu-item--is-highlighted-color;
+            @include desktop-lg{
+                font-size: 14px;
+            }
+        }
+        .previewCartAction{
+            margin: 0px;
+            padding: 0px;
+            padding-top: 16px;
+            margin-top: 16px;
+            border-color: rgba($color-black , 0.1);
+            & > div{
+                padding: 0px;
+                width: auto;
+            }
+            .button {
+                font-weight: 500;
+                font-size: 14px;
+                line-height: 24px;
+                padding: 6px 18px;
+                &.button--primary{
+                    &:hover{
+                        background-color: transparent;
+                    }
+                }
+            }
+            .previewCartAction-viewCart{
+                margin-left: 16px;
+            }
+        }
+        .previewCart-additionalCheckoutButtons{
+            padding: 0px;
+            .CheckoutButton{
+                @include display-flex(flex);
+                @include flex-direction(column);
+                @include align-item(center);
+                div{
+                    
+                    input{
+                        border: none;
+                        padding: 0px;
+                    }
+                }
+            }
+           
+            .or-use-label{
+                text-align: center;
+            }
+        }
+    }
+}

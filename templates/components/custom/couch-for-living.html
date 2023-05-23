@@ -1,0 +1,9 @@
+{{#if category.products}}
+<ul class="productGrid">
+    {{#each (limit category.products 2)}}
+    <li class="product">
+        {{>components/products/card settings=../settings show_compare=../category.show_compare show_rating=../settings.show_product_rating theme_settings=../theme_settings customer=../customer event=../event position=(add @index 1)}}
+    </li>
+    {{/each}}
+</ul>
+{{/if}}

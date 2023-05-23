@@ -1,0 +1,44 @@
+{{#if children}}
+<a class="navPages-action has-subMenu{{#if is_active}} activePage{{/if}}" href="{{url}}">
+    <span>{{name}}</span>
+    <i class="icon navPages-action-moreIcon" aria-hidden="true">
+        <svg><use xlink:href="#icon-chevron-down" /></svg>
+    </i>
+</a>
+<ul class="navPage-childList" id="navPages-{{id}}">
+    {{#each children}}
+    <li class="navPage-childList-item">
+        <a class="navPage-childList-action navPages-action{{#if is_active}} activePage{{/if}}"
+        href="{{url}}"
+        aria-label="{{name}}"
+        >
+            {{name}}
+        </a>
+        {{#if children}}
+        <ul class="navPage-childList" id="navPages-{{id}}">
+            {{#each children}}
+            <li class="navPage-childList-item">
+                <a class="navPage-childList-action navPages-action{{#if is_active}} activePage{{/if}}"
+                href="{{url}}"
+                aria-label="{{name}}"
+                >
+                    {{name}}
+                </a>
+            </li>
+            {{/each}}
+        </ul>
+        {{/if}}
+    </li>
+    {{/each}}
+    </ul>
+        
+    
+
+{{else}}
+<a class="navPages-action{{#if is_active}} activePage{{/if}}"
+   href="{{url}}"
+   aria-label="{{name}}"
+>
+    {{name}}
+</a>
+{{/if}}

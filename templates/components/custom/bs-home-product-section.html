@@ -1,0 +1,23 @@
+{{#if theme_settings.categorysection}}
+<div class="container">
+    <div class="custom-row">
+        <div class="grid">
+            <div class="shop-category">
+                
+                <div class="shop-categoryimg">
+                    <img class="lazyload" data-sizes="auto" src="/product_images/uploaded_images/{{theme_settings.ProductSectionImage}}" data-src="/product_images/uploaded_images/{{theme_settings.ProductSectionImage}}" alt="" width="784" height="513" loading="lazy">
+                </div>
+                <div class="shop-categoryinfo">
+                    <h2 class="page-heading">{{theme_settings.ProductSectionHeading}}</h2>
+                    <p>{{theme_settings.ProductSectiontext}}</p>
+                </div>                
+            </div>
+        </div>
+        <div class="grid" id="custom-product-section">
+            <div class="product-loader">
+                <img class="lazyload" data-sizes="auto" src="{{cdn 'img/loading.svg'}}" alt="" width="300px" height="300px">
+            </div>
+        </div>
+    </div>
+</div>
+{{/if}}

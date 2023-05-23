@@ -1,0 +1,28 @@
+
+   
+    <ul class="navigation-treeview">
+        {{#each categories}}
+            <li class="navList-item">
+                <a href="{{url}}" class="navList-action {{#if is_active}} activePage{{/if}}">{{name}}</a>
+                {{#if children}}
+                <ul>
+                    {{#each children}}
+                        <li class="navList-item">
+                            <a href="{{url}}" class="navList-action {{#if is_active}} activePage{{/if}}">{{name}}</a>
+                            {{#if children}}
+                            <ul>
+                                {{#each children}}
+                                    <li class="navList-item">
+                                        <a href="{{url}}" class="navList-action {{#if is_active}} activePage{{/if}}">{{name}}</a>
+                                    </li>
+                                {{/each}}
+                            </ul>
+                            {{/if}}
+                        </li>
+                    {{/each}}
+                </ul>
+                {{/if}}
+            </li>
+        {{/each}}
+    </ul>
+   
