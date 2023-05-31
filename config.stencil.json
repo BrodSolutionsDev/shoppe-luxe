@@ -1,0 +1,16 @@
+{
+  "customLayouts": {
+    "brand": {},
+    "category": {},
+    "page": {
+      "countertops.html": "/countertops",
+      "showers.html": "/showers",
+      "flooring.html": "/flooring",
+      "artwork.html": "/artwork",
+      "woodworking.html": "/woodworking"
+    },
+    "product": {}
+  },
+  "normalStoreUrl": "https://scc-development.mybigcommerce.com/.",
+  "port": 3000
+}
