@@ -1,4 +1,13 @@
 .footer {
   text-align: center;
   padding: 20px 0;
+  background: $black;
+  
+  p, a {
+    color: $white;
+  }
+
+  a:hover {
+    color: $orange;
+  }
 }

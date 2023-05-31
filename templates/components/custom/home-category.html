@@ -1,0 +1,12 @@
+<div class="home-categories">
+    <div class="container">
+        <h2>Shop By Category</h2>
+        <ul>
+            {{#each categories}}
+                {{#unless @index '>' '3'}}
+                <li class="category-pill"><a href="{{url}}">{{name}}</a></li>
+                {{/unless}}
+            {{/each}}
+        </ul>
+    </div>
+</div>

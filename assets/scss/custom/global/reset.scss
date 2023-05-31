@@ -2,6 +2,8 @@ h1, h2, h3, h4, h5, h6, p, a, span, div, button, section {
   font-family: $montserrat;
   font-size: $font-size-16;
   color: $black;
+  margin: 0;
+  padding: 0;
 }
 
 h1 {
@@ -10,4 +12,13 @@ h1 {
 
 h2 {
   font-size: $font-size-18;
+}
+
+a {
+  text-decoration: none;
+  transition: all $transition-fast;
+  
+  &:hover {
+    color: $orange;
+  }
 }

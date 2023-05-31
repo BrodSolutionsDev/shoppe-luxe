@@ -13,9 +13,15 @@ $medium-grey: #D1D1D1;
 // radius
 $border-radius-lg: 15px;
 $border-radius-sm: 7px;
+$border-radius-full: 100px; // full rounded edges
+
+// padding
+$padding-small: 10px;
+$padding-medium: 20px;
+$padding-large: 50px;
 
 // shadows
-$box-shadow: box-shadow(0, 11px, 24px, rgba(34, 31, 32, .1));
+$box-shadow: 0 11px 24px rgba(34, 31, 32, .1);
 
 // font sizes
 :root {
@@ -84,3 +90,7 @@ $bebas-neue: 'Bebas Neue', sans-serif;
   justify-content: center;
   align-items: center;
 }
+
+// transition
+$transition-fast: .15s;
+$transition-slow: .25s;

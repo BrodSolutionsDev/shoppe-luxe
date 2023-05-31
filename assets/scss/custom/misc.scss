@@ -5,3 +5,16 @@ body {
 .body {
   margin-top: -30px;
 }
+
+.container {
+  @include mobile-container;
+}
+
+.slick-dotted.slick-slider {
+  margin-bottom: 0;
+}
+
+.section {
+  padding-top: $padding-medium;
+  padding-bottom: $padding-medium;
+}

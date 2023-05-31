@@ -18,105 +18,37 @@
   object-fit: contain !important;
 }
 
-// .shopby-section{
-//     @include mobile{
-//         margin-bottom: 25px
-//     }
+.home-categories {
+  text-align: center;
 
-//     .container{
-//         @include mobile{
-//             @include flex-wrap(wrap);
-//             display: block;
-//             padding-right: 0px;
-//             max-width: inherit;
-//         }
-//         padding-left: 0;
-//     }
-    
-//     ul{
-//         &:not(.slick-initialized){
-//             @include mobile{
-//                 @include display-flex(flex);
-//                 @include flex-wrap(nowrap);
-//             }
-            
-//             li{
-//                 @include mobile{
-//                     // min-width: 110px;
-//                 }
-//             }
-//         }
-//     }
-//     label{
-//         font-weight: 400;
-//         font-size: 16px;
-//         line-height: 23px;
-//         text-transform: uppercase;
-//         color: $theme-lightgrey;
-//         letter-spacing: 1.28px;
-//         min-width: 80px;
-//         margin-top: 10px;
-//         @include mobile{
-//             font-size: 14px;
-//             line-height: 20px;
-//             margin-top: 0px;
-//             margin-bottom: 8px;
-//             display: block;
-//         }
-//     }
-//     ul{
-//         @include display-flex(flex);
-//         @include align-item(center);
-//         @include flex-wrap(wrap);
-//         margin: 0px;
-//         // margin-left: 10px;
-//         @include mobile{
-//             // margin-left: 0px;
-//             .slick-list{
-//                 @include mobile{
-//                     padding-left: 0px !important;
-//                 }
-//             }
-//             display: grid !important;
-//             grid-template-rows: repeat(2, 1fr);
-//             grid-template-columns: repeat(2, 1fr);
-//             gap: 10px;
-//         }
+  h2 {
+    padding-bottom: $padding-small;
+  }
 
-//         li{
-//             margin: 0px 5px;
-//             padding: 0px;
-//             margin-bottom: 10px;
-//             text-align: center;
-          
-//             &:before{
-//                 display: none;
-//             }
-//             a{
-//                 font-weight: 400;
-//                 font-size: 16px;
-//                 line-height: 28px;
-//                 color: $body-font-color;
-//                 border: 2px solid $border-color;
-//                 border-radius: 30px;
-//                 padding: 7px 15px;
-//                 display: block;
-//                 @include tablet-small{
-//                     font-size: 12px;
-//                     line-height: 24px;
-//                     padding: 8px 15px;
-//                 }
-//                 &:hover{
-//                     color: $color-secondary;
-//                     border-color: $color-primary;
-//                 }
+  ul {
+    list-style: none;
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 10px;
+    margin: 0;
 
-//                 &:focus {
-//                     background: $color-primary;
-//                     border-color: $color-primary;
-//                     color: #fff;
-//                 }
-//             }
-//         }
-//     }
-// }
+    .category-pill {
+      @include flex-center;
+      padding: 5px;
+      border: 2px solid $black;
+      border-radius: $border-radius-full;
+      transition: all $transition-fast;
+      background: $white;
+
+      &:hover {
+        a {
+          color: $orange;
+        }
+
+        border-color: $orange;
+        box-shadow: $box-shadow;
+        transform: translateY(-1px);
+      }
+    }
+  }
+}
