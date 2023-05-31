@@ -67,3 +67,13 @@ $bebas-neue: 'Bebas Neue', sans-serif;
   font-style: $style;
   font-weight: 900;
 }
+
+// breakpoint styles
+@mixin tablet-container {
+  @media only screen and (min-width: 800px) {}
+}
+
+// container
+@mixin mobile-container {
+  padding:  0 3%;
+}
