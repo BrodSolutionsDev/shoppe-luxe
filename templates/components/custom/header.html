@@ -1,36 +1,36 @@
 <a href="#main-content" class="skip-to-main-link">{{lang 'header.skip_to_main'}}</a>
 
-<header class="header {{#unless theme_settings.sticky-header}} sticky-header {{/unless}} {{#if theme_settings.header_style '==' 'header2'}}headerstyletwo{{/if}}" sticky="{{theme_settings.sticky-header}}" role="banner">
-    <div class="header-main">
-        <div class="container-lg">
-            <div class="custom-row flex">
-                <div class="menu-icons-left-right">
-                        <button class="mobileMenu-toggle header-button" data-mobile-menu-toggle="menu">
-                            <span class="mobileMenu-toggleIcon">Toggle menu</span>
-                        </button>
-                    <button class="search-toggle header-button">
-                        <svg class="icon">
-                            <use xlink:href="#icon-header-search" />
-                        </svg>
-                    </button>
-                </div>
-                <div class="menu-logo">
-                    {{> components/common/store-logo}}
-                </div>
-                <div class="menu-icons-left-right">
-                    <button class="search-toggle header-button-alt">
-                        <svg class="icon">
-                            <use xlink:href="#icon-header-user" />
-                        </svg>
-                    </button>
-                    <button class="search-toggle header-button-alt">
-                        <svg class="icon">
-                            <use xlink:href="#icon-shopping-basket" />
-                        </svg>
-                    </button>
-                </div>
-                <div class="headersidebar-overlay"></div>
-            </div>
+<header class="header">
+    <div class="header-container">
+        <!-- menu button and search button -->
+        <div class="buttons">
+            <button class="mobileMenu-toggle">
+                <span class="toggle-bar"></span>
+                <span class="toggle-bar"></span>
+                <span class="toggle-bar"></span>
+            </button>
+            <button id="search-toggle">
+                <svg class="icon">
+                    <use xlink:href="#icon-search" />
+                </svg>
+            </button>
+        </div>
+        <!-- store logo -->
+        <div class="menu-logo">
+            {{> components/common/store-logo}}
+        </div>
+        <!-- account button and cart button -->
+        <div class="buttons">
+            <button class="search-toggle header-button-alt">
+                <svg class="icon">
+                    <use xlink:href="#icon-user" />
+                </svg>
+            </button>
+            <button class="search-toggle header-button-alt">
+                <svg class="icon">
+                    <use xlink:href="#icon-cart" />
+                </svg>
+            </button>
         </div>
     </div>
 </header>
