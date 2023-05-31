@@ -1,0 +1,52 @@
+<div class="mobile-menu">
+  <h2>Main Menu</h2>
+  <button id="close-mobile-menu">&#10005;</button>
+  <!-- Shop Products -->
+  <div class="nav-categories">
+    <h3>Shop Products</h3>
+    <div class="nav-list">
+    {{#each categories}}
+      <a href="{{url}}">{{name}}</a>
+    {{/each}}
+    </div>
+  </div>
+  <!-- Training & Resouces -->
+  <div class="nav-categories">
+    <h3>Training & Resources</h3>
+    <div class="nav-list">
+    {{#each pages.[0].children}}
+      <a href="{{url}}">{{name}}</a>
+    {{/each}}
+    </div>
+  </div>
+  <!-- Stone Coat Pros -->
+  <div class="nav-categories">
+    <h3>Stone Coat Pros</h3>
+    <div class="nav-list-alt">
+      <div>
+        {{#if customer}}
+        <a href="/logout.php">Logout</a>
+        {{else}}
+        <a href="/login.php">Login</a>
+        {{/if}}
+        <a href="/login.php?action=create_account">Register</a>
+      </div>
+
+      <div>
+        <a href="/account.php">My Account</a>
+        <a href="/account.php?action=order_status">Order History</a>
+        <a href="/account.php?action=address_book">Addresses</a>
+        <a href="#">Reorder</a>
+      </div>
+    </div>
+  </div>
+  <!-- our company -->
+  <div class="nav-categories">
+    <h3>Our Company</h3>
+    <div class="nav-list">
+    {{#each pages.[3].children}}
+    <a href="{{url}}">{{name}}</a>
+    {{/each}}
+  </div>
+  </div>
+</div>

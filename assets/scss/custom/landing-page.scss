@@ -1,0 +1,50 @@
+.stonecoat-landing {
+  .page-hero {
+      position: relative;
+      z-index: 10000;
+      margin: -15px 0 50px 0;
+      img {
+          width: 100%;
+          border-radius: 15px;
+      }
+  }
+  .page-title {
+      display: flex;
+      justify-content: space-between;
+      img {
+          fill: #222;
+          width: 50px;
+          height: 50px;
+      }
+  }
+  .page-content {
+      margin: 50px 0;
+      background-color: $medium-grey;
+      padding: 20px;
+  }
+  .page-steps {
+      .step {
+          margin: 50px 0;
+      }
+      .step-head {
+          display: flex;
+          justify-content: space-between;
+
+          .step-icon {
+              width: 50px;
+              height: 50px;
+              border-radius: 50%;
+              color: $white;
+              background-color: $black;
+              display: flex;
+              justify-content: center;
+              align-items: center;
+              margin-right: 20px;
+              img {
+                  width: 30px;
+                  height: 30px;
+              }
+          }
+      }
+  }
+}

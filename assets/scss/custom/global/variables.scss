@@ -1,0 +1,69 @@
+@import url('https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Montserrat:ital,wght@0,400;0,600;0,900;1,400;1,600;1,900&display=swap');
+
+// colors
+$black: #221f20;
+$white: #FFFFFF;
+$orange: #B75533;
+$blue: #526D9D;
+$yellow: #C8944E;
+$green: #3E6855;
+$light-grey: #F2F2F2;
+$medium-grey: #D1D1D1;
+
+// radius
+$border-radius-lg: 15px;
+$border-radius-sm: 7px;
+
+// shadows
+$box-shadow: box-shadow(0, 11px, 24px, rgba(34, 31, 32, .1));
+
+// font sizes
+:root {
+  font-size: 62.5%; // 10px - allows auto scaling with window resizing. Good accessibility
+}
+$font-size-14: 1.4rem; // 14px
+$font-size-16: 1.6rem; // 16px
+$font-size-18: 1.8rem; // 18px
+$font-size-20: 2rem; // 20px
+$font-size-25: 2.5rem; // 25px
+$font-size-30: 3rem; // 30px
+$font-size-40: 4rem; // 40px
+
+// font families
+$montserrat: 'Montserrat', serif;
+$bebas-neue: 'Bebas Neue', sans-serif;
+
+/*
+  To use a mixin, add @include montserrat-regular to a style. This will add the whole
+  mixin block as a reusable style anywhere it's included. You can also pass parameters to
+  mixins like functions to add styles based on a condition (use $parameter: default to set
+  default parameters). 
+
+  Mixin docs: https://sass-lang.com/documentation/at-rules/mixin
+
+  Examples: 
+  .title {
+    @include montserrat-regular;
+  }
+
+  .title {
+    @include montserrat-bold(italic);
+  }
+*/
+@mixin montserrat-regular($style: normal) {
+  font-family: $montserrat;
+  font-style: $style;
+  font-weight: 400;
+}
+
+@mixin montserrat-bold($style: normal) {
+  font-family: $montserrat;
+  font-style: $style;
+  font-weight: 600;
+}
+
+@mixin montserrat-black($style: normal) {
+  font-family: $montserrat;
+  font-style: $style;
+  font-weight: 900;
+}

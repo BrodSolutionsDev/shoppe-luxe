@@ -1,0 +1,95 @@
+{{#partial "page"}}
+
+<!--
+    1) Hero (use category image)
+    2) Title, Content
+    3) Icons
+    4) Page Builder #1
+    5) Steps 1-4
+    5) Related
+-->
+
+
+<section class="page container stonecoat-landing">
+    <div class="page-hero">
+        <img src="https://cdn11.bigcommerce.com/s-19qfhxpoud/images/stencil/original/image-manager/gray-and-red-rock-epoxy-kits-bg.jpg" alt="countertop epoxy" />
+    </div>
+
+    
+        <div class="page-title">
+            <h1 class="page-heading">{{ page.title }}</h1>
+            <img src="/assets/icons/admin-tooltip.svg" alt="submenu" style="fill:black;"/>
+        </div>
+        <p class="page-meta">{{ head.meta_tags }}</h1>
+        
+            {{{region name="countertops_top"}}}
+
+        <div class="page-content">
+            <p>{{{page.content}}}</p>
+        </div>
+
+        <div class="page-videos">
+            {{{region name="countertops_videos"}}}
+        </div>
+    
+    {{{region name="countertops_middle"}}}
+
+    <div class="page-steps">
+        <div class="step">
+            <div class="step-head">
+            <h3 class="step-title">Choose Epoxy & Amount Needed</h3>
+            <span class="step-icon">1</span></div>
+            <div class="step-description">
+                <p>Find the epoxy that works for your project, then calculate how much you need.</p>
+            </div>
+            <div class="step-products">
+                {{{region name="countertops_step1"}}}
+            </div>
+        </div>
+
+        <div class="step">
+            <div class="step-head">
+                <h3 class="step-title">Choose Colorants</h3>
+                <span class="step-icon">2</span>
+            </div>
+            <div class="step-description">
+                <p>Use spray paint, powders, dusts and dyes to your epoxy countertops.</p>
+            </div>
+            <div class="step-products">
+                {{{region name="countertops_step2"}}}
+            </div>
+        </div>
+
+        <div class="step">
+            <div class="step-head">
+            <h3 class="step-title">Choose Additives</h3>
+            <span class="step-icon">3</span></div>
+            <div class="step-description">
+                <p>Need anything to add? Find it here.</p>
+            </div>
+            <div class="step-products">
+                {{{region name="countertops_step3"}}}
+            </div>
+        </div>
+
+        <div class="step">
+            <div class="step-head">
+            <h3 class="step-title">Choose Tools & Acccessories</h3>
+            <span class="step-icon">4</span></div>
+            <div class="step-description">
+                <p>Get the supplies to make your project a success!</p>
+            </div>
+            <div class="step-products">
+                {{{region name="countertops_step4"}}}
+            </div>
+    </div>
+
+    {{{region name="countertops_bottom"}}}
+
+    
+    
+</section>
+
+{{/partial}}
+
+{{> layout/base}}

@@ -1,0 +1,69 @@
+<a href="#main-content" class="skip-to-main-link">{{lang 'header.skip_to_main'}}</a>
+
+<header class="header {{#unless theme_settings.sticky-header}} sticky-header {{/unless}} {{#if theme_settings.header_style '==' 'header2'}}headerstyletwo{{/if}}" sticky="{{theme_settings.sticky-header}}" role="banner">
+    <div class="header-main">
+        <div class="container-lg">
+            <div class="custom-row flex">
+                <div class="menu-icons-left-right">
+                        <button class="mobileMenu-toggle header-button" data-mobile-menu-toggle="menu">
+                            <span class="mobileMenu-toggleIcon">Toggle menu</span>
+                        </button>
+                    <button class="search-toggle header-button">
+                        <svg class="icon">
+                            <use xlink:href="#icon-header-search" />
+                        </svg>
+                    </button>
+                </div>
+                <div class="menu-logo">
+                    {{> components/common/store-logo}}
+                </div>
+                <div class="menu-icons-left-right">
+                    <button class="search-toggle header-button-alt">
+                        <svg class="icon">
+                            <use xlink:href="#icon-header-user" />
+                        </svg>
+                    </button>
+                    <button class="search-toggle header-button-alt">
+                        <svg class="icon">
+                            <use xlink:href="#icon-shopping-basket" />
+                        </svg>
+                    </button>
+                </div>
+                <div class="headersidebar-overlay"></div>
+            </div>
+        </div>
+    </div>
+</header>
+
+{{{region name="header_bottom--global"}}}
+{{{region name="header_bottom"}}}
+
+<div id="mobile-menu" style="display: none">
+    {{> components/custom/menu }}
+</div>
+
+<script>
+    window.onload = function() {
+        const menuBtn = document.querySelector(".mobileMenu-toggle");
+        const close = document.getElementById("close-mobile-menu");
+        const mobileMenu = document.getElementById("mobile-menu");
+        const body = document.querySelector("body");
+    
+        menuBtn.addEventListener("click", function(e) {
+            if (mobileMenu.style.display == "none") {
+                mobileMenu.style.display = "block";
+                mobileMenu.style.height = `${window.innerHeight}px`;
+                body.style.overflow = "hidden";
+            } else {
+                mobileMenu.style.display = "none";
+                body.style.overflow = "auto";
+            }
+        });
+    
+        close.addEventListener("click", function() {
+            mobileMenu.style.display = "none";
+            body.style.overflow = "auto";
+        })
+    }
+
+</script>

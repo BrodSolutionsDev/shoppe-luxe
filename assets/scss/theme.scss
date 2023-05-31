@@ -77,3 +77,13 @@
 // -----------------------------------------------------------------------------
 
 @import "layouts/layouts"; // 1
+
+// custom changes
+@import "custom/global/variables"; // IMPORTANT - load first
+@import "custom/global/reset"; // IMPORTANT - load immediately after variables
+// load order doesn't matter from here down
+@import "custom/header";
+@import "custom/footer";
+@import "custom/home";
+@import "custom/item";
+@import "custom/landing-page";
