@@ -77,3 +77,10 @@ $bebas-neue: 'Bebas Neue', sans-serif;
 @mixin mobile-container {
   padding:  0 3%;
 }
+
+// flex
+@mixin flex-center {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
