@@ -1,5 +1,6 @@
 body {
   padding-top: 0;
+  background-color: $bg-soft;
 }
 
 .body {
@@ -13,9 +14,7 @@ body {
     border-top-right-radius: $border-radius-lg;
   }
 }
-body {
-  background-color: $bg-soft;
-}
+
 
 .container {
   @include mobile-container;

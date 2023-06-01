@@ -1,0 +1,18 @@
+<div class="section scc-categories">
+  <h2>Shop By Category</h2>
+  <div class="scc-slider flex-row">
+    {{#each categories}} {{#unless @index '>' '8'}}
+    
+    <a class="product-card-alt" href="{{url}}">
+      {{#if image}}
+      <div class="product-card-img">
+        {{> components/common/responsive-img image=image fallback_size=theme_settings.thumbnail lazyload=theme_settings.lazyload_mode }}
+      </div>
+      {{/if}}
+      <div class="product-card-details">
+        {{name}}
+      </div>
+    </a>
+    {{/unless}} {{/each}}
+  </div>
+</div>

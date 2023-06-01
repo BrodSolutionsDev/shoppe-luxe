@@ -124,6 +124,10 @@ $bebas-neue: 'Bebas Neue', sans-serif;
   justify-content: space-between;
   align-items: center;
 }
+@mixin flex-row-wrap {
+  display: flex; 
+  flex-flow: row wrap;
+}
 .flex-center {
   @include flex-center;
 }
@@ -139,6 +143,10 @@ $bebas-neue: 'Bebas Neue', sans-serif;
 .flex-row-heading {
   @include flex-row-heading;
 }
+.flex-row-wrap {
+  @include flex-row-wrap;
+}
+
 
 // grid
 @mixin grid {
