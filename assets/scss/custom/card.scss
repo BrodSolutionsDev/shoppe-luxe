@@ -1,0 +1,14 @@
+.card {
+    @include card;
+    padding: 0;
+    .card-figure, .card-body {
+        border-radius: $border-radius-lg;
+    }
+    .card-figcaption {
+        display: none!important;
+        opacity: 0!important;
+    }
+    .card-body {
+        padding:20px;
+    }
+}

@@ -82,11 +82,14 @@
 @import "custom/global/variables"; // IMPORTANT - load first
 // load order doesn't matter from here down
 @import "custom/button";
+@import "custom/card";
 @import "custom/carousel";
-@import "custom/misc";
-@import "custom/header";
+@import "custom/cart";
 @import "custom/footer";
 @import "custom/font";
+@import "custom/header";
 @import "custom/home";
 @import "custom/item";
 @import "custom/landing-page";
+@import "custom/misc";
+@import "custom/slider";

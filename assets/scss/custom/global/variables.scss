@@ -9,6 +9,7 @@ $yellow: #C8944E;
 $green: #3E6855;
 $light-grey: #F2F2F2;
 $medium-grey: #D1D1D1;
+$bg-soft: #F9F9F9;
 
 // radius
 $border-radius-lg: 15px;
@@ -124,12 +125,19 @@ $bebas-neue: 'Bebas Neue', sans-serif;
   grid-template-columns: repeat(4, calc(50% - 40px));
   grid-template-rows: minmax(150px, 1fr);
   overflow-x: scroll;
+  scrollbar-width: none;
+  padding-right: 17px; /* Increase/decrease this value for cross-browser compatibility */
+    box-sizing: content-box; /* So the width will be 100% + 17px */
+    cursor: grab;
 }
 .grid {
   @include grid;
-  ::-webkit-scrollbar {
-    display: none;
+  
 }
+.grid::-webkit-scrollbar {
+  display: none;
+  width: 0;
+  height: 0;
 }
 @mixin card {
   background: $white;
@@ -137,9 +145,7 @@ $bebas-neue: 'Bebas Neue', sans-serif;
   box-shadow: $box-shadow;
   padding: $padding-medium;
   width: 100%;
-  height: 100%;
-  position: relative;
-  z-index: 1;
+  height: auto;
 }
 // transition
 $transition-fast: .15s;
