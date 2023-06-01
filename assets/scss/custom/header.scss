@@ -6,6 +6,8 @@
   width: 100%;
   background: $black;
   position: relative;
+  padding: 0 5%;
+  z-index: 1;
   
   &-container {
     @include mobile-container;
@@ -24,11 +26,12 @@
 
 .header .buttons {
   @include flex-center;
+  gap: 15px;
 
-  gap: 10px;
-
-  button {
+  button,
+  a {
     @include flex-center;
+    text-decoration: none;
 
     width: 35px;
     height: 35px;
@@ -105,13 +108,9 @@
   left: 0;
   z-index: 99999;
   width: 100%;
-  overflow-y: scroll !important;
+  overflow-y: auto;
 }
-// @media screen and (min-width: 768px) {
-//   #mobile-menu {
-//     width: 50%;
-//   }
-// }
+
 #close-mobile-menu {
   position: fixed;
   top: 95px;
@@ -139,7 +138,7 @@
   padding-bottom: 100px;
 
   h2 {
-      margin-bottom: 0;
+      margin: 0;
       font-size: $font-size-20;
   }
 
@@ -199,6 +198,24 @@
   &::after {
     width: 55% !important;
   }
+}
+
+#cart-button-qty {
+  @include flex-center;
+  background: $white;
+  border: 1px solid $black;
+  position: absolute;
+  z-index: 99;
+  top: -5px;
+  right: -5px;
+  display: block;
+  color: $black;
+  font-size: $font-size-14;
+  width: 25px;
+  height: 25px;
+  text-align: center;
+  border-radius: $border-radius-full;
+  box-shadow: $box-shadow;
 }
 
 
