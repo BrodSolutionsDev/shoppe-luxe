@@ -1,0 +1,234 @@
+.heroCarousel{
+        z-index: 9999;
+        position: relative;
+        aspect-ratio: 2/1 !important;
+        //overflow: hidden;
+        border-radius: $border-radius-lg;
+    margin: 0; 
+    margin-bottom: 80px;
+    &.slick-initialized{
+        max-height: 600px; 
+        margin-bottom: 80px;
+    }
+    .heroCarousel-image-wrapper{
+        max-height: 600px;
+        border-radius: $border-radius-lg;
+    }
+    .carousel-tooltip{
+        display: none;
+    }
+    .slick-next, .slick-prev , .slick-arrow{
+        font-weight: 500;
+        font-size: 14px;
+        line-height: 20px;
+        text-align: center;
+        color: rgba($slick-dot-color , 0.8);
+        width: auto;
+        height: auto;
+        padding: 0px;
+        background-color: transparent;
+        border: none;
+        top: auto;
+        bottom: 28px;
+        transform: none;
+        right: 24px;
+        left: auto;
+        position: absolute;
+        display: block;
+        z-index: 1;
+        text-transform: uppercase;
+        &::before{
+            display: none;
+        }
+        &:hover{
+            color: rgba($slick-dot-color , 1);
+        }
+        @include mobile-container{
+            display: none !important;
+        }
+    }
+    .slick-prev , span.slick-arrow{
+        right: 204px;
+        cursor: pointer;
+    }
+    .slick-dots{
+        bottom: 20px;
+        width: 100%;
+        right: 0px;
+        left: auto;
+        counter-reset: section;
+        list-style-type: none;
+        line-height: 1;
+        li{
+            background-color: $white;
+            padding: 0px;
+            width: auto;
+            height: 14px;
+            width: 24px;
+            border-radius: $border-radius-full;
+            text-align: left;
+            & + li{
+                margin-left: 20px;
+            }
+            &:after{
+                content: '';
+                display: block;
+                position: absolute;
+                border-radius: $border-radius-full;
+                bottom: 0px;
+                width: 100%;
+                background: rgba($black, 1);
+                height: 14px;
+                left: 0px;
+                opacity: 0;
+            }
+            button{
+                width: 100%;
+                border-radius: $border-radius-full;
+                height: 14px;
+                border: none;
+                display: block;
+                &:before{
+                    display: none;
+                }
+            }
+            &:hover{
+                &:before{
+                    color: $slick-dot-color;
+                }
+                &:after{
+                    opacity: 1;
+
+                }
+            }
+            &.slick-active{
+                &:before{
+                    color: $slick-dot-color;
+                }
+               
+                &:after{
+                    opacity: 1;
+                    -webkit-animation: linear;
+                    -webkit-animation-name: run;
+                    -webkit-animation-duration: 5.1s;
+                }
+                             
+            }
+        }
+    }
+    .heroCarousel-image{
+        object-fit: cover;
+        border-radius: $border-radius-lg;
+        @include mobile-container{
+            object-position: 100% 0%;
+        }
+    }
+    .slick-active{
+        .animated {
+          -webkit-animation-duration : 2s  ;
+          animation-duration : 2s  ;
+      
+          -webkit-animation-delay : 0.1s  ;
+          animation-delay : 0.1s  ;
+        }
+      
+        @keyframes slideInUp {
+          from {
+            transform: translate3d(0, 100%, 0);
+            visibility: visible;
+          }
+          to {
+            transform: translate3d(0, 0, 0);
+          }
+        }
+        .slideInUp {
+          animation-name: slideInUp;
+        }
+        @keyframes slideInDown {
+          from {
+            transform: translate3d(0, -100%, 0);
+            visibility: visible;
+          }
+          to {
+            transform: translate3d(0, 0, 0);
+          }
+        }
+        .slideInDown {
+          animation-name: slideInDown;
+        }
+        @keyframes fadeIn {
+          from {
+            opacity: 0;
+          }
+          to {
+            opacity: 1;
+          }
+        }
+        .fadeIn {
+          animation-name: fadeIn;
+        }
+       
+    }
+    
+    &.slidercount-1 {
+        .slick-prev{
+            right: 116px;
+        }
+    }
+    &.slidercount-2 {
+        .slick-prev{
+            right: 159px;
+        }
+    }
+    &.slidercount-4 {
+        .slick-prev{
+            right: 248px;
+        }
+    }
+    &.slidercount-5 {
+        .slick-prev{
+            right: 296px;
+        }
+    }
+}
+.heroCarousel-content{
+    background-color: $medium-grey;
+    text-align: left;
+    width: auto;
+    padding: 10px;
+    bottom:0px;
+    right: unset;
+    top:unset;
+    left:0px;
+    
+    .button{
+        background-color: stencilColor("carousel-background-Color");
+        color:stencilColor("carousel-btn-text-Color");
+        border-color:stencilColor("carousel-btn-border-Color");
+        // @include desktop-lg{
+        //     margin-top: 7px;
+        // }
+        &:hover{
+            background-color: stencilColor("carousel-background-hoverColor");            
+            color:stencilColor("carousel-btn-text-hoverColor");
+            border-color:stencilColor("carousel-btn-border-hoverColor");
+        }
+        @media(max-width:666px){
+            color: $buttonStyle-default-color;
+            background: $buttonStyle-default-backgroundColor;
+            border: 2px solid $buttonStyle-default-borderColor;
+            &:hover {
+                background: $buttonStyle-default-backgroundColorHover;
+                color: $buttonStyle-default-colorHover;
+                border-color: $buttonStyle-default-borderColorHover;
+            }
+        
+            &:active,
+            &:focus {
+                background: $buttonStyle-default-backgroundColorHover;
+                color: $buttonStyle-default-colorHover;
+                border-color: $buttonStyle-default-borderColorHover;
+            }
+        }
+    }
+}

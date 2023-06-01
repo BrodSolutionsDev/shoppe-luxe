@@ -1,13 +1,11 @@
-.footer {
-  text-align: center;
-  padding: 20px 0;
-  background: $black;
-  
-  p, a {
-    color: $white;
-  }
-
-  a:hover {
-    color: $orange;
-  }
+.scc-footer {
+  background: $white;
+  border-color: $medium-grey;
+  border-radius: $border-radius-lg;
+  box-shadow: $box-shadow;
+  position: fixed;
+  bottom: 0;
+  width: 100%;
+  padding: 2px;
+  z-index: 99999;
 }
