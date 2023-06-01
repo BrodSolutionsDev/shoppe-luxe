@@ -2,10 +2,14 @@
   background: $white;
   border-color: $medium-grey;
   border-radius: $border-radius-lg;
-  box-shadow: $box-shadow;
+  box-shadow: $box-shadow-top;
   position: fixed;
   bottom: 0;
   width: 100%;
-  padding: 2px;
-  z-index: 99999;
+  padding-top: $padding-small;
+  z-index: 9999;
+
+  p {
+    margin-bottom: 0;
+  }
 }

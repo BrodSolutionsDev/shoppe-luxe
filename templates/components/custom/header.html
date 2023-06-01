@@ -26,11 +26,12 @@
                     <use xlink:href="#icon-user" />
                 </svg>
             </button>
-            <button class="search-toggle header-button-alt">
+            <a class="cart-toggle header-button-alt" href="{{urls.cart}}">
+                <span id="cart-button-qty"></span>
                 <svg class="icon">
                     <use xlink:href="#icon-cart" />
                 </svg>
-            </button>
+            </a>
         </div>
     </div>
 </header>
@@ -64,6 +65,9 @@
             mobileMenu.style.display = "none";
             body.style.overflow = "auto";
         })
-    }
-
+        
+        
+    } 
+    const cartBtnQty = document.getElementById("cart-button-qty");
+    cartBtnQty.innerText = localStorage.getItem("cart-quantity") || null;
 </script>

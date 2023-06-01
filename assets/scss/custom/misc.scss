@@ -4,6 +4,14 @@ body {
 
 .body {
   margin-top: -30px;
+  background: $white;
+
+  .container {
+    z-index: 99;
+    background: $white;
+    border-top-left-radius: $border-radius-lg;
+    border-top-right-radius: $border-radius-lg;
+  }
 }
 
 .container {
