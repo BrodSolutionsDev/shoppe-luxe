@@ -1,6 +1,11 @@
 <footer class="scc-footer">
+
+  <div class="flex-row-heading scc-footer-contact-copyright">
+    <p>&copy; {{moment format="YYYY"}} {{settings.store_name}} All Rights Reserved.</p>
   <div class="flex-column-reverse">
     <p>Have questions? <a href="/contact-us">Contact us!</a></p>
+  </div>
+  <div class="flex-row snackbar">
     <!-- Default:  Icon Shop All -->
     {{#if page_type '===' 'default'}}
     <a class="scc-button" href="/shop-all">
@@ -9,71 +14,67 @@
     >
     {{/if}}
 
+    {{#if page_type '===' 'cart'}}
+                    <div class="cart-actions cart-content-padding-right">
+                        <a
+                            class="scc-button"
+                            href="{{urls.checkout.single_address}}"
+                            title="{{lang 'cart.checkout.title'}}"
+                            data-primary-checkout-now-action
+                        >
+                        <svg class="scc-button-icon"><use href="#icon-lock"></use></svg>
+                        Checkout
+                        </a>
+                    </div>
+    {{/if}}
+
     <!-- Page:  Shop By Category -->
     {{#if page_type '===' 'page'}}
-    
+
     <!-- TODO use handlebars to get title and match to category-->
     {{#if page.title '===' 'Countertops' }}
     <a id="scc-button-page" class="scc-button" href="/products/countertops">
-        <svg class="scc-button-icon"><use href="#icon-cart"></use></svg>
-        Shop {{ page.title }} </a
-      >
-    {{/if}}
-    {{#if page.title '===' 'Flooring' }}
+      <svg class="scc-button-icon"><use href="#icon-cart"></use></svg>
+      Shop {{ page.title }}
+    </a>
+    {{/if}} {{#if page.title '===' 'Flooring' }}
     <a id="scc-button-page" class="scc-button" href="/products/flooring">
-        <svg class="scc-button-icon"><use href="#icon-cart"></use></svg>
-        Shop {{ page.title }} </a
-      >
-    {{/if}}
-
-    {{/if}}
-
+      <svg class="scc-button-icon"><use href="#icon-cart"></use></svg>
+      Shop {{ page.title }}
+    </a>
+    {{/if}} {{/if}}
 
     <!-- Category:  Filters -->
     {{#if page_type '===' 'category'}}
     <!-- TODO open a modal to the filters -->
 
-<a class="scc-button" href="#">
+    <a class="scc-button" href="#">
       <svg class="scc-button-icon"><use href="#icon-search"></use></svg>
       Filters</a
     >
     {{/if}}
 
-    
     <!-- Product: Add to Cart -->
     {{#if page_type '===' 'product'}}
     <div id="scc-snackbar-addtocart">
-
-        <form class="form" method="post" action="{{product.cart_url}}" enctype="multipart/form-data"
-                  data-cart-item-add>
-                <input type="hidden" name="action" value="add">
-                <input type="hidden" name="product_id" value="{{product.id}}"/>
-                <div data-product-option-change>
-                    {{inject 'showSwatchNames' theme_settings.show_product_swatch_names}}
-                    {{#each product.options}}
-                        {{{dynamicComponent 'components/products/options'}}}
-                    {{/each}}
-                </div>
-                <div class="form-field form-field--stock{{#unless product.stock_level}} u-hiddenVisually{{/unless}}">
-                    <label class="form-label form-label--alternate">
-                        {{lang 'products.current_stock'}}
-                        <span data-product-stock>{{product.stock_level}}</span>
-                    </label>
-                </div>
-                {{> components/products/add-to-cart with_wallet_buttons=true}}
-                {{#if product.out_of_stock}}
-                    {{#if product.out_of_stock_message}}
-                        {{> components/common/alert/alert-error product.out_of_stock_message}}
-                    {{else}}
-                        {{> components/common/alert/alert-error (lang 'products.sold_out')}}
-                    {{/if}}
-                {{/if}}
-            </form>
-
+      <form class="form" method="post" action="{{product.cart_url}}" enctype="multipart/form-data" data-cart-item-add>
+        <input type="hidden" name="action" value="add" />
+        <input type="hidden" name="product_id" value="{{product.id}}" />
+        <div data-product-option-change>
+          {{inject 'showSwatchNames' theme_settings.show_product_swatch_names}} {{#each product.options}} {{{dynamicComponent 'components/products/options'}}} {{/each}}
+        </div>
+        <div class="form-field form-field--stock{{#unless product.stock_level}} u-hiddenVisually{{/unless}}">
+          <label class="form-label form-label--alternate">
+            {{lang 'products.current_stock'}}
+            <span data-product-stock>{{product.stock_level}}</span>
+          </label>
+        </div>
+        {{> components/products/add-to-cart with_wallet_buttons=true}} {{#if product.out_of_stock}} {{#if product.out_of_stock_message}} {{> components/common/alert/alert-error
+        product.out_of_stock_message}} {{else}} {{> components/common/alert/alert-error (lang 'products.sold_out')}} {{/if}} {{/if}}
+      </form>
+      
     </div>
 
     {{/if}}
   </div>
-  <p>{{{region name="snackbar"}}}</p>
-  {{{region name="ssl_site_seal--global"}}}
 </footer>

@@ -1,15 +1,39 @@
 .scc-footer {
-  background: $white;
-  border-color: $medium-grey;
-  border-radius: $border-radius-lg;
-  box-shadow: $box-shadow-top;
-  position: fixed;
-  bottom: 0;
-  width: 100%;
-  padding-top: $padding-small;
-  z-index: 9999;
-
+.scc-footer-contact-copyright{
+  height: 75px;
+  
+  margin-bottom: 36px;
+  background: $black;
+  a {
+    color: $white;
+  }
   p {
-    margin-bottom: 0;
+    color:$light-grey;
+    text-align: center;
+    padding: 0 10px;
+  }
+}
+  
+  .snackbar {
+    background: $bg-soft;
+    border-color: $medium-grey;
+    border-radius: $border-radius-sm;
+    box-shadow: $box-shadow;
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+    height: 80px;
+    padding: 2px;
+    z-index: 99999;
+    a {
+      color: $white;
+      text-decoration: none;
+    }
+    .add-to-cart-wrapper, .form{
+      @include flex-row-heading;
+    }
+    .form-label {
+      display: none;
+    }
   }
 }

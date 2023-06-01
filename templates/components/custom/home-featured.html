@@ -1,9 +1,10 @@
+<div class="container-overflow-none">
 <h2 class="page-heading">{{lang 'products.featured' }}</h2>
-
-<ul class="grid" data-product-type="featured" {{#if settings.data_tag_enabled}} data-list-name="Featured Products" {{/if}}>
+<ul class="scc-slider" data-product-type="featured" {{#if settings.data_tag_enabled}} data-list-name="Featured Products" {{/if}}>
     {{#each products}}
-        <li class="product">
+        <li class="product scc-slide">
                 {{>components/products/card settings=../settings theme_settings=../theme_settings customer=../customer event="list" position=(add @index 1)}}
         </li>
     {{/each}}
 </ul>
+</div>

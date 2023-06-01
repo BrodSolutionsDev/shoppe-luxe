@@ -12,24 +12,29 @@ blog:
     limit: { { theme_settings.homepage_blog_posts_count } }
 ---
 
-{{#partial "hero"}} {{{region name="home_below_menu"}}}
+{{#partial "hero"}} 
+
 <div class="container section">
-  {{#and carousel carousel.slides.length}} {{> components/carousel arrows=theme_settings.homepage_show_carousel_arrows play_pause_button=theme_settings.homepage_show_carousel_play_pause_button}}
+  {{#and carousel carousel.slides.length}} 
+  {{> components/carousel arrows=theme_settings.homepage_show_carousel_arrows play_pause_button=theme_settings.homepage_show_carousel_play_pause_button}}
   {{/and}}
 </div>
-{{{region name="home_below_carousel"}}} {{/partial}} {{#partial "page"}} {{#each shipping_messages}} {{> components/common/alert/alert-info message}} {{/each}}
+{{/partial}} {{#partial "page"}} {{#each shipping_messages}} {{> components/common/alert/alert-info message}} {{/each}}
 
 <div class="main full">
   {{#if products.top_sellers}} {{> components/products/top products=products.top_sellers columns=theme_settings.homepage_top_products_column_count}} {{/if}} {{{region name="home_below_top_products"}}}
   {{#if products.new}} {{> components/products/new products=products.new columns=theme_settings.homepage_new_products_column_count}} {{/if}}
 
-  <!-- 1 -->
+  <!-- Region 1 Home Below Carousel -->
+  <div class="section">{{{region name="home_below_carousel"}}}</div>
+  <!-- 1) Projects -->
   <div class="section">{{> components/custom/home-projects }}</div>
 
   <div class="section">{{#if products.featured}} 
     {{> components/custom/home-featured products=products.featured columns=theme_settings.homepage_featured_products_column_count}} 
     {{/if}}</div>
 
+    <!-- Region 1 Home Below Featured -->
   <div class="section">
     {{{region name="home_below_featured_products"}}}
 </div>
@@ -37,26 +42,29 @@ blog:
   <!-- 2 -->
   <div class="section">{{> components/custom/home-category }}</div>
 
-  <!-- 3 -->
-  <div id="home-category-region" class="section">{{{region name="home_below_shop_by_category"}}}</div>
+  <!-- Region Home Category Below -->
+  <div id="home-category-below_region" class="section">
+    {{{region name="home_category_below"}}}
+</div>
 
-  <!-- 4 -->
-  <div class="scc-home-banner">
-    <div class="container">{{{region name="home_below_bottom_banner"}}}</div>
+  
   </div>
-  <!-- 5 -->
-  <div class="scc-home-bottom-products">
-    <div class="container">{{{region name="home_below_bottom_products"}}}</div>
+  <!-- Region Home Below Bottom Products -->
+  <div id="home-below-bottom-products_region" class="section">
+    {{{region name="home_below_bottom_products"}}}
   </div>
 
-  <!-- 6 -->
+  <!-- 6) Tutorials -->
   {{#if settings.blog_enabled}}
-  <div class="container">{{> components/blog/post posts=blog.recent_posts}}</div>
+  <div class="section">
+    {{> components/blog/post posts=blog.recent_posts}}</div>
   {{/if}}
 
-  <!-- 7 -->
-  <div class="container">{{{region name="home_below_blog"}}}</div>
+  <!-- Region Home Below Blog -->
+  <div id="home-below-blog_region" class="section">
+    {{{region name="home_below_blog"}}}
+</div>
 
-  <!-- ? -->
+  
 </div>
 {{/partial}} {{> layout/base}}

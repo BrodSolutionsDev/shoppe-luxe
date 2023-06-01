@@ -13,14 +13,17 @@ body {
     border-top-right-radius: $border-radius-lg;
   }
 }
+body {
+  background-color: $bg-soft;
+}
 
 .container {
   @include mobile-container;
 }
-
-.slick-dotted.slick-slider {
-  margin-bottom: 0;
+.container-overflow-none {
+  overflow: hidden;
 }
+
 
 .section {
   padding-top: $padding-medium;

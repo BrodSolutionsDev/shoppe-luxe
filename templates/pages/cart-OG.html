@@ -32,12 +32,12 @@ cart: true
                 {{#if cart.show_primary_checkout_button}}
                     <div class="cart-actions cart-content-padding-right">
                         <a
-                            class="scc-button"
+                            class="button button-primary"
                             href="{{urls.checkout.single_address}}"
                             title="{{lang 'cart.checkout.title'}}"
                             data-primary-checkout-now-action
                         >
-                        <svg class="scc-button-icon"><use href="#icon-lock"></use></svg>{{lang 'cart.checkout.button'}}
+                        {{lang 'cart.checkout.button'}}
                         </a>
                         {{#if cart.show_multiple_address_shipping}}
                             <a class="checkoutMultiple" href="{{urls.checkout.multiple_address}}">
