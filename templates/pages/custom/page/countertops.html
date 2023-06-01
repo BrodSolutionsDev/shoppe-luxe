@@ -26,7 +26,7 @@
         
             {{{region name="countertops_top"}}}
 
-        <div class="page-content">
+        <div class="scc-page-content">
             <p>{{{page.content}}}</p>
         </div>
 
@@ -85,6 +85,7 @@
                 {{{region name="countertops_step4"}}}
             </div>
     </div>
+    </div>
 
     {{{region name="countertops_bottom"}}}
 
@@ -94,23 +95,7 @@
             {{{region name="countertops_related"}}}
         </div>
 
-    <div class="page-categories">
-        <h2 class="page-categories-title">Shop Categories</h2>
-        <div class="items">
-        {{#each categories}}
-        <div class="item">
-            <a href="{{url}}">
-                {{#if image}}
-                <img class="item-image" src="{{image}}" alt="{{name}}" />
-                {{else}}
-                <img class="item-image" src="/assets/img/noImage.jpg" alt="{{name}}" />
-                {{/if}}
-                <h4 class="item-title">{{name}}</h4>
-            </a>
-            </div>
-        {{/each}}
-        </div>
-    </div>
+    {{> components/custom/categories}}
     
 </section>
 

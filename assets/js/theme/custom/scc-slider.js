@@ -17,4 +17,13 @@ export default function () {
 
         ],
     });
+
+    $('.scc-slider-wide').slick({
+        draggable: true,
+        infinite: true,
+        slidesToShow: 1,
+        slidesToScroll: 1,
+        mobileFirst: true,
+        swipeToSlide: true,
+    });
 }

@@ -1,19 +1,18 @@
 .scc-footer {
-.scc-footer-contact-copyright{
-  height: 75px;
-  
-  margin-bottom: 36px;
-  background: $black;
-  a {
-    color: $white;
+  .scc-footer-contact-copyright {
+    height: 100px;
+    margin-bottom: 36px;
+    background: $black;
+    a {
+      color: $white;
+    }
+    p {
+      color: $light-grey;
+      text-align: center;
+      padding: 0 10px;
+    }
   }
-  p {
-    color:$light-grey;
-    text-align: center;
-    padding: 0 10px;
-  }
-}
-  
+
   .snackbar {
     background: $bg-soft;
     border-color: $medium-grey;
@@ -29,7 +28,8 @@
       color: $white;
       text-decoration: none;
     }
-    .add-to-cart-wrapper, .form{
+    .add-to-cart-wrapper,
+    .form {
       @include flex-row-heading;
     }
     .form-label {

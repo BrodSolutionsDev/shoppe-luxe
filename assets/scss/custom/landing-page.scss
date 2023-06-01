@@ -1,8 +1,9 @@
 .stonecoat-landing {
   .page-hero {
-      position: relative;
-      z-index: 10000;
-      margin: -15px 0 50px 0;
+    //   position: relative;
+    //   z-index: 10000;
+    //   margin: -15px 0 50px 0;
+    margin:25px 0;
       img {
           width: 100%;
           border-radius: 15px;
@@ -17,7 +18,7 @@
           height: 50px;
       }
   }
-  .page-content {
+  .scc-page-content {
       margin: 50px 0;
       background-color: $medium-grey;
       padding: 20px;
