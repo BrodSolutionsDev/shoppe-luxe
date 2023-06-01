@@ -25,7 +25,7 @@ $box-shadow: 0 11px 24px rgba(34, 31, 32, .1);
 
 // font sizes
 :root {
-  font-size: 62.5%; // 10px - allows auto scaling with window resizing. Good accessibility
+  font-size: 100%; // 10px - allows auto scaling with window resizing. Good accessibility
 }
 $font-size-14: 1.4rem; // 14px
 $font-size-16: 1.6rem; // 16px
@@ -76,12 +76,16 @@ $bebas-neue: 'Bebas Neue', sans-serif;
 
 // breakpoint styles
 @mixin tablet-container {
-  @media only screen and (min-width: 800px) {}
+  @media only screen and (max-width: 1200px) {
+    @content;
+  }
 }
 
 // container
 @mixin mobile-container {
-  padding:  0 3%;
+  @media only screen and (max-width: 800px) {
+    @content;
+  }
 }
 
 // flex
@@ -91,6 +95,52 @@ $bebas-neue: 'Bebas Neue', sans-serif;
   align-items: center;
 }
 
+@mixin flex-row {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-evenly;
+  align-items: center;
+}
+@mixin flex-row-heading {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+}
+.flex-center {
+  @include flex-center;
+}
+.flex-row {
+  @include flex-row;
+}
+.flex-row-heading {
+  @include flex-row-heading;
+}
+
+// grid
+@mixin grid {
+  display: grid;
+  grid-gap: 10px;
+  grid-template-columns: repeat(4, calc(50% - 40px));
+  grid-template-rows: minmax(150px, 1fr);
+  overflow-x: scroll;
+}
+.grid {
+  @include grid;
+  ::-webkit-scrollbar {
+    display: none;
+}
+}
+@mixin card {
+  background: $white;
+  border-radius: $border-radius-lg;
+  box-shadow: $box-shadow;
+  padding: $padding-medium;
+  width: 100%;
+  height: 100%;
+  position: relative;
+  z-index: 1;
+}
 // transition
 $transition-fast: .15s;
 $transition-slow: .25s;

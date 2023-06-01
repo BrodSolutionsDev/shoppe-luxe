@@ -1,0 +1,25 @@
+.scc-button {
+    @include flex-center;
+    align-items: center;
+    padding: 18px 16px;
+    gap: 8px;
+    position: relative;
+    width: 200px;
+    height: 40px;
+    background: $black;
+    border-radius: $border-radius-full;
+    color: $white;
+    text-decoration: none;
+    .scc-button-icon {
+        width: 20px;
+        height: 20px;
+        fill: $white;
+    }
+}
+.scc-button:hover {
+    background: $orange;
+    color: $white;
+    .scc-button-icon {
+        fill: $white;
+    }
+}
