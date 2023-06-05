@@ -22,25 +22,31 @@ blog:
 {{/partial}} {{#partial "page"}} {{#each shipping_messages}} {{> components/common/alert/alert-info message}} {{/each}}
 
 <div class="main full">
-  {{#if products.top_sellers}} {{> components/products/top products=products.top_sellers columns=theme_settings.homepage_top_products_column_count}} {{/if}} {{{region name="home_below_top_products"}}}
-  {{#if products.new}} {{> components/products/new products=products.new columns=theme_settings.homepage_new_products_column_count}} {{/if}}
-
   <!-- Region 1 Home Below Carousel -->
   <div class="section">{{{region name="home_below_carousel"}}}</div>
   <!-- 1) Projects -->
   <div class="section">{{> components/custom/home-projects }}</div>
-
-  <div class="section">{{#if products.featured}} 
+<!-- 2) Featured -->
+  {{#if products.featured}}
+  <div class="section">
     {{> components/custom/home-featured products=products.featured columns=theme_settings.homepage_featured_products_column_count}} 
-    {{/if}}</div>
-
+  </div>
+    {{/if}}
     <!-- Region 1 Home Below Featured -->
   <div class="section">
     {{{region name="home_below_featured_products"}}}
 </div>
+<!-- 3) New -->
+    {{#if products.new}}
+    <div class="section">{{> components/custom/home-new products=products.new columns=theme_settings.homepage_new_products_column_count}}</div>
+     {{/if}}
+
+    
 
   <!-- 2 -->
-  <div class="section">{{> components/custom/home-category }}</div>
+  <div class="section">
+    {{> components/custom/categories }}
+  </div>
 
   <!-- Region Home Category Below -->
   <div id="home-category-below_region" class="section">

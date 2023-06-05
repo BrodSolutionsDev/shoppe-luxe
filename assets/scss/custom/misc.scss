@@ -1,29 +1,29 @@
 body {
   padding-top: 0;
+  background-color: $bg-soft;
 }
 
 .body {
   margin-top: -30px;
-  background: $white;
+  background: $bg-soft;
 
   .container {
     z-index: 99;
-    background: $white;
+    background: $bg-soft;
     border-top-left-radius: $border-radius-lg;
     border-top-right-radius: $border-radius-lg;
   }
 }
-body {
-  background-color: $bg-soft;
-}
 
-.container {
+
+.container-lg, .container {
   @include mobile-container;
+  max-width: $max-width;
+  padding: 0;
 }
 .container-overflow-none {
   overflow: hidden;
 }
-
 
 .section {
   padding-top: $padding-medium;

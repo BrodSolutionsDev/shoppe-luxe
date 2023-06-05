@@ -2,13 +2,12 @@
 
   <div class="flex-row-heading scc-footer-contact-copyright">
     <p>&copy; {{moment format="YYYY"}} {{settings.store_name}} All Rights Reserved.</p>
-  <div class="flex-column-reverse">
-    <p>Have questions? <a href="/contact-us">Contact us!</a></p>
+    <p>Have questions? <a class="scc-button-action" href="/contact-us">Contact us!</a></p>
   </div>
   <div class="flex-row snackbar">
     <!-- Default:  Icon Shop All -->
     {{#if page_type '===' 'default'}}
-    <a class="scc-button" href="/shop-all">
+    <a class="scc-button glow-on-hover" href="/shop-all">
       <svg class="scc-button-icon"><use href="#icon-cart"></use></svg>
       Shop Now!</a
     >

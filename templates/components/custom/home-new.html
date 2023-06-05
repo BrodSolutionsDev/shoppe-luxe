@@ -1,9 +1,9 @@
-<div id="home-featured">
+<div id="home-new">
     <div class="flex-row-heading">
-        <h2>Featured</h2>
-        <a href="/shop-all/?sort=featured">Show All ></a>
+        <h2>new</h2>
+        <a href="/shop-all/?sort=newest">Show All ></a>
       </div>
-<ul class="scc-slider" data-product-type="featured" {{#if settings.data_tag_enabled}} data-list-name="Featured Products" {{/if}}>
+<ul class="scc-slider" data-product-type="new" {{#if settings.data_tag_enabled}} data-list-name="new Products" {{/if}}>
     {{#each products}}
         <li class="product scc-slide">
                 {{>components/products/card settings=../settings theme_settings=../theme_settings customer=../customer event="list" position=(add @index 1)}}

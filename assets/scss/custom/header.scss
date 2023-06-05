@@ -12,6 +12,7 @@
   &-container {
     @include mobile-container;
 
+    max-width: $max-width;
     width: 100%;
     display: flex;
     justify-content: space-between;
