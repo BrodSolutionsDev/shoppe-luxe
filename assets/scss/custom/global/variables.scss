@@ -1,7 +1,7 @@
 @import url('https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Montserrat:ital,wght@0,400;0,600;0,900;1,400;1,600;1,900&display=swap');
 
 // colors
-$black: #221f20;
+$black: #221F20;
 $white: #FFFFFF;
 $orange: #B75533;
 $blue: #526D9D;
@@ -20,6 +20,10 @@ $border-radius-full: 100px; // full rounded edges
 $padding-small: 10px;
 $padding-medium: 20px;
 $padding-large: 50px;
+
+// widths
+$max-width: 1200px;
+$min-width: 320px;
 
 // shadows
 $box-shadow: 0 11px 24px rgba(34, 31, 32, .1);
