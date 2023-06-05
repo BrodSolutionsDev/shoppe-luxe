@@ -74,6 +74,7 @@ export default function (secureBaseUrl, cartId) {
             if (localStorage.getItem('cart-quantity')) {
                 quantity = Number(localStorage.getItem('cart-quantity'));
                 $body.trigger('cart-quantity-update', quantity);
+                $('#cart-button-qty').html = quantity;
             }
         }
 
