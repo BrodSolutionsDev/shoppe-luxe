@@ -280,3 +280,12 @@
     <div class="modal-content"></div>
     <div class="loadingOverlay"></div>
 </div>
+
+<script>
+
+    document.querySelectorAll(".price-section--withoutTax span").forEach(span => {
+        if (span.innerText.includes("Sale") || span.innerText.includes("Was")) {
+            span.style.display = "none";
+        }
+    });
+</script>

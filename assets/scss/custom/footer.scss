@@ -74,7 +74,11 @@
   width: 320px;
   margin: 0 auto;
 
-  [data-product-option-change] > .form-field {
-    margin-bottom: 10px;
+  [data-product-option-change] {
+    width: 100%;
+    
+    & > .form-field {
+      margin-bottom: 10px;
+    }
   }
 }
