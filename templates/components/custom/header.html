@@ -9,11 +9,24 @@
                 <span class="toggle-bar"></span>
                 <span class="toggle-bar"></span>
             </button>
-            <button id="search-toggle">
+            <!-- <button id="search-toggle">
                 <svg class="icon">
                     <use xlink:href="#icon-search" />
                 </svg>
-            </button>
+            </button> -->
+            <li class="navUser-item">
+                <button class="navUser-action navUser-action--quickSearch"
+                   type="button"
+                   id="quick-search-expand"
+                   data-search="quickSearch"
+                   aria-controls="quickSearch"
+                   aria-label="{{lang 'common.search'}}"
+                >
+                <svg class="icon">
+                    <use xlink:href="#icon-search" />
+                </svg>
+                </button>
+            </li>
         </div>
         <!-- store logo -->
         <div class="menu-logo">
@@ -21,11 +34,11 @@
         </div>
         <!-- account button and cart button -->
         <div class="buttons">
-            <button class="search-toggle header-button-alt">
+            <a class="header-button-alt" href="/account.php">
                 <svg class="icon">
                     <use xlink:href="#icon-user" />
                 </svg>
-            </button>
+            </a>
             <a class="cart-toggle header-button-alt" href="{{urls.cart}}">
                 <span id="cart-button-qty"></span>
                 <svg class="icon">
@@ -33,6 +46,9 @@
                 </svg>
             </a>
         </div>
+    </div>
+    <div class="dropdown dropdown--quickSearch" id="quickSearch" aria-hidden="true" data-prevent-quick-search-close style="z-index: 999">
+        {{> components/common/quick-search name='nav-quick-search'}}
     </div>
 </header>
 
@@ -68,6 +84,4 @@
         
         
     } 
-    const cartBtnQty = document.getElementById("cart-button-qty");
-    cartBtnQty.innerText = localStorage.getItem("cart-quantity") || null;
 </script>
