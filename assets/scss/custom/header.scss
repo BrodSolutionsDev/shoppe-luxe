@@ -224,3 +224,12 @@
 .navUser-item {
   display: block !important;
 }
+
+#quickSearch {
+  position: fixed;
+  top: 80px;
+  left: 0;
+  z-index: 99999 !important;
+  width: 100%;
+  overflow-y: auto;
+}
