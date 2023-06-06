@@ -1,11 +1,13 @@
 body {
   padding-top: 0;
   background-color: $bg-soft;
+  overflow-x: hidden;
 }
 
 .body {
   margin-top: -30px;
   background: $bg-soft;
+  overflow-x: hidden;
 
   .container {
     z-index: 99;
