@@ -8,6 +8,7 @@
     label {
       margin-bottom: 0;
       padding-right: $padding-small;
+      min-width: fit-content;
     }
 
     small {
@@ -36,6 +37,10 @@
     .price {
       font-family: $bebas-neue;
       font-size: $font-size-30;
+    }
+
+    @media only screen and (min-width: 800px) {
+      width: 345px;
     }
   }
 
