@@ -1,4 +1,17 @@
+.heroCarousel {
+  margin-top: -20px;
 
+  .slick-slide,
+  .slick-list,
+  .slick-track {
+    border-radius: $border-radius-lg;
+  }
+
+  .heroCarousel-content {
+    border-bottom-right-radius: $border-radius-lg;
+    border-bottom-left-radius: $border-radius-lg;
+  }
+}
 
 .home-categories {
   text-align: center;
