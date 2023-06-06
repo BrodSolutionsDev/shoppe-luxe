@@ -60,4 +60,15 @@
       background: inherit;
     }
   }
+
+  .productView-price {
+    display: flex;
+    flex-direction: row-reverse;
+    align-items: baseline;
+
+    .price--non-sale {
+      font-size: $font-size-18;
+      margin-left: 10px;
+    }
+  }
 }
