@@ -7,6 +7,10 @@ $mobile-image-container-height: 338px;
     display: none;
   }
 
+  .product-options {
+    padding-bottom: 0;
+  }
+
   .productView-images {
     // padding: 0;
     height: $mobile-image-container-height;
@@ -123,6 +127,10 @@ $mobile-image-container-height: 338px;
   }
 }
 
+.tabs {
+  display: none;
+}
+
 #description-show-more {
   margin: 15px auto;
   left: 50%;
@@ -143,4 +151,102 @@ pointer-events: none;
 width: 100%;
 height: 4em;
 background-image: linear-gradient(to bottom,rgba($bg-soft,0),$bg-soft 90%);
+}
+
+.videoGallery.toggle {
+  border-top: none;
+  margin-bottom: 0;
+}
+
+.scc-video-slider,
+.scc-video-slider .slick-list, 
+.scc-video-slider .slick-track, 
+.scc-video-slider .slick-slide {
+  aspect-ratio: 16/9;
+  overflow: hidden;
+}
+
+.scc-video-slider .slick-slide {
+  height: unset;
+}
+
+.scc-video-slider {
+  margin-bottom: 50px;
+
+  .slick-next,
+  .slick-prev {
+    margin-top: unset;
+  }
+}
+
+.scc-video-slider .slick-slide iframe {
+  height: 100%;
+  width: 100%;
+  top: 0;
+}
+
+.info-icons-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 15px;
+  margin-bottom: 50px;
+}
+
+.calculator-section {
+  margin-bottom: 50px;
+
+  .calculator-section-heading {
+    h3 {
+      margin-top: 0;
+    }
+  }
+
+  .calculator-section-coverage {
+    display: flex;
+    align-items: center;
+
+    .kit-size {
+      width: 50%;
+      position: relative;
+      left: 0;
+      display: flex;
+      align-items: center;
+
+      img {
+        width: 65px;
+        height: 65px;
+      }
+
+      .equals {
+        @include montserrat-bold;
+        font-size: $font-size-25;
+      }
+
+      .covers {
+        display: flex;
+        flex-direction: column;
+        position: absolute;
+        width: 45px;
+        top: 20px;
+        left: 97px;
+
+        p {
+          font-size: 12px;
+          margin: 0;
+          margin-bottom: -8px;
+          text-align: center;
+        }
+      
+        .value {
+          @include montserrat-bold;
+          font-size: $font-size-18;
+        }
+      }
+    }
+
+    .button {
+      width: 50%;
+      margin-bottom: 0;
+    }
+  }
 }
