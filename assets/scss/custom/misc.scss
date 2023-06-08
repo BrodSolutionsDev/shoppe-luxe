@@ -37,3 +37,11 @@ body {
   padding-right: 0;
   padding-left: 0;
 }
+
+.button--primary {
+  @include flex-center;
+  gap: 10px;
+  .icon  {
+    fill: $white;
+  }
+}
