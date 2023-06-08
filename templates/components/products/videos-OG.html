@@ -1,25 +1,4 @@
 <section class="toggle videoGallery" data-video-gallery>
-    <ul class="scc-slider-wide scc-video-slider">
-        {{#each videos.list}}
-        <li class="scc-slide">
-            <iframe
-                id="player"
-                class="lazyload"
-                type="text/html"
-                width="640"
-                height="390"
-                frameborder="0"
-                webkitAllowFullScreen
-                mozallowfullscreen
-                allowFullScreen
-                data-src="//www.youtube.com/embed/{{this.id}}"
-                data-video-player>
-            </iframe>
-        </li>
-        {{/each}}
-    </ul>
-
-    <!-- 
     <h4 class="toggle-title">
         {{lang 'products.videos.header'}}
         <a href="#videoGallery-content" class="toggleLink is-open" data-collapsible>
@@ -64,7 +43,5 @@
         {{/each}}
         </ul>
     </div>
-
--->
 
 </section>
