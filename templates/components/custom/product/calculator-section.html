@@ -7,9 +7,9 @@
     {{#each product.custom_fields}}
       {{#if name '==' '1 Gallon Kit'}}
         <div class="kit-size">
-          <img src="/assets/img/info-icons/one_gallon_bucket.png" alt="One gallon kit">
+          <img src="{{cdn 'img/info-icons/one_gallon_bucket.png'}}" alt="One gallon kit">
           <span class="equals">=</span>
-          <img src="/assets/img/info-icons/square_footage.png" alt="Square footage icon">
+          <img src="{{cdn 'img/info-icons/square_footage.png'}}" alt="Square footage icon">
           <div class="covers">
             <p class="value">{{value}}</p>
             <p>Sq Ft</p>
