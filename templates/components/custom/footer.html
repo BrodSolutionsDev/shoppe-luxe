@@ -77,3 +77,10 @@
     {{/if}}
   </div>
 </footer>
+
+<script>
+  const footer = document.querySelector(".scc-footer");
+  const snackbar = document.querySelector(".snackbar");
+
+  footer.style.bottom = `${snackbar.getBoundingClientRect().height - 7}px`;
+</script>

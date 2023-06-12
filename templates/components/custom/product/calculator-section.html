@@ -1,0 +1,22 @@
+<section class="calculator-section">
+  <div class="calculator-section-heading">
+    <h3>How much do I need?</h3>
+    <p>Coverage is calculated by length * width * pour depth</p>
+  </div>
+  <div class="calculator-section-coverage">
+    {{#each product.custom_fields}}
+      {{#if name '==' '1 Gallon Kit'}}
+        <div class="kit-size">
+          <img src="{{cdn 'img/info-icons/one_gallon_bucket.png'}}" alt="One gallon kit">
+          <span class="equals">=</span>
+          <img src="{{cdn 'img/info-icons/square_footage.png'}}" alt="Square footage icon">
+          <div class="covers">
+            <p class="value">{{value}}</p>
+            <p>Sq Ft</p>
+          </div>
+        </div>
+      {{/if}}
+    {{/each}}
+    <a class="button button--primary" href="/calculator">Calculator</a>
+  </div>
+</section>

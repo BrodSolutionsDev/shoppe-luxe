@@ -1,17 +1,18 @@
 .scc-footer {
   width: 100%;
   background: $black;
-  min-height: 160px;
+  min-height: 100px;
+  position: relative;
+
   .scc-footer-contact-copyright {
-    position: absolute;
-    bottom: 0;
+    // position: absolute;
     margin-left: auto;
     margin-right: auto;
     left: 0;
     right: 0;
     width: 100%;
     max-width: $max-width;
-    margin-bottom: 40px;
+    // margin-bottom: 40px;
     a {
       color: $white;
       text-decoration: none;
@@ -32,9 +33,11 @@
     position: fixed;
     bottom: 0;
     width: 100%;
-    height: 60px;
+    padding: $padding-medium 0;
+    // max-width: 100vw;
+    // height: 60px;
     //padding: 2px;
-    z-index: 99999;
+    z-index: 999;
     a {
       color: $white;
       text-decoration: none;
@@ -42,9 +45,40 @@
     .add-to-cart-wrapper,
     .form {
       @include flex-row-heading;
+
+      .form-increment {
+        @include quantity-buttons($medium-grey);
+      }
     }
     .form-label {
       display: none;
+    }
+  }
+
+  .add-to-cart-wrapper {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width: 100%;
+
+    .form-field--increments,
+    .button--primary {
+      margin-bottom: 0;
+    }
+  }
+}
+
+#scc-snackbar-addtocart form {
+  display: flex;
+  flex-direction: column;
+  width: 320px;
+  margin: 0 auto;
+
+  [data-product-option-change] {
+    width: 100%;
+    
+    & > .form-field {
+      margin-bottom: 10px;
     }
   }
 }

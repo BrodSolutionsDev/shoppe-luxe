@@ -1,0 +1,16 @@
+<div class="info-icons-grid">
+  {{#each product.custom_fields}}
+    {{#if name '==' 'Cure Time'}}
+        {{> components/custom/info-icons/dry-time }}
+    {{/if}}
+    {{#if name '==' 'Mix Ratio'}}
+        {{> components/custom/info-icons/mix-ratio }}
+    {{/if}}
+    {{#if name '==' 'Water Resistant'}}
+        {{> components/custom/info-icons/water-resistant }}
+    {{/if}}
+    {{#if name '==' 'Personal Protection'}}
+        {{> components/custom/info-icons/personal-protection }}
+    {{/if}}
+  {{/each}}
+</div>

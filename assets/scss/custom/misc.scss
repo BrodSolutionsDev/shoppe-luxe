@@ -1,17 +1,20 @@
 body {
   padding-top: 0;
   background-color: $bg-soft;
+  overflow-x: hidden;
 }
 
 .body {
   margin-top: -30px;
   background: $bg-soft;
+  overflow-x: hidden;
 
   .container {
     z-index: 2;
     background: $bg-soft;
     border-top-left-radius: $border-radius-lg;
     border-top-right-radius: $border-radius-lg;
+    padding: 0 5%;
   }
 }
 
@@ -28,4 +31,17 @@ body {
 .section {
   padding-top: $padding-medium;
   padding-bottom: $padding-medium;
+}
+
+.page-content {
+  padding-right: 0;
+  padding-left: 0;
+}
+
+.button--primary {
+  @include flex-center;
+  gap: 10px;
+  .icon  {
+    fill: $white;
+  }
 }

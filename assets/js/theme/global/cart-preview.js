@@ -31,6 +31,9 @@ export default function (secureBaseUrl, cartId) {
         $('.cart-quantity')
             .text(quantity)
             .toggleClass('countPill--positive', quantity > 0);
+        if (quantity <= 0) $('#cart-button-qty').css('display', 'none');
+        if (quantity > 0) $('#cart-button-qty').css('display', 'block');
+        $('#cart-button-qty').text(quantity);
         if (utils.tools.storage.localStorageAvailable()) {
             localStorage.setItem('cart-quantity', quantity);
         }
@@ -74,6 +77,7 @@ export default function (secureBaseUrl, cartId) {
             if (localStorage.getItem('cart-quantity')) {
                 quantity = Number(localStorage.getItem('cart-quantity'));
                 $body.trigger('cart-quantity-update', quantity);
+                $('#cart-button-qty').html = quantity;
             }
         }
 

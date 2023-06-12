@@ -25,12 +25,8 @@ product:
         {{{region name="product_below_content"}}}
 
         {{#if product.videos.list.length}}
-            {{> components/products/videos videos=product.videos}}
+            {{> components/products/videos product.videos}}
         {{/if}}
-
-        {{> components/custom/info-icons-grid }}
-
-        {{> components/custom/product/calculator-section }}
 
         {{#all settings.show_product_reviews theme_settings.show_product_reviews (if theme_settings.show_product_details_tabs '!==' true)}}
             {{> components/products/reviews reviews=product.reviews product=product urls=urls}}
@@ -42,4 +38,3 @@ product:
     {{> components/products/schema}}
 {{/partial}}
 {{> layout/base}}
-

@@ -132,6 +132,24 @@ $bebas-neue: 'Bebas Neue', sans-serif;
   display: flex; 
   flex-flow: row wrap;
 }
+
+@mixin quantity-buttons($background: $light-grey) {
+  background: $background;
+  border-radius: $border-radius-full;
+  color: $black;
+  padding: 2px 7px;
+
+  button {
+    border: none;
+    color: inherit;
+  }
+  
+  input {
+    @include montserrat-regular;
+    color: inherit;
+    background: inherit;
+  }
+}
 .flex-center {
   @include flex-center;
 }

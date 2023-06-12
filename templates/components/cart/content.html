@@ -13,3 +13,10 @@
         {{/each}}
     </tbody>
 </table>
+
+<script>
+    const deleteBtns = document.querySelectorAll(".product-card-delete");
+    deleteBtns.forEach(btn => {
+        btn.style.height = Math.round(btn.parentNode.clientHeight) + "px";
+    })
+</script>

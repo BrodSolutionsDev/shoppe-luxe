@@ -47,7 +47,7 @@
     }
   }
 
-  #search-toggle > svg {
+  #quick-search-expand > svg {
     fill: $white;
   }
 
@@ -217,6 +217,7 @@
   border-radius: $border-radius-full;
   box-shadow: $box-shadow;
 }
+
 // Quick Search
 .dropdown--quickSearch.is-open {
   z-index: 99999;
