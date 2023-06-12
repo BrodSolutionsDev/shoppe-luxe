@@ -1,0 +1,15 @@
+#scc-preview-cart {
+    margin: 10px;
+    a {
+        text-decoration: none;
+        &:hover {
+                color: $black;
+        }
+    }
+    h5{
+        margin: 0;
+    }
+    .scc-preview-cart-total {
+        text-align: center;
+    }
+}

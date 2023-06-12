@@ -185,7 +185,7 @@
     "carousel-play-pause-button-bgColor": "#ffffff",
     "carousel-play-pause-button-borderColor": "#ffffff",
     "card-title-color": "#221F20",
-    "card-title-color-hover": "#757575",
+    "card-title-color-hover": "#221F20",
     "card-figcaption-button-background": "#ffffff",
     "card-figcaption-button-color": "#221F20",
     "card--alternate-backgroundColor": "#ffffff",

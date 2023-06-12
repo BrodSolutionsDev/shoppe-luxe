@@ -119,7 +119,7 @@ $bebas-neue: 'Bebas Neue', sans-serif;
   display: flex;
   flex-direction: $direction;
   gap: 10px;
-  align-items: center;
+  //align-items: center;
 }
 
 @mixin flex-row-heading {

@@ -1,9 +1,9 @@
-import _ from 'lodash';
 import utils from '@bigcommerce/stencil-utils';
+import _ from 'lodash';
 import StencilDropDown from './stencil-dropdown';
 
 export default function () {
-    const TOP_STYLING = 'top: 49px; z-index: 999;';
+    const TOP_STYLING = 'top: 80px;';
     const $quickSearchResults = $('.quickSearchResults');
     const $quickSearchForms = $('[data-quick-search-form]');
     const $quickSearchExpand = $('#quick-search-expand');
