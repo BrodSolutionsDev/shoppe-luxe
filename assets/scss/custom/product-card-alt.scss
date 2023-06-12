@@ -1,5 +1,5 @@
 .product-card-alt {
-  margin-bottom: 40px;
+  margin-bottom: 10px;
   display: grid;
   grid-template-areas: 
   'image details'
@@ -8,11 +8,12 @@
   box-shadow: $box-shadow;
   border-radius: $border-radius-lg;
   padding: $padding-small;
+  background: $white;
 }
 
 .product-card-img {
   grid-area: image;
-  // border-radius: $border-radius-sm;
+  border-radius: $border-radius-sm;
   
   img {
     object-fit: contain;

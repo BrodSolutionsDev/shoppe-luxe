@@ -1,18 +1,12 @@
 <div class="product-card-alt">
   <div class="product-card-img">
-    {{#if type '==' 'GiftCertificate'}}
-      <img class="cart-item-fixed-image" src="{{cdn ../theme_settings.default_image_gift_certificate}}"
-        alt="{{lang 'cart.gift_certificates.gift_certificate'}}"
-        title="{{lang 'cart.gift_certificates.gift_certificate'}}">
-    {{else}}
       {{> components/common/responsive-img
         image=image
         class="cart-item-image"
         fallback_size=../theme_settings.productthumb_size
-        lazyload="lazyload"
+        lazyload=../theme_settings.lazyload_mode
         default_image=../theme_settings.default_image_product
       }}
-    {{/if}}
   </div>
   <div class="product-card-details">
     <h2><a href="{{url}}">{{name}}</a></h2>

@@ -9,10 +9,16 @@
                 <span class="toggle-bar"></span>
                 <span class="toggle-bar"></span>
             </button>
-            <button id="search-toggle">
-                <svg class="icon">
-                    <use xlink:href="#icon-search" />
-                </svg>
+            <button id="search-toggle" class="navUser-action navUser-action--quickSearch"
+               type="button"
+               id="quick-search-expand"
+               data-search="quickSearch"
+               aria-controls="quickSearch"
+               aria-label="{{lang 'common.search'}}"
+            >
+            <svg class="icon">
+                <use xlink:href="#icon-search" />
+            </svg>
             </button>
         </div>
         <!-- store logo -->
@@ -21,17 +27,26 @@
         </div>
         <!-- account button and cart button -->
         <div class="buttons">
-            <button class="search-toggle header-button-alt">
+            <a class="navUser-action"
+                   href="{{urls.account.index}}"
+                   aria-label="{{lang 'common.account'}}"
+                ><button class="account-toggle header-button-alt">
                 <svg class="icon">
                     <use xlink:href="#icon-user" />
                 </svg>
             </button>
-            <a class="cart-toggle header-button-alt" href="{{urls.cart}}">
-                <span id="cart-button-qty"></span>
+            </a>
+            <a class="cart-toggle header-button-alt"
+            data-cart-preview
+            data-dropdown="cart-preview-dropdown"
+            href="{{urls.cart}}"
+            aria-label="{{lang 'cart.nav_aria_label'}}"">
+                <span id="cart-button-qty" class="countPill cart-quantity"></span>
                 <svg class="icon">
                     <use xlink:href="#icon-cart" />
                 </svg>
             </a>
+
         </div>
     </div>
 </header>
@@ -42,6 +57,10 @@
 <div id="mobile-menu" style="display: none">
     {{> components/custom/menu }}
 </div>
+<div class="dropdown dropdown--quickSearch" id="quickSearch" aria-hidden="true" data-prevent-quick-search-close>
+    {{> components/common/quick-search name='nav-quick-search'}}
+</div>
+<div class="dropdown-menu" id="cart-preview-dropdown" data-dropdown-content aria-hidden="true"></div>
 
 <script>
     window.onload = function() {
@@ -68,6 +87,5 @@
         
         
     } 
-    const cartBtnQty = document.getElementById("cart-button-qty");
-    cartBtnQty.innerText = localStorage.getItem("cart-quantity") || null;
+
 </script>

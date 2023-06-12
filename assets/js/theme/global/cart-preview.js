@@ -1,6 +1,6 @@
+import utils from '@bigcommerce/stencil-utils';
 import 'foundation-sites/js/foundation/foundation';
 import 'foundation-sites/js/foundation/foundation.dropdown';
-import utils from '@bigcommerce/stencil-utils';
 
 export const CartPreviewEvents = {
     close: 'closed.fndtn.dropdown',
@@ -38,7 +38,7 @@ export default function (secureBaseUrl, cartId) {
 
     $cart.on('click', event => {
         const options = {
-            template: 'common/cart-preview',
+            template: 'custom/cart-preview',
         };
 
         // Redirect to full cart page
