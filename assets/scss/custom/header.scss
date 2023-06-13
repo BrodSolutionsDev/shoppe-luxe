@@ -109,12 +109,14 @@
   left: 0;
   z-index: 99999;
   width: 100%;
-  overflow-y: auto;
+  overflow-y: scroll;
+  background: $light-grey; 
+  padding-bottom: 100px;
+  height: 100%; 
 }
 
 #close-mobile-menu {
-  position: fixed;
-  top: 95px;
+  position: absolute;
   right: 20px;
   color: $white;
   background: $black;
@@ -128,15 +130,17 @@
 }
 
 .mobile-menu {
+  position: relative;
   background: $light-grey;
   display: flex;
   flex-direction: column;
   gap: 20px;
   padding: 20px;
-  height: 100%;
+  height: fit-content;
   border-radius: $border-radius-lg;
-  overflow-y: scroll;
   padding-bottom: 100px;
+  max-width: 1200px;
+  margin: 0 auto;
 
   h2 {
     margin: 0;
