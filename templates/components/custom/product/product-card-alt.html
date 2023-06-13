@@ -2,36 +2,36 @@
   <div class="product-card-alt-content">
     <div class="product-card-img">
       {{#if type '==' 'GiftCertificate'}}
-        <img class="cart-item-fixed-image" src="{{cdn ../theme_settings.default_image_gift_certificate}}"
-          alt="{{lang 'cart.gift_certificates.gift_certificate'}}"
-          title="{{lang 'cart.gift_certificates.gift_certificate'}}">
+      <img class="cart-item-fixed-image" src="{{cdn ../theme_settings.default_image_gift_certificate}}"
+        alt="{{lang 'cart.gift_certificates.gift_certificate'}}"
+        title="{{lang 'cart.gift_certificates.gift_certificate'}}">
       {{else}}
-        {{> components/common/responsive-img
-          image=image
-          class="cart-item-image"
-          fallback_size=../theme_settings.productthumb_size
-          lazyload="lazyload"
-          default_image=../theme_settings.default_image_product
-        }}
+      {{> components/common/responsive-img
+      image=image
+      class="cart-item-image"
+      fallback_size=../theme_settings.productthumb_size
+      lazyload="lazyload"
+      default_image=../theme_settings.default_image_product
+      }}
       {{/if}}
     </div>
     <div class="product-card-details">
       <h2><a href="{{url}}">{{name}}</a></h2>
       {{#if options}}
-        {{#each options}}
-          <p>{{value}}</p>
-        {{/each}}
+      {{#each options}}
+      <p>{{value}}</p>
+      {{/each}}
       {{/if}}
     </div>
     <div class="product-card-priceAndQty">
       <div>
         {{#or ../customer (unless ../settings.hide_price_from_guests) (if type '==' 'GiftCertificate')}}
-          <span class="cart-item-value {{#if price_discounted}}price--discounted{{/if}}">{{price.formatted}}</span>
+        <span class="cart-item-value {{#if price_discounted}}price--discounted{{/if}}">{{price.formatted}}</span>
         {{#if price_discounted}}
-          <span class="cart-item-value">{{price_discounted.formatted}}</span>
+        <span class="cart-item-value">{{price_discounted.formatted}}</span>
         {{/if}}
         {{else}}
-          {{> components/common/login-for-pricing}}
+        {{> components/common/login-for-pricing}}
         {{/or}}
       </div>
       <div>
@@ -59,9 +59,11 @@
       </div>
     </div>
   </div>
-  <button class="product-card-delete">
+  <div 
+    class="product-card-delete"
+  >
     <svg class="icon">
       <use xlink:href="#icon-trash" />
     </svg>
-  </button>
+  </div>
 </div>
