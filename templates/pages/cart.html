@@ -18,13 +18,16 @@ cart: true
         {{#if cart.items.length}}
             <div class="loadingOverlay"></div>
 
-            <div data-cart-content class="cart-content-padding-right">
-                {{> components/cart/content}}
+            <div class="cart-content-wrapper">
+                <div data-cart-content class="cart-content-padding-right">
+                    {{> components/cart/content}}
+                </div>
+    
+                <div data-cart-totals class="cart-content-padding-right">
+                    {{> components/cart/totals}}
+                </div>
             </div>
-
-            <div data-cart-totals class="cart-content-padding-right">
-                {{> components/cart/totals}}
-            </div>
+            
 
             {{{region name="cart_below_totals"}}}
 

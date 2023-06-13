@@ -9,7 +9,7 @@
     </thead> -->
     <tbody class="cart-list">
         {{#each cart.items}}
-            {{> components/custom/product/product-card-alt id=this.id cart=cart name=this.name }}
+            {{> components/custom/product/product-card-cart id=this.id cart=cart name=this.name }}
         {{/each}}
     </tbody>
 </table>
