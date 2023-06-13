@@ -62,9 +62,9 @@
             "update": "Update shipping cost"
         },
         "preview": {
-            "checkout_now": "Check out now",
+            "checkout_now": "Checkout",
             "checkout_multiple": "or check out with multiple addresses",
-            "view_cart": "View Cart"
+            "view_cart": "Shopping Cart"
         },
         "label": "Your Cart ({quantity, plural, one {# item} other {# items}})",
         "is_empty": "Your cart is empty",
@@ -248,7 +248,7 @@
             "intro": "To redeem a gift certificate at {store_name}, follow the simple steps below.",
             "item1": "You need your unique gift certificate code, which is part of the gift certificate that was emailed to you as an attachment. It will look something like Z50-Y6K-COS-402.",
             "item2": "Browse the store and add items to your cart as you normally would.",
-            "item3": "Click the '<a href=\"{cart_url}\">View Cart</a>' link to view the contents of your shopping cart.",
+            "item3": "Click the '<a href=\"{cart_url}\">Shopping Cart</a>' link to view the contents of your shopping cart.",
             "item4": "Type your gift certificate code in to the 'Redeem Gift Certificate' box and click 'Go'."
         },
         "balance": {
@@ -852,7 +852,7 @@
         "errorMessage": "There was a problem retrieving your results. Please try again in a few seconds.",
         "quick_search": {
             "input_label": "Search",
-            "input_placeholder": "Search the store"
+            "input_placeholder": "Search products and knowledge"
         },
         "results": {
             "form_label": "Search Keyword:",

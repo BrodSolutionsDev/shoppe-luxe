@@ -1,0 +1,48 @@
+<div id="scc-preview-cart" class="flex-column">
+  {{#if cart.items.length}} {{#each (limit cart.items 4)}}
+
+  <a class="product-card-alt" href="{{url}}" alt="{{name}}" title="{{name}}">
+    <div class="product-card--image">
+      {{> components/common/responsive-img image=image class="cart-item-image" fallback_size=../theme_settings.productthumb_size lazyload=../theme_settings.lazyload_mode
+      default_image=../theme_settings.default_image_product }}
+    </div>
+    <div class="product-card-details">
+      <h5>{{name}}</h5>
+      {{#if options}} {{#each options}}
+      <p>{{value}}</p>
+      {{/each}} {{/if}}
+      <span>
+        <span class="cart-item-quantity">{{quantity}}</span>
+         {{#or ../customer (unless ../settings.hide_price_from_guests) (if type '==' 'GiftCertificate')}}
+        <span class="cart-item-value {{#if price_discounted}}price--discounted{{/if}}">{{price.formatted}}</span>
+        {{#if price_discounted}}
+        <span class="cart-item-value">{{price_discounted.formatted}}</span>
+        {{/if}} {{else}} {{> components/common/login-for-pricing}} {{/or}}
+      </p>
+    </div>
+  </a>
+
+  {{/each}}
+
+  <div class="scc-preview-cart-total">
+    <strong>{{lang 'cart.checkout.subtotal'}}:</strong>
+    <span>{{cart.sub_total.formatted}}</span>
+  </div>
+    <a href="{{urls.cart}}" class="scc-button" title="Click here to edit shopping cart">
+      <svg class="scc-button-icon">
+        <use xlink:href="#icon-cart" />
+      </svg>
+      {{lang 'cart.preview.view_cart'}}
+    </a>
+  {{#if cart.show_primary_checkout_button}}
+  
+    <a class="scc-button" href="{{urls.checkout.single_address}}" title="{{lang 'cart.checkout.title'}}" data-primary-checkout-now-action>
+      <svg class="scc-button-icon"><use href="#icon-lock"></use></svg>{{lang 'cart.checkout.button'}}
+    </a>
+  
+  {{/if}} {{#if cart.additional_checkout_buttons}}
+  <div class="">{{#each cart.additional_checkout_buttons}} {{{this}}} {{/each}}</div>
+  {{/if}} {{else}}
+  <div role="alert" aria-live="polite" aria-atomic="false" class="previewCart-emptyBody">{{lang 'cart.checkout.empty_cart'}}</div>
+  {{/if}}
+</div>

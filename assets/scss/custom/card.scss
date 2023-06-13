@@ -11,4 +11,50 @@
     .card-body {
         padding:20px;
     }
+    // unset hover effect
+    &:hover {
+        border-color: unset;
+        box-shadow: none;
+    }
+}
+.card-title {
+    > a {
+        &:hover {
+            color: $black;
+        }
+    }
+}
+
+.card-figcaption-button {
+    border: $card-figcaption-button-border;
+    &:active {
+        background-color: unset;
+        border: none;
+    }
+    .card-figcaption-body & {
+        &:focus {
+            background-color: unset;
+        }
+    }
+
+}
+
+
+.card--alternate {
+    border: none;
+    .card-body {
+        background-color: $white;
+    }
+    &:hover {
+        border-color: transparent;
+        .card-body {
+            background-color: $white;
+            .card-text {
+                color: $black;
+            }
+        }
+        .card-title > a {
+            color: $black;
+        }
+    }
 }

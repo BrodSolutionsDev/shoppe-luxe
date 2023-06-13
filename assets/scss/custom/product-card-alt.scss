@@ -1,40 +1,23 @@
 .product-card-alt {
-  margin-bottom: 40px;
+  margin-bottom: 10px;
+  display: grid;
+  grid-template-areas: 
+  'image details'
+  'image priceAndQty';
+  grid-template-columns: 100px auto;
   box-shadow: $box-shadow;
   border-radius: $border-radius-lg;
-  display: flex;
-  justify-content: space-between;
-  height: fit-content;
-
-  &-content {
-    width: 100%;
-    padding: $padding-small;
-    height: fit-content;
-    display: grid;
-    grid-template-areas: 
-    'image details'
-    'image priceAndQty';
-    grid-template-columns: 80px auto;
-    border-radius: $border-radius-lg;
-  }
-
-  &:hover {
-    .product-card-delete {
-      width: 50px;
-      min-width: 50px;
-    }
-  }
+  padding: $padding-small;
+  background: $white;
 }
 
 .product-card-img {
   grid-area: image;
-  // border-radius: $border-radius-sm;
+  border-radius: $border-radius-sm;
   
   img {
     object-fit: contain;
     height: 100%;
-    width: 80px;
-    max-height: 80px;
     border-radius: $border-radius-lg;
   }
 }
@@ -60,12 +43,12 @@
   }
 
   h2 {
+    @include montserrat-bold;
     font-size: $font-size-16;
   }
 
   p {
     font-size: $font-size-14;
-    max-width: 200px;
   }
 }
 
@@ -76,12 +59,11 @@
   align-items: baseline;
   padding-left: $padding-small;
   padding-top: $padding-small;
-  position: relative;
 
   .cart-item-value { padding-left: 0 }
 
   .form-increment {
-    background: $light-grey;
+    background: $medium-grey;
     border-radius: $border-radius-full;
     color: $black;
     padding: 2px 7px;
@@ -96,21 +78,5 @@
       color: inherit;
       background: inherit;
     }
-  }
-}
-
-.product-card-delete  {
-  @include flex-center;
-  width: 0px;
-  min-width: 0px;
-  background: $black;
-  height: 0px;
-  transition: all $transition-slow;
-  border-top-right-radius: $border-radius-lg;
-  border-bottom-right-radius: $border-radius-lg;
-
-  .icon {
-    fill: $white !important;
-    height: auto;
   }
 }

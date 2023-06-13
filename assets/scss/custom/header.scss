@@ -8,7 +8,7 @@
   position: relative;
   padding: 0 5%;
   z-index: 1;
-  
+
   &-container {
     @include mobile-container;
 
@@ -73,7 +73,7 @@
       width: 12px;
       right: -4px;
     }
-        
+
     &:nth-of-type(2) {
       margin: 4px 0;
       align-self: center;
@@ -139,8 +139,8 @@
   padding-bottom: 100px;
 
   h2 {
-      margin: 0;
-      font-size: $font-size-20;
+    margin: 0;
+    font-size: $font-size-20;
   }
 
   a {
@@ -159,10 +159,10 @@
   border-radius: $border-radius-lg;
 
   h3 {
-      text-align: center;
-      font-size: $font-size-20;
-      margin-top: 0;
-      padding-bottom: 10px;
+    text-align: center;
+    font-size: $font-size-20;
+    margin-top: 0;
+    padding-bottom: 10px;
   }
 }
 
@@ -190,7 +190,6 @@
 // }
 
 .mobileMenu-toggleIcon {
-
   &::before {
     width: 55% !important;
     right: 0 !important;
@@ -219,17 +218,9 @@
   box-shadow: $box-shadow;
 }
 
-
-
-.navUser-item {
-  display: block !important;
-}
-
-#quickSearch {
-  position: fixed;
-  top: 80px;
-  left: 0;
-  z-index: 99999 !important;
-  width: 100%;
-  overflow-y: auto;
+// Quick Search
+.dropdown--quickSearch.is-open {
+  z-index: 99999;
+  position: absolute;
+  padding: 15px;
 }
