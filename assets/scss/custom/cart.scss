@@ -5,3 +5,49 @@
 .cart-content-padding-right {
     padding-right: 0;
 }
+
+.cart-content-wrapper {
+    display: flex;
+    flex-direction: column;
+
+    .cart-totals {
+        text-align: left;
+        max-width: 300px;
+        float: right;
+
+        .cart-total-label,
+        .cart-total-value {
+            width: 50%;
+        }
+
+        .cart-total-label {
+            padding-left: 0;
+        }
+    }
+
+    @media only screen and (min-width: 700px) {
+        flex-direction: row;
+        gap: 20px;
+
+        [data-cart-totals] {
+            width: 40%;
+
+            .cart-totals {
+                width: 100%;
+            }
+        }
+    
+        [data-cart-content] {
+            width: 60%;
+        }
+    }
+
+    @media only screen and (min-width: 800px) {
+        // gap: 50px;
+    }
+}
+
+.cart-actions {
+    display: flex;
+    justify-content: flex-end;
+}

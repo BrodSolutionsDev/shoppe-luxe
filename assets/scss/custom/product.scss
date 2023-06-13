@@ -17,6 +17,16 @@ $mobile-image-container-height: 338px;
     border-radius: $border-radius-lg;
     background: $bg-soft;
     border-color: $bg-soft;
+
+    .scc-slider-wide {
+      max-height: $mobile-image-container-height;
+      max-width: $mobile-image-container-height;
+
+      .slick-slide {
+        max-height: $mobile-image-container-height;
+        max-width: $mobile-image-container-height;
+      }
+    }
     
 
     .scc-slide,
