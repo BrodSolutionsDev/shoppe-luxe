@@ -14,7 +14,10 @@ body {
     background: $bg-soft;
     border-top-left-radius: $border-radius-lg;
     border-top-right-radius: $border-radius-lg;
-    padding: 0 5%;
+    
+    @media only screen and (max-width: 800px) {
+      padding: 0 5%;
+    }
   }
 }
 
