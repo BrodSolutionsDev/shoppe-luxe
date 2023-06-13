@@ -1,6 +1,10 @@
 #scc-preview-cart {
     align-items: center;
-    margin: 10px;
+    padding: 10px;
+    max-width: 400px;
+    background: $medium-grey;
+    border-radius: $border-radius-lg;
+
     &.dropdown {
         max-width: 500px;
     }
@@ -28,13 +32,26 @@
         font-family: "Bebas Neue", sans-serif;
         font-size: $font-size-20;
     }
+
+    @media only screen and (max-width: 500px) {
+        // margin-right: 5%;
+        max-width: 100%;
+        width: 100%;
+    }
 }
 #cart-preview-dropdown {
     position: absolute;
     top: 80px !important;
-    min-width: 400px !important;
+    // min-width: 400px !important;
     border-radius: $border-radius-sm;
-    right: 0 !important;
-    left: 0 !important;
+    // right: 0 !important;
+    // left: 0 !important;
     margin: auto !important;
+    max-width: 1200px;
+    background: transparent;
+    left: 50% !important;
+    transform: translateX(-50%) !important;
+    display: flex;
+    justify-content: right;
+    z-index: 9999 !important;
   }
