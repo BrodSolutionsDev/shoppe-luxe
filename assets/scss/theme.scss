@@ -82,10 +82,12 @@
 @import "custom/global/variables"; // IMPORTANT - load first
 // load order doesn't matter from here down
 @import "custom/button";
+@import "custom/calculator";
 @import "custom/card";
 @import "custom/carousel";
 @import "custom/cart";
 @import "custom/cart-preview";
+@import "custom/categories";
 @import "custom/footer";
 @import "custom/font";
 @import "custom/header";
