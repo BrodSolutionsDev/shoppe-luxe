@@ -17,6 +17,16 @@ $mobile-image-container-height: 338px;
     border-radius: $border-radius-lg;
     background: $bg-soft;
     border-color: $bg-soft;
+
+    .scc-slider-wide {
+      max-height: $mobile-image-container-height;
+      max-width: $mobile-image-container-height;
+
+      .slick-slide {
+        max-height: $mobile-image-container-height;
+        max-width: $mobile-image-container-height;
+      }
+    }
     
 
     .scc-slide,
@@ -133,8 +143,6 @@ $mobile-image-container-height: 338px;
 
 #description-show-more {
   margin: 15px auto;
-  left: 50%;
-  transform: translateX(-50%);
 }
 
 #tab-description {

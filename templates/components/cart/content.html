@@ -9,7 +9,7 @@
     </thead> -->
     <tbody class="cart-list">
         {{#each cart.items}}
-            {{> components/custom/product/product-card-alt }}
+            {{> components/custom/product/product-card-cart id=this.id cart=cart name=this.name }}
         {{/each}}
     </tbody>
 </table>
@@ -18,5 +18,19 @@
     const deleteBtns = document.querySelectorAll(".product-card-delete");
     deleteBtns.forEach(btn => {
         btn.style.height = Math.round(btn.parentNode.clientHeight) + "px";
+        btn.addEventListener("click", function(e) {
+            e.stopPropagation();
+            e.preventDefault();
+            let target;
+            if (e.target.parentNode.parentNode == document.querySelector(".product-card-delete")) {
+                target = e.target.parentNode.parentNode.parentNode
+                console.log("moving from svg")
+            } else {
+                target = e.target.parentNode.parentNode
+            }
+            // if (e.target == document.querySelector(".icon")) {
+            console.log(target.children[0].lastElementChild)         
+            // }
+        })
     })
 </script>
