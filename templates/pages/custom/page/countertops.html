@@ -44,6 +44,7 @@
             <div class="step-description">
                 <p>Find the epoxy that works for your project, then calculate how much you need.</p>
             </div>
+            {{> components/custom/epoxy-calculator }}
             <div class="step-products">
                 {{{region name="countertops_step1"}}}
             </div>
@@ -89,8 +90,8 @@
 
     {{{region name="countertops_bottom"}}}
 
-    <div class="page-related">
-        <h2 class="page-related-title">Related Products</h2>
+    
+        
         <div class="page-related-products">
             {{{region name="countertops_related"}}}
         </div>
@@ -104,7 +105,7 @@
 {{> layout/base}}
 
 <!-- graphql load all countertop category products -->
-<!-- <script>
+<script>
     fetch('/graphql', {
       method: 'POST',
       credentials: 'same-origin',
@@ -113,23 +114,103 @@
         'Authorization': 'Bearer {{ settings.storefront_api.token }}' // use auto-generated token
       },
       body: JSON.stringify({
-        query: `query MyFirstQuery {
-            products {
-              edges {
-                node {
-                  name
-                  sku
-                  defaultImage {
-                    url(width: 1280)
-                  }
-                }
+        query: `query CategoryByUrl {
+
+site {
+
+  route(path: "/shop/countertop-epoxy") {
+
+    node {
+
+      id
+
+      ... on Category {
+
+        name
+
+        entityId
+
+        description
+
+        products {
+
+          edges {
+
+            node {
+
+              name
+
+              defaultImage {
+
+                url(width: 1200)
+
               }
+
+              brand {
+
+                name
+
+                defaultImage {
+
+                  url(width: 200)
+
+                }
+
+              }
+
+              prices {
+
+                price {
+
+                  ...PriceFields
+
+                }
+
+                priceRange {
+
+                  min {
+
+                    ...PriceFields
+
+                  }
+
+                  max {
+
+                    ...PriceFields
+
+                  }
+
+                }
+
+              }
+
             }
+
           }
-        }`
+
+        }
+
+      }
+
+    }
+
+  }
+
+}
+
+}
+
+
+fragment PriceFields on Money {
+
+value
+
+currencyCode
+
+}`
       })
     })
     .then(res => res.json())
     .then(data => console.log(data)) // will log JSON result to browser console
     .catch(error => console.error(error));
-    </script> -->
+    </script>
