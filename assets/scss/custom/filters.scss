@@ -1,0 +1,38 @@
+.page-sidebar + .page-content {
+    width: 100%;
+    
+
+    @media only screen and (max-width: 699px) {
+        .productGrid .product {
+        }
+    }
+    @media only screen and (min-width: 700px) {
+        .productGrid .product {
+        }
+    }
+
+    @media only screen and (min-width: 1000px) {
+        .productGrid .product {
+        }
+    }
+}
+
+#faceted-search-container {
+     position: fixed;
+     width: 100%;
+     height: 100vh;
+     top: 0;
+     left: 0;
+     background: $light-grey;
+     padding-top: 100px;
+     padding-left: 30px;
+     z-index: 9999;
+
+     .actionBar {
+         display: block !important;
+     }
+
+     .facetedSearch {
+         width: 300px;
+     }
+}

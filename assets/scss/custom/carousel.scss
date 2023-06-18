@@ -244,6 +244,22 @@
             }
         }
     }
+
+    @media only screen and (max-width: 550px) {
+        position: absolute;
+        left: 0;
+        bottom: 0;
+        //transform: translateY(-50%);
+        width: 100%;
+        //backdrop-filter: blur(3px);
+
+        .button {
+            //padding: 7px 10px;
+            background: $black;
+            color: $white;
+            margin: 0 auto;
+        }
+    }
 }
 
 .heroCarousel-content--empty {
@@ -252,5 +268,16 @@
 
     .heroCarousel-action {
         width: 100%;
+    }
+}
+
+@media only screen and (max-width: 550px) {
+    .heroCarousel .slick-dots {
+        bottom: -20px !important;
+
+        li:not(.slick-active) {
+            top: 2px !important;
+            border: 2px solid $black;
+        }
     }
 }

@@ -32,18 +32,21 @@ category:
 {{{category.description}}}
 <div class="page">
     {{#if category.faceted_search_enabled}}
-        <aside class="page-sidebar" id="faceted-search-container">
+        <div class="page-sidebar" style="display: none" id="faceted-search-container">
+            {{> components/products/filter sort=pagination.category.sort}}
             {{> components/category/sidebar}}
-        </aside>
+        </div>
     {{else if category.subcategories}}
-        <aside class="page-sidebar" id="faceted-search-container">
+        <div class="page-sidebar" style="display: none" id="faceted-search-container">
+            {{> components/products/filter sort=pagination.category.sort}}
             {{> components/category/sidebar}}
-        </aside>
+        </div>
     {{else if category.shop_by_price}}
         {{#if theme_settings.shop_by_price_visibility}}
-             <aside class="page-sidebar" id="faceted-search-container">
-                {{> components/category/sidebar}}
-            </aside>
+             <div class="page-sidebar" style="display: none" id="faceted-search-container">
+            {{> components/products/filter sort=pagination.category.sort}}
+                {{> components/custom/filters }}
+            </div>
         {{/if}}
     {{/if}}
 
@@ -55,3 +58,28 @@ category:
 
 {{/partial}}
 {{> layout/base}}
+
+<script>
+    let isCategory = false;
+    if ("{{page_type}}" === "category") isCategory = true;
+
+    if (isCategory) {
+        const facetsContainer = document.getElementById("faceted-search-container");
+        const filtersButton = document.querySelector(".snackbar .scc-button");
+        const snackbar = document.querySelector(".snackbar");
+        filtersButton.addEventListener("click", function(e) {
+            e.preventDefault();
+            if (facetsContainer.style.display == "none") {
+                facetsContainer.style.display = "block";
+                snackbar.style.top = "0";
+                snackbar.style.bottom = "unset";
+                snackbar.style.boxShadow = "none";
+            } else {
+                facetsContainer.style.display = "none";
+                snackbar.style.bottom = "0";
+                snackbar.style.top = "unset";
+                snackbar.style.boxShadow = "0px -1px 5px 5px rgba(0, 0, 0, .2)";
+            }
+        })
+    }
+</script>
