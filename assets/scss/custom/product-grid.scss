@@ -19,3 +19,15 @@
         }
     }
 }
+
+.slick-track {
+    display: flex !important;
+
+    .slick-slide {
+        height: inherit !important;
+
+        .card {
+            height: 100%;
+        }
+    }
+}
