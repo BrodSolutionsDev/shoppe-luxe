@@ -47,7 +47,7 @@
                 "or": "or"
             },
             "button": "Checkout",
-            "empty_cart": "Your cart is empty",
+            "empty_cart": "Cart is empty",
             "title": "Click here to proceed to checkout",
             "item": "Item",
             "price": "Price",
@@ -66,8 +66,8 @@
             "checkout_multiple": "or check out with multiple addresses",
             "view_cart": "Shopping Cart"
         },
-        "label": "Your Cart ({quantity, plural, one {# item} other {# items}})",
-        "is_empty": "Your cart is empty",
+        "label": "Cart ({quantity, plural, one {# item} other {# items}})",
+        "is_empty": "Cart is empty",
         "invalid_entry_message": "[ENTRY] is not a valid entry",
         "coupon_code": "Coupon Code",
         "discount": "Discount",
@@ -126,12 +126,12 @@
             "preview": "Preview"
         },
         "added_to_cart": {
-            "what_next": "Ok, {num_products, plural, one {1 item was} other {# items were}} added to your cart. What's next?",
-            "your_cart_contains": "Your cart contains {num_products, plural, one {1 item} other {# items}}",
+            "what_next": "Ok, {num_products, plural, one {1 item was} other {# items were}} added to Cart. What's next?",
+            "your_cart_contains": "Cart contains {num_products, plural, one {1 item} other {# items}}",
             "proceed_to_checkout": "Proceed to checkout",
             "order_subtotal": "Order subtotal",
             "continue_shopping": "Continue Shopping",
-            "view_or_edit_cart": "View or edit your cart",
+            "view_or_edit_cart": "View or edit Cart",
             "you_might_also_like": "You may also like"
         }
     },
@@ -140,7 +140,7 @@
         "store_credit_overview": "{credit} Store Credit",
         "generic_error": "Oops! Something went wrong.",
         "currency": "Select Currency: {code}",
-        "currency_switch_promotion" : "Promotions and gift certificates that don't apply to the new currency will be removed from your cart. Are you sure you want to continue?",
+        "currency_switch_promotion" : "Promotions and gift certificates that don't apply to the new currency will be removed from Cart. Are you sure you want to continue?",
         "newsletter_signup": "Register for our newsletter",
         "form_submit": "Submit",
         "no_preference": "No Preference",
@@ -247,7 +247,7 @@
             "heading": "Redeem Gift Certificate",
             "intro": "To redeem a gift certificate at {store_name}, follow the simple steps below.",
             "item1": "You need your unique gift certificate code, which is part of the gift certificate that was emailed to you as an attachment. It will look something like Z50-Y6K-COS-402.",
-            "item2": "Browse the store and add items to your cart as you normally would.",
+            "item2": "Browse the store and add items to Cart as you normally would.",
             "item3": "Click the '<a href=\"{cart_url}\">Shopping Cart</a>' link to view the contents of your shopping cart.",
             "item4": "Type your gift certificate code in to the 'Redeem Gift Certificate' box and click 'Go'."
         },
@@ -272,7 +272,7 @@
         "submit_value": "Sign in",
         "forgot_password": "Forgot your password?",
         "new_customer": {
-            "heading": "New Customer?",
+            "heading": "Want to Join Stone Coat Insiders?",
             "intro": "Create an Stone Coat Insider account with us and you'll be able to:",
             "fact1": "Check out faster",
             "fact2": "Save multiple shipping addresses",
