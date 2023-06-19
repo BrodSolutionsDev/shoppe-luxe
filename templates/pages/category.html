@@ -25,7 +25,7 @@ category:
 {{{category.description}}}
 <div class="page">
     {{#if category.faceted_search_enabled}}
-        <div class="page-sidebar" style="display: none" id="faceted-search-container">
+        <div class="page-sidebar faceted-search-container"  id="faceted-search-container">
             {{> components/products/filter sort=pagination.category.sort}}
             {{> components/category/sidebar}}
         </div>
@@ -66,22 +66,12 @@ category:
     if ("{{page_type}}" === "category") isCategory = true;
 
     if (isCategory) {
-        const facetsContainer = document.getElementById("faceted-search-container");
+        const facetsContainer = document.querySelector(".faceted-search-container");
         const filtersButton = document.querySelector(".snackbar .scc-button");
         const snackbar = document.querySelector(".snackbar");
         filtersButton.addEventListener("click", function(e) {
             e.preventDefault();
-            if (facetsContainer.style.display == "none") {
-                facetsContainer.style.display = "block";
-                snackbar.style.top = "0";
-                snackbar.style.bottom = "unset";
-                snackbar.style.boxShadow = "none";
-            } else {
-                facetsContainer.style.display = "none";
-                snackbar.style.bottom = "0";
-                snackbar.style.top = "unset";
-                snackbar.style.boxShadow = "0px -1px 5px 5px rgba(0, 0, 0, .2)";
-            }
+            facetsContainer.classList.toggle("facets-open");
         })
     }
 </script>

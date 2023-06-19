@@ -17,16 +17,26 @@
     }
 }
 
-#faceted-search-container {
+.facets-open {
+    top: 80px !important;
+}
+
+.faceted-search-container {
      position: fixed;
+     border-top-right-radius: $border-radius-lg;
+     border-top-left-radius: $border-radius-lg;
      width: 100%;
+     max-width: 1200px;
      height: 100vh;
-     top: 0;
-     left: 0;
+     left: 50%;
+     transform: translateX(-50%);
+     top: 100%;
      background: $light-grey;
-     padding-top: 100px;
-     padding-left: 30px;
+     padding: 0 20px 150px 20px;
      z-index: 9999;
+     overflow-y: auto;
+     transition: all .15s;
+     box-shadow: $box-shadow-top;
 
      .actionBar {
          display: block !important;
@@ -34,5 +44,10 @@
 
      .facetedSearch {
          width: 300px;
+
+         .button {
+             background: $black;
+             color: $white;
+         }
      }
 }
