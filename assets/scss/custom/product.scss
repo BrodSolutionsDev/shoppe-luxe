@@ -263,33 +263,30 @@ background-image: linear-gradient(to bottom,rgba($bg-soft,0),$bg-soft 90%);
 .videoGallery.toggle {
   border-top: none;
   margin-bottom: 0;
-}
-
-.scc-video-slider,
-.scc-video-slider .slick-list, 
-.scc-video-slider .slick-track, 
-.scc-video-slider .slick-slide {
-  aspect-ratio: 16/9;
-  overflow: hidden;
-}
-
-.scc-video-slider .slick-slide {
-  height: unset;
-}
-
-.scc-video-slider {
-  margin-bottom: 50px;
-
-  .slick-next,
-  .slick-prev {
-    margin-top: unset;
-  }
-}
-
-.scc-video-slider .slick-slide iframe {
-  height: 100%;
   width: 100%;
-  top: 0;
+}
+
+.videos-list {
+    margin-bottom: 50px;
+    width: 100%;
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 20px;
+
+    &__video {
+        width: 100%;
+        aspect-ratio: 16/9;
+        overflow: hidden;
+
+        iframe {
+            width: 100%;
+            height: 100%;
+        }
+    }
+
+    @media only screen and (max-width: 600px) {
+        grid-template-columns: repeat(1, 1fr);
+    }
 }
 
 .info-icons-grid {
