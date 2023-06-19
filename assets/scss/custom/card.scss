@@ -1,6 +1,7 @@
 .card {
     @include card;
     padding: 0;
+    transition: all .15s;
     .card-figure, .card-body {
         border-radius: $border-radius-lg;
     }
