@@ -257,11 +257,11 @@
         }
     },
     "create_account": {
-        "heading": "New Account",
+        "heading": "Create a Stone Coat Insider Account",
         "created": {
-            "heading": "Your account has been created",
-            "intro": "Thank you for creating your account at {store_name}. Your account details have been emailed to {email}",
-            "continue": "Continue Shopping"
+            "heading": "Your Stone Coat Insider account has been created",
+            "intro": "Thank you for creating your Stone Coat Insider account at {store_name}. Your account details have been emailed to {email}",
+            "continue": "You Got This!"
         },
         "recaptcha_title": "Google recaptcha"
     },
@@ -273,13 +273,13 @@
         "forgot_password": "Forgot your password?",
         "new_customer": {
             "heading": "New Customer?",
-            "intro": "Create an account with us and you'll be able to:",
+            "intro": "Create an Stone Coat Insider account with us and you'll be able to:",
             "fact1": "Check out faster",
             "fact2": "Save multiple shipping addresses",
             "fact3": "Access your order history",
             "fact4": "Track new orders",
-            "fact5": "Save items to your Wish List",
-            "create_account": "Create Account"
+            "fact5": "Save items to your Project List",
+            "create_account": "Create Stone Coat Insider Account"
         }
     },
     "reset_password": {
@@ -287,13 +287,13 @@
         "intro": "Fill in your email below to request a new password. An email will be sent to the address below containing a link to verify your email address."
     },
     "account": {
-        "breadcrumb": "Your Account",
+        "breadcrumb": "Account",
         "nav": {
             "overview": "Overview",
             "orders": "Orders",
             "returns": "Returns",
             "messages": "Messages ({num_new_messages})",
-            "wishlists": "Wish Lists",
+            "wishlists": "Project Lists",
             "recently_viewed": "Recently Viewed",
             "settings": "Account Settings",
             "addresses": "Addresses",
@@ -301,7 +301,7 @@
         },
         "mobile_nav": {
             "messages": "Messages",
-            "wishlists": "Wish Lists"
+            "wishlists": "Project Lists"
         },
         "addresses": {
             "heading": "Addresses",
@@ -468,28 +468,28 @@
             "no_items": "The items you've recently looked at on our site will appear below."
         },
         "wishlists": {
-            "heading": "Wish Lists",
-            "tag_line": "Fill in the form below to create a new Wish List. Click the \"Create Wish List\" button when you're done.",
-            "new": "New Wish List",
-            "you_have_none": "You have no Wish Lists, add one now.",
-            "empty_wishlist": "Your Wish List is empty. When you add items to your Wish List they will appear here.",
+            "heading": "Project Lists",
+            "tag_line": "Fill in the form below to create a new Project List. Click the \"Create Project List\" button when you're done.",
+            "new": "New Project List",
+            "you_have_none": "You have no Project Lists, add one now.",
+            "empty_wishlist": "Your Project List is empty. When you add items to your Project List they will appear here.",
             "num_items": "Items",
-            "add_item": "Add to Wish List",
+            "add_item": "Add to Project List",
             "remove_item": "Remove Item",
-            "name": "Wish List Name",
+            "name": "Project List Name",
             "shared": "Shared",
             "action": "Action",
-            "add": "Add Wish List",
+            "add": "Add Project List",
             "delete_all": "Delete All",
-            "edit": "Edit Wish List",
-            "view_heading": "Wish List: {name}",
-            "share_intro": "Share this Wish List with friends:",
+            "edit": "Edit Project List",
+            "view_heading": "Project List: {name}",
+            "share_intro": "Share this Project List with friends:",
             "num_products": "{num_products, plural, one {1 product} other {# products}}",
-            "create": "Create Wish List",
-            "save": "Save Wish List",
-            "delete_alert": "Are you sure you want to delete your Wish List(s)? This action cannot be undone.",
-            "create_new": "Create New Wish List",
-            "add_to_default": "Add to My Wish List",
+            "create": "Create Project List",
+            "save": "Save Project List",
+            "delete_alert": "Are you sure you want to delete your Project List(s)? This action cannot be undone.",
+            "create_new": "Create New Project List",
+            "add_to_default": "Add to My Project List",
             "enter_wishlist_name_error": "You must enter a wishlist name."
         }
     },
@@ -653,8 +653,8 @@
             "searchsubs": "Automatically search sub categories"
         },
         "wishlist": {
-            "name": "Wish List Name:",
-            "public": "Share Wish List?"
+            "name": "Project List Name:",
+            "public": "Share Project List?"
         },
         "validate": {
             "account": {
