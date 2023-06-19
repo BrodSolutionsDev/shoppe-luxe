@@ -40,7 +40,7 @@
             data-cart-preview
             data-dropdown="cart-preview-dropdown"
             href="{{urls.cart}}"
-            aria-label="{{lang 'cart.nav_aria_label'}}"">
+            aria-label="{{lang 'cart.nav_aria_label'}}">
                 <span id="cart-button-qty" class="countPill cart-quantity"></span>
                 <svg class="icon">
                     <use xlink:href="#icon-cart" />
@@ -88,4 +88,21 @@
         
     } 
 
+    const previewCart = document.getElementById("cart-preview-dropdown");
+    const previewCartOptions = {
+        attributes: true,
+    }
+
+    function callback(mutationList, observer) {
+        mutationList.forEach((mutation) => {
+            if (mutation.type === 'attributes' && mutation.attributeName === 'class') {
+                if (!previewCart.classList.contains("is-open")) {
+                    previewCart.style.display = "none";
+                }
+            }
+        })
+    }
+
+    const observer = new MutationObserver(callback);
+    observer.observe(previewCart, previewCartOptions);
 </script>
