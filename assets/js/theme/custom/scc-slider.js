@@ -8,6 +8,13 @@ export default function () {
         swipeToSlide: true,
         responsive: [
             {
+                breakpoint: 600,
+                settings: {
+                    slidesToShow: 2,
+                    slidesToScroll: 1,
+                },
+            },
+            {
                 breakpoint: 800,
                 settings: {
                     slidesToShow: 3,
