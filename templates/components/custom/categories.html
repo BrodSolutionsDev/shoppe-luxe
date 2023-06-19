@@ -1,7 +1,7 @@
 <div class="section scc-categories">
   <h2>Shop By Category</h2>
   <div class="scc-slider flex-row">
-    {{#each categories}} {{#unless @index '>' '8'}}
+    {{#each categories}}
     
     <a class="product-card-alt" href="{{url}}">
       {{#if image}}
@@ -10,9 +10,9 @@
       </div>
       {{/if}}
       <div class="product-card-details">
-        {{name}}
+        <h2>{{name}}</h2>
       </div>
     </a>
-    {{/unless}} {{/each}}
+    {{/each}}
   </div>
 </div>
