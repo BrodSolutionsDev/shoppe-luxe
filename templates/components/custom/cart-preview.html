@@ -29,7 +29,7 @@
     <span>{{cart.sub_total.formatted}}</span>
   </div>
     <a href="{{urls.cart}}" class="scc-button" title="Click here to edit shopping cart">
-      <svg class="icon">
+      <svg class="scc-button-icon">
         <use xlink:href="#icon-cart" />
       </svg>
       {{lang 'cart.preview.view_cart'}}
@@ -37,7 +37,7 @@
   {{#if cart.show_primary_checkout_button}}
   
     <a class="scc-button" href="{{urls.checkout.single_address}}" title="{{lang 'cart.checkout.title'}}" data-primary-checkout-now-action>
-      <svg class="icon"><use href="#icon-lock"></use></svg>{{lang 'cart.checkout.button'}}
+      <svg class="scc-button-icon"><use href="#icon-lock"></use></svg>{{lang 'cart.checkout.button'}}
     </a>
   
   {{/if}} {{#if cart.additional_checkout_buttons}}
