@@ -13,6 +13,7 @@ gql: 'query CategoryByUrl {
             edges {
               node {
                 name
+                id
                 path
                 addToCartUrl
                 seo {
@@ -20,35 +21,6 @@ gql: 'query CategoryByUrl {
                 }
                 inventory {
                     isInStock
-                }
-                variants {
-                  edges {
-                    node {
-                      sku
-                      id
-                      entityId
-                      defaultImage {
-                        url(width: 400)
-                      }
-                      inventory {
-                        isInStock
-                    }
-                    
-                      prices {
-                        price {
-                          ...PriceFields
-                        }
-                        priceRange {
-                          min {
-                            ...PriceFields
-                          }
-                          max {
-                            ...PriceFields
-                          }
-                        }
-                      }
-                    }
-                  }
                 }
                 categories {
                     edges {
@@ -61,7 +33,7 @@ gql: 'query CategoryByUrl {
                     }
                 }
                 defaultImage {
-                  url(width: 400)
+                  url(width: 400, height: 400)
                 }
                 prices {
                   price {
@@ -141,16 +113,15 @@ gql: 'query CategoryByUrl {
             <div class="step-products">
                 {{{region name="countertops_step1"}}}
             </div>
-            <div id="epoxy" class="scc-slider">
+            <ul id="epoxy" class="scc-slider">
               {{#if gql.data.site}}
-
-              {{#each gql.data.site.route.node.products.edges}}
-                {{#if node.inventory.isInStock}}
-                {{> components/custom/product/product-card-page product=node}}                  
-                {{/if}}
+                {{#each gql.data.site.route.node.products.edges}}
+                  <li class="scc-slide">
+                    {{> components/custom/product/product-card-page product=node}}
+                  </li>           
               {{/each}}
             {{/if}}
-            </div>
+            </ul>
         </div>
 
         <div class="step">
@@ -164,6 +135,7 @@ gql: 'query CategoryByUrl {
             <div class="step-products">
                 {{{region name="countertops_step2"}}}
             </div>
+            {{> components/custom/colorant-products }}
         </div>
 
         <div class="step">

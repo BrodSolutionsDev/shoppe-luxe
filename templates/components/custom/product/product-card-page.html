@@ -1,41 +1,26 @@
 {{#if product}}
-{{#if product.variants.edges}}
-{{#each product.variants.edges}}
-{{#if node.inventory.isInStock}}
-<div class="card">
-  <div class="card-body">
-    <div class="product-card-img">
-      <img src="{{node.defaultImage.url}}" alt="{{name}}"
-      class="cart-item-image"/>
-    </div>
-    <div class="product-card-details">
-      
-    </div>
-    <div class="product-card-button">
-      <a href="/cart.php?action=add&sku={{node.sku}}&source=landing-page"" class="scc-button">Add To Cart</a>
-    </div>
-  </div>
-</div>
-{{/if}}
-{{/each}}
-{{else}}
 {{#if product.inventory.isInStock}}
-<div class="card">
-  <div class="card-body">
-    <div class="product-card-img">
-      <img src="{{product.defaultImage.url}}" alt="{{name}}"
-      class="cart-item-image"/>
+<article class="card">
+  <figure class="card-figure">
+    <div class="card-img-container">
+      <img src="{{product.defaultImage.url}}" alt="{{product.seo.metaDescription}}"
+      class="card-image lazyautosizes ls-is-cached lazyloaded"/>
     </div>
-    <div class="product-card-details">
-      <h2><a href="/cart.php?action=add&sku={{productsku}}&source=landing-page">{{product.name}}</a></h2>
-      <!--  -->
+      <div class="card-body">
+      <h3 class="card-title">{{product.name}}</h3>
+      <div class="card-text price-section">
+        {{#if product.prices.priceRange.max.value '!==' product.prices.priceRange.min.value}}
+          ${{product.prices.priceRange.min.value}} - ${{product.prices.priceRange.max.value}}
+        {{else}}
+          ${{product.prices.price.value}}
+        {{/if}}
+    </div>
     </div>
     <div class="product-card-button">
-      <a href="{{product.addToCartUrl}}" class="scc-button">Add To Cart</a>
+      <a href="{{product.path}}" class="scc-button">View Product</a>
     </div>
-  </div>
-</div>
-{{/if}}
+  </figure>
+</article>
 {{/if}}
 {{/if}}
 
