@@ -1,15 +1,17 @@
-<ul id="colorants" class="">
-</ul>
+<div id="colorants" class="scc-slider">
+
+</div>
 <script>
-fetch('/graphql', {
-      method: 'POST',
-      credentials: 'same-origin',
-      headers: {
-        'Content-Type': 'application/json',
-        'Authorization': 'Bearer {{ settings.storefront_api.token }}' // use auto-generated token
-      },
-      body: JSON.stringify({
-        query: `query CategoryByUrl {
+    // fetch the products from the GraphQL API
+  fetch("/graphql", {
+    method: "POST",
+    credentials: "same-origin",
+    headers: {
+      "Content-Type": "application/json",
+      Authorization: "Bearer {{ settings.storefront_api.token }}", // use auto-generated token
+    },
+    body: JSON.stringify({
+      query: `query CategoryByUrl {
 site {
   route(path: "/shop/colorants") {
     node {
@@ -57,18 +59,19 @@ site {
 fragment PriceFields on Money {
 value
 currencyCode
-}`
-      })
-    })
-    .then(res => res.json())
-    .then(data => {
+}`,
+    }),
+  })
+    .then((res) => res.json())
+    .then((data) => {
       // append the data to the #colorants ul
-      const colorants = document.getElementById('colorants');
-      var slide = document.createElement("li");
-      slide.classList.add("scc-slide");
+      const colorants = document.getElementById("colorants");
       const products = data.data.site.route.node.products.edges;
-      products.forEach(product => {
-        slide.innerHTML(`
+      products.forEach((product) => {
+        var slide = document.createElement("li");
+        slide.classList.add("scc-slide");
+
+        slide.innerHTML = `
       <article class="card">
   <figure class="card-figure">
     <div class="card-img-container">
@@ -90,11 +93,10 @@ currencyCode
     </div>
   </figure>
 </article>
-      `)
-        
+      `;
+      colorants.appendChild(slide);
       });
-      
-      
     })
-    .catch(error => console.error(error));
+    .catch((error) => console.error(error));
+
 </script>

@@ -1,3 +1,66 @@
+---
+gql: 'query CategoryByUrl {
+  site {
+    route(path: "/shop/flooring-epoxy") {
+      node {
+        id
+        ... on Category {
+          name
+          entityId
+          path
+          description
+          products {
+            edges {
+              node {
+                name
+                id
+                path
+                addToCartUrl
+                seo {
+                    metaDescription
+                }
+                inventory {
+                    isInStock
+                }
+                categories {
+                    edges {
+                        node {
+                            name
+                            path
+                            id
+                            entityId
+                        }
+                    }
+                }
+                defaultImage {
+                  url(width: 400, height: 400)
+                }
+                prices {
+                  price {
+                    ...PriceFields
+                  }
+                  priceRange {
+                    min {
+                      ...PriceFields
+                    }
+                    max {
+                      ...PriceFields
+                    }
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+  }
+  fragment PriceFields on Money {
+  value
+  currencyCode
+  }'
+---
 {{#partial "page"}}
 
 <!--
@@ -12,27 +75,29 @@
 
 <section class="page container stonecoat-landing">
     <div class="page-hero">
-        <img src="https://cdn11.bigcommerce.com/s-19qfhxpoud/images/stencil/original/image-manager/gray-and-red-rock-epoxy-kits-bg.jpg" alt="countertop epoxy" />
+        <img src="https://cdn11.bigcommerce.com/s-19qfhxpoud/images/stencil/original/image-manager/unnamed-1-.png" alt="flooring epoxy" />
     </div>
 
     
         <div class="page-title">
             <h1 class="page-heading">{{ page.title }}</h1>
-            <img src="/assets/icons/admin-tooltip.svg" alt="submenu" style="fill:black;"/>
+            <!-- <svg class="scc-button-icon">
+              <use xlink:href="#icon-admin-tooltip" />
+            </svg> -->
         </div>
-        <p class="page-meta">{{ head.meta_tags }}</h1>
         
-            {{{region name="countertops_top"}}}
+        
+            {{{region name="flooring_top"}}}
 
-        <div class="page-content">
-            <p>{{{page.content}}}</p>
-        </div>
+            <div class="scc-page-content">
+                <p>{{{page.content}}}</p>
+            </div>
 
         <div class="page-videos">
-            {{{region name="countertops_videos"}}}
+            {{{region name="flooring_videos"}}}
         </div>
     
-    {{{region name="countertops_middle"}}}
+    {{{region name="flooring_middle"}}}
 
     <div class="page-steps">
         <div class="step">
@@ -43,8 +108,17 @@
                 <p>Find the epoxy that works for your project, then calculate how much you need.</p>
             </div>
             <div class="step-products">
-                {{{region name="countertops_step1"}}}
+                {{{region name="flooring_step1"}}}
             </div>
+            <ul id="flooring" class="scc-slider">
+                {{#if gql.data.site}}
+                  {{#each gql.data.site.route.node.products.edges}}
+                    <li class="scc-slide">
+                      {{> components/custom/product/product-card-page product=node}}
+                    </li>           
+                {{/each}}
+              {{/if}}
+              </ul>
         </div>
 
         <div class="step">
@@ -53,10 +127,10 @@
                 <span class="step-icon">2</span>
             </div>
             <div class="step-description">
-                <p>Use spray paint, powders, dusts and dyes to your epoxy countertops.</p>
+                <p>Use spray paint, powders, dusts and dyes to your epoxy flooring.</p>
             </div>
             <div class="step-products">
-                {{{region name="countertops_step2"}}}
+                {{{region name="flooring_step2"}}}
             </div>
         </div>
 
@@ -68,7 +142,7 @@
                 <p>Need anything to add? Find it here.</p>
             </div>
             <div class="step-products">
-                {{{region name="countertops_step3"}}}
+                {{{region name="flooring_step3"}}}
             </div>
         </div>
 
@@ -80,11 +154,11 @@
                 <p>Get the supplies to make your project a success!</p>
             </div>
             <div class="step-products">
-                {{{region name="countertops_step4"}}}
+                {{{region name="flooring_step4"}}}
             </div>
     </div>
 
-    {{{region name="countertops_bottom"}}}
+    {{{region name="flooring_bottom"}}}
 
     
     
