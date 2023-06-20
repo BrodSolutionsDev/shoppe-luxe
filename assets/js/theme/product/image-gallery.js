@@ -10,14 +10,14 @@ export default class ImageGallery {
 
     init() {
         this.bindEvents();
-        this.setImageZoom();
+        // this.setImageZoom();
     }
 
     setMainImage(imgObj) {
         this.currentImage = { ...imgObj };
 
         this.setActiveThumb();
-        this.swapMainImage();
+        // this.swapMainImage();
     }
 
     setAlternateImage(imgObj) {
