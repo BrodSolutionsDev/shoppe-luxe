@@ -38,10 +38,14 @@ blog:
 </div>
 <!-- 3) New -->
     {{#if products.new}}
-    <div class="section">{{> components/custom/home-new products=products.new columns=theme_settings.homepage_new_products_column_count}}</div>
+    <div class="section">
+      {{> components/custom/home-new products=products.new columns=theme_settings.homepage_new_products_column_count}}</div>
      {{/if}}
 
-    
+     <!-- Region Home Below Bottom Products -->
+  <div id="home-below-bottom-products_region" class="section">
+    {{{region name="home_below_bottom_products"}}}
+  </div>
 
   <!-- 2 -->
   <div class="section">
@@ -55,15 +59,13 @@ blog:
 
   
   </div>
-  <!-- Region Home Below Bottom Products -->
-  <div id="home-below-bottom-products_region" class="section">
-    {{{region name="home_below_bottom_products"}}}
-  </div>
+ 
 
   <!-- 6) Tutorials -->
   {{#if settings.blog_enabled}}
   <div class="section">
-    {{> components/blog/post posts=blog.recent_posts}}</div>
+    {{> components/blog/post posts=blog.recent_posts}}
+  </div>
   {{/if}}
 
   <!-- Region Home Below Blog -->
