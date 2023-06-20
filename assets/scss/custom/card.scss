@@ -2,6 +2,7 @@
     @include card;
     padding: 0;
     transition: all .15s;
+    box-shadow: none;
     .card-figure, .card-body {
         border-radius: $border-radius-lg;
     }

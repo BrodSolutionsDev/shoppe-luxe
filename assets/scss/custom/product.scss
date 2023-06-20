@@ -167,6 +167,7 @@ $desktop-image-container-height: 480px;
       margin-bottom: 0;
       padding-right: $padding-small;
       min-width: fit-content;
+      color: $black;
     }
 
     small {
@@ -174,10 +175,10 @@ $desktop-image-container-height: 480px;
     }
 
     .form-select--large {
-      background: $light-grey;
-      border: none;
-      height: 50px;
+      //background: $bg-white;
+      box-shadow: $box-shadow;
       border-radius: $border-radius-sm;
+      color:$black;
     }
   }
 

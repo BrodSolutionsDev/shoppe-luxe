@@ -45,11 +45,9 @@
 
     <!-- Category:  Filters -->
     {{#if page_type '===' 'category'}}
-    <!-- TODO open a modal to the filters -->
-
     <a class="scc-button" href="#">
       <svg class="scc-button-icon"><use href="#icon-search"></use></svg>
-      Filters</a
+      Filter & Sort</a
     >
     {{/if}}
 
@@ -68,7 +66,7 @@
             <span data-product-stock>{{product.stock_level}}</span>
           </label>
         </div>
-        {{> components/products/add-to-cart with_wallet_buttons=true}} {{#if product.out_of_stock}} {{#if product.out_of_stock_message}} {{> components/common/alert/alert-error
+        {{> components/products/add-to-cart}} {{#if product.out_of_stock}} {{#if product.out_of_stock_message}} {{> components/common/alert/alert-error
         product.out_of_stock_message}} {{else}} {{> components/common/alert/alert-error (lang 'products.sold_out')}} {{/if}} {{/if}}
       </form>
       

@@ -7,14 +7,14 @@ body {
 .body {
   margin-top: -30px;
   background: $bg-soft;
-  margin-bottom: 150px;
+  margin-bottom: 100px;
 
   .container {
     z-index: 2;
     background: $bg-soft;
     border-top-left-radius: $border-radius-lg !important;
     border-top-right-radius: $border-radius-lg !important;
-    padding: 0 5%;
+    //padding: 0 5%;
   }
 }
 
@@ -31,7 +31,7 @@ body {
 .section {
   padding-top: $padding-medium;
   padding-bottom: $padding-medium;
-  max-width: 1200px;
+  max-width: $max-width;
   margin: 0 auto;
   z-index: 1;
   position: relative;

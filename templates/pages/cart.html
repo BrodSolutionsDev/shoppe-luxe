@@ -7,7 +7,6 @@ cart: true
 <div class="page">
 
     <div class="page-content" data-cart>
-        {{> components/common/breadcrumbs breadcrumbs=breadcrumbs}}
 
         {{> components/cart/page-title}}
 
@@ -20,17 +19,17 @@ cart: true
 
             <div class="cart-content-wrapper">
                 <div data-cart-content class="cart-content-padding-right">
+                    
                     {{> components/cart/content}}
+                    {{{region name="cart_below_content"}}}
                 </div>
     
                 <div data-cart-totals class="cart-content-padding-right">
                     {{> components/cart/totals}}
+                    {{{region name="cart_below_totals"}}}
                 </div>
             </div>
-            
-
-            {{{region name="cart_below_totals"}}}
-
+        
             {{#or customer (unless settings.hide_price_from_guests)}}
                 {{#if cart.show_primary_checkout_button}}
                     <div class="cart-actions cart-content-padding-right">
@@ -64,9 +63,11 @@ cart: true
                     <a class="button" href="{{urls.auth.login}}" title="{{lang 'cart.login_to_checkout'}}">{{lang 'cart.login_to_checkout'}}</a>
                 </div>
             {{/or}}
-
+            {{{region name="cart_below"}}}
+            {{> components/custom/categories title="Continue Shopping"}}
         {{else}}
             <h3 tabindex="0">{{lang 'cart.checkout.empty_cart'}}</h3>
+            {{> components/custom/categories title="Shop By Category"}}
         {{/if}}
 
     </div>

@@ -20,7 +20,12 @@
 .facets-open {
     top: 80px !important;
 }
-
+.facetedSearch-navList {
+	display: block;
+}
+.facetedSearch-toggle {
+	display: none;
+}
 .faceted-search-container {
      position: fixed;
      border-top-right-radius: $border-radius-lg;
@@ -39,12 +44,19 @@
      box-shadow: $box-shadow-top;
 
      .actionBar {
-         display: block !important;
+         margin: 0;
      }
 
-     .facetedSearch {
-         width: 300px;
-
+     #facetedSearch {
+        .accordion-navigation, .accordion {
+            border: 0!important;
+        }
+        .accordion-block {
+            background: $bg-white;
+            border-radius: $border-radius-lg;
+            margin-bottom: 5px;
+            padding: 5px;
+        }
          .button {
              background: $black;
              color: $white;

@@ -1,9 +1,9 @@
 .product-card-cart {
   margin-bottom: 10px;
   display: grid;
-  grid-template-areas: 
-  'image details'
-  'image priceAndQty';
+  grid-template-areas:
+    "image details"
+    "image priceAndQty";
   grid-template-columns: 100px auto;
   box-shadow: $box-shadow;
   border-radius: $border-radius-lg;
@@ -13,20 +13,21 @@
   .product-card-img {
     grid-area: image;
     border-radius: $border-radius-sm;
-    
+
     img {
       object-fit: contain;
       height: 100%;
+      min-height: 100px;
       border-radius: $border-radius-lg;
     }
   }
-  
+
   .product-card-details {
     grid-area: details;
     display: flex;
     flex-direction: column;
     padding-left: $padding-small;
-  
+
     a {
       text-decoration: none;
       transition: all $transition-fast;
@@ -36,21 +37,22 @@
         }
       }
     }
-  
-    h2, p {
+
+    h2,
+    p {
       margin: 0;
     }
-  
+
     h2 {
       @include montserrat-bold;
       font-size: $font-size-16;
     }
-  
+
     p {
       font-size: $font-size-14;
     }
   }
-  
+
   .product-card-priceAndQty {
     grid-area: priceAndQty;
     display: grid;
@@ -60,20 +62,24 @@
     align-items: center;
     padding-left: $padding-small;
     padding-top: $padding-small;
-  
-    .cart-item-value { padding-left: 0 }
-  
+
+    .cart-item-value {
+      padding-left: 0;
+      font-family: "Bebas Neue", sans-serif;
+      font-size: 20px;
+    }
+
     .form-increment {
       background: $medium-grey;
       border-radius: $border-radius-full;
       color: $black;
       padding: 2px 7px;
-  
+
       button {
         border: none;
         color: inherit;
       }
-    
+
       input {
         @include montserrat-regular;
         color: inherit;
@@ -100,4 +106,3 @@
     }
   }
 }
-
