@@ -1,3 +1,94 @@
+---
+gql: 'query CategoryByUrl {
+  site {
+    route(path: "/shop/countertop-epoxy") {
+      node {
+        id
+        ... on Category {
+          name
+          entityId
+          path
+          description
+          products {
+            edges {
+              node {
+                name
+                path
+                addToCartUrl
+                seo {
+                    metaDescription
+                }
+                inventory {
+                    isInStock
+                }
+                variants {
+                  edges {
+                    node {
+                      sku
+                      id
+                      entityId
+                      defaultImage {
+                        url(width: 400)
+                      }
+                      inventory {
+                        isInStock
+                    }
+                    
+                      prices {
+                        price {
+                          ...PriceFields
+                        }
+                        priceRange {
+                          min {
+                            ...PriceFields
+                          }
+                          max {
+                            ...PriceFields
+                          }
+                        }
+                      }
+                    }
+                  }
+                }
+                categories {
+                    edges {
+                        node {
+                            name
+                            path
+                            id
+                            entityId
+                        }
+                    }
+                }
+                defaultImage {
+                  url(width: 400)
+                }
+                prices {
+                  price {
+                    ...PriceFields
+                  }
+                  priceRange {
+                    min {
+                      ...PriceFields
+                    }
+                    max {
+                      ...PriceFields
+                    }
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+  }
+  fragment PriceFields on Money {
+  value
+  currencyCode
+  }'
+---
 {{#partial "page"}}
 
 <!--
@@ -18,13 +109,15 @@
     
         <div class="page-title">
             <h1 class="page-heading">{{ page.title }}</h1>
-            <img src="/assets/icons/admin-tooltip.svg" alt="submenu" style="fill:black;"/>
+            <!-- <svg class="scc-button-icon">
+              <use xlink:href="#icon-admin-tooltip" />
+            </svg> -->
         </div>
         <!-- <p class="page-meta">
             {{ head.meta_tags }}
         </p> -->
         
-            {{{region name="countertops_top"}}}
+        {{{region name="countertops_top"}}}
 
         <div class="scc-page-content">
             <p>{{{page.content}}}</p>
@@ -34,7 +127,7 @@
             {{{region name="countertops_videos"}}}
         </div>
     
-    {{{region name="countertops_middle"}}}
+    
 
     <div class="page-steps">
         <div class="step">
@@ -47,6 +140,16 @@
             {{> components/custom/epoxy-calculator }}
             <div class="step-products">
                 {{{region name="countertops_step1"}}}
+            </div>
+            <div id="epoxy" class="scc-slider">
+              {{#if gql.data.site}}
+
+              {{#each gql.data.site.route.node.products.edges}}
+                {{#if node.inventory.isInStock}}
+                {{> components/custom/product/product-card-page product=node}}                  
+                {{/if}}
+              {{/each}}
+            {{/if}}
             </div>
         </div>
 
@@ -103,114 +206,3 @@
 {{/partial}}
 
 {{> layout/base}}
-
-<!-- graphql load all countertop category products -->
-<script>
-    fetch('/graphql', {
-      method: 'POST',
-      credentials: 'same-origin',
-      headers: {
-        'Content-Type': 'application/json',
-        'Authorization': 'Bearer {{ settings.storefront_api.token }}' // use auto-generated token
-      },
-      body: JSON.stringify({
-        query: `query CategoryByUrl {
-
-site {
-
-  route(path: "/shop/countertop-epoxy") {
-
-    node {
-
-      id
-
-      ... on Category {
-
-        name
-
-        entityId
-
-        description
-
-        products {
-
-          edges {
-
-            node {
-
-              name
-
-              defaultImage {
-
-                url(width: 1200)
-
-              }
-
-              brand {
-
-                name
-
-                defaultImage {
-
-                  url(width: 200)
-
-                }
-
-              }
-
-              prices {
-
-                price {
-
-                  ...PriceFields
-
-                }
-
-                priceRange {
-
-                  min {
-
-                    ...PriceFields
-
-                  }
-
-                  max {
-
-                    ...PriceFields
-
-                  }
-
-                }
-
-              }
-
-            }
-
-          }
-
-        }
-
-      }
-
-    }
-
-  }
-
-}
-
-}
-
-
-fragment PriceFields on Money {
-
-value
-
-currencyCode
-
-}`
-      })
-    })
-    .then(res => res.json())
-    .then(data => console.log(data)) // will log JSON result to browser console
-    .catch(error => console.error(error));
-    </script>

@@ -1,0 +1,41 @@
+{{#if product}}
+{{#if product.variants.edges}}
+{{#each product.variants.edges}}
+{{#if node.inventory.isInStock}}
+<div class="card">
+  <div class="card-body">
+    <div class="product-card-img">
+      <img src="{{node.defaultImage.url}}" alt="{{name}}"
+      class="cart-item-image"/>
+    </div>
+    <div class="product-card-details">
+      
+    </div>
+    <div class="product-card-button">
+      <a href="/cart.php?action=add&sku={{node.sku}}&source=landing-page"" class="scc-button">Add To Cart</a>
+    </div>
+  </div>
+</div>
+{{/if}}
+{{/each}}
+{{else}}
+{{#if product.inventory.isInStock}}
+<div class="card">
+  <div class="card-body">
+    <div class="product-card-img">
+      <img src="{{product.defaultImage.url}}" alt="{{name}}"
+      class="cart-item-image"/>
+    </div>
+    <div class="product-card-details">
+      <h2><a href="/cart.php?action=add&sku={{productsku}}&source=landing-page">{{product.name}}</a></h2>
+      <!--  -->
+    </div>
+    <div class="product-card-button">
+      <a href="{{product.addToCartUrl}}" class="scc-button">Add To Cart</a>
+    </div>
+  </div>
+</div>
+{{/if}}
+{{/if}}
+{{/if}}
+
