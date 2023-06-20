@@ -21,8 +21,15 @@
 // tile of categories
 .scc-categories {
   .product-card-alt {
+    background: $black;
+    
     box-shadow: none;
     margin: 0 10px;
+    padding: 0;
+  }
+  h3 {
+    color: #fff;
+    margin: 0;
   }
   a {
     text-decoration: none;
