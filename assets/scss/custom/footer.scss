@@ -68,17 +68,26 @@
   }
 }
 
-#scc-snackbar-addtocart form {
-  display: flex;
-  flex-direction: column;
-  width: 320px;
-  margin: 0 auto;
+#scc-snackbar-addtocart {
+    width: 400px;
+    max-width: 80%;
 
-  [data-product-option-change] {
-    width: 100%;
+    form {
+        display: flex;
+        flex-direction: column;
+        width: 100%;
+        margin: 0 auto;
+
+        [data-product-option-change] {
+            width: 100%;
     
-    & > .form-field {
-      margin-bottom: 10px;
+            & > .form-field { 
+                margin-bottom: 10px;
+            }
+        }
+
+        button {
+            width: unset;
+        }
     }
-  }
 }
