@@ -292,9 +292,14 @@ background-image: linear-gradient(to bottom,rgba($bg-soft,0),$bg-soft 90%);
 
 .info-icons-grid {
   display: grid;
-  grid-template-columns: repeat(2, 1fr);
-  gap: 15px;
-  margin-bottom: 50px;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 50px;
+  margin: 25px auto 75px auto;
+  width: fit-content;
+
+  @media only screen and (max-width: 800px) {
+      grid-template-columns: repeat(2, 1fr);
+  }
 }
 
 .calculator-section {

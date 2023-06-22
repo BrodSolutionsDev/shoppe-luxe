@@ -18,40 +18,47 @@ category:
 
 {{> components/common/breadcrumbs breadcrumbs=breadcrumbs}}
 
-{{{region name="category_above_products"}}}
-
+{{{category.description}}}
+    <div class="category-header">
+        {{#if category.image}}
+            {{> components/common/responsive-img
+                image=category.image
+                fallback_size=theme_settings.zoom_size
+                lazyload=theme_settings.lazyload_mode
+                class="category-header-image"
+            }}
+        {{/if}}
+    </div>
 <div class="page">
-        <div class="page-sidebar faceted-search-container" id="faceted-search-container">
+    {{#if category.faceted_search_enabled}}
+        <div class="page-sidebar faceted-search-container"  id="faceted-search-container">
             {{> components/products/filter sort=pagination.category.sort}}
-            {{> components/faceted-search/index category}}
+            {{> components/category/sidebar}}
         </div>
+    {{else if category.subcategories}}
+        <div class="page-sidebar" style="display: none" id="faceted-search-container">
+            {{> components/products/filter sort=pagination.category.sort}}
+            {{> components/category/sidebar}}
+        </div>
+    {{else if category.shop_by_price}}
+        {{#if theme_settings.shop_by_price_visibility}}
+             <div class="page-sidebar" style="display: none" id="faceted-search-container">
+            {{> components/products/filter sort=pagination.category.sort}}
+                {{> components/category/sidebar }}
+            </div>
+        {{/if}}
+    {{/if}}
 
     <div class="page-content" id="product-listing-container">
-        <h2>{{category.name}}</h2>
+        {{#unless theme_settings.hide_category_page_heading }}
+            <h1 class="page-heading">{{category.name}}</h1>
+            {{{region name="category_below_header"}}}
+        {{/unless}}
         {{> components/category/product-listing}}
         {{{region name="category_below_content"}}}
     </div>
 </div>
-<div class="bg-white">
-    <div class="flex-row-wrap category-header more-categories">
-        <div class="category-header-text">
-            <h1 class="page-heading">{{category.name}}</h1>
-            {{#if category.description}}
-                {{{category.description}}}
-            {{/if}}
-        </div>
-        
-        {{#if category.image}}
-                {{> components/common/responsive-img
-                    image=category.image
-                    fallback_size=theme_settings.zoom_size
-                    lazyload=theme_settings.lazyload_mode
-                    class="category-header-image"
-                }}
-        {{/if}}
-    </div>
-    {{> components/custom/categories title="More Categories"}}
-</div> 
+
 {{/partial}}
 {{> layout/base}}
 

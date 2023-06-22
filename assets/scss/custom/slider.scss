@@ -28,3 +28,31 @@ ul.scc-slider-wide {
         }
     }
 }
+
+.home-project-card {
+    display: block;
+    position: relative;
+
+    h3 {
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        width: 300px;
+        background: rgba($black, .1);
+        text-align: center;
+        border-radius: $border-radius-lg;
+        backdrop-filter: blur(10px);
+        padding: 20px 0;
+        text-shadow: 3px 3px 5px rgba($black, .25);
+        margin: 0 !important;
+        font-size: 50px;
+    }
+
+    @media only screen and (max-width: 500px) {
+        h3 {
+            width: 200px;
+            font-size: 35px;
+        }
+    }
+}

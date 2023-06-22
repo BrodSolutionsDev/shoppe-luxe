@@ -129,6 +129,9 @@
                 {{name}}
             </a>
         </h3>
+        {{#if availability}}
+        <p class="card-desc">{{availability}}</p>
+        {{/if}}
 
         <div class="card-text" data-test-info-type="price">
             {{#or customer (unless settings.hide_price_from_guests)}}
