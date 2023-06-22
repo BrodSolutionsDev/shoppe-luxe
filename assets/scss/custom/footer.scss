@@ -66,6 +66,17 @@
       margin-bottom: 0;
     }
   }
+
+  .form-increment {
+    .button--icon {
+      font-family: "Montserrat", serif;
+      font-style: normal;
+      font-weight: 400;
+      color: #221F20;
+      font-size: 16px;
+      border: none;
+    }
+  }
 }
 
 #scc-snackbar-addtocart {
@@ -89,5 +100,8 @@
         button {
             width: unset;
         }
+
+
     }
+
 }

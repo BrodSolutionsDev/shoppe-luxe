@@ -1,0 +1,63 @@
+
+<div class="epoxy-calculator">
+    <h4>Square Foot Calculator</h4>
+    <!-- length x width inputs -->
+    <div class="epoxy-calculator-inputs flex-row">
+        <div class="epoxy-calculator-input">
+            <label for="length">Length (feet)</label>
+            <input type="number" id="length" name="length" placeholder="feet" />
+        </div>
+        <div class="epoxy-calculator-input">
+            <label for="width">Width (feet)</label>
+            <input type="number" id="width" name="width" placeholder="feet" />
+        </div>
+        <div class="epoxy-calculator-input">
+            <label for="depth">Depth (inches)</label>
+            <input type="number" id="depth" name="depth" placeholder="inches">
+        </div>
+        <!-- submit and calculate -->
+        <div class="epoxy-calculator-submit">
+            <button class="scc-button-action" id="calculate">Calculate</button>
+        </div>
+        </div>
+        
+        <!-- results -->
+        <div class="epoxy-calculator-results flex-row">
+            <div class="epoxy-calculator-results-amount">
+                <h5>Square Feet: <span id="results-square-feet">0</span></h5>
+            </div>
+            <div class="epoxy-calculator-results-amount">
+                <h5>Gallons Needed: <span id="results-gallons">0</span></h5>
+            </div>
+            <h5><em>Length &times; Width &times; depth &divide; 20 = Gallons</em></h5>
+        </div>
+        <script>
+            // get inputs
+            const length = document.getElementById('length');
+            const width = document.getElementById('width');
+            const depth = document.getElementById('depth');
+            const calculate = document.getElementById('calculate');
+            // get results
+            const resultsSquareFeet = document.getElementById('results-square-feet');
+            const resultsGallons = document.getElementById('results-gallons');
+            // calculate square feet
+            function calculateSquareFeet() {
+                const squareFeet = length.value * width.value * depth.value;
+                resultsSquareFeet.innerHTML = squareFeet;
+            }
+            // calculate gallons
+            function calculateGallons() {
+                const squareFeet = length.value * width.value * depth.value;
+                const gallons = squareFeet / 20;
+                resultsGallons.innerHTML = gallons.toFixed(2);
+            }
+            // calculate square feet and gallons
+            function calculateAll() {
+                calculateSquareFeet();
+                calculateGallons();
+            }
+            // calculate on click
+            calculate.addEventListener('click', calculateAll);
+        </script>
+
+</div>

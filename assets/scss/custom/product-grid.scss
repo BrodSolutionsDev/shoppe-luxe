@@ -1,6 +1,7 @@
 .productGrid {
     display: flex;
     flex-wrap: wrap;
+    justify-content: center;
 
     .product {
         flex: 0 1 25%;

@@ -16,7 +16,16 @@
         </div>
       {{/if}}
     {{/each}}
+    {{#each product.custom_fields}}
+    {{#if name '==' 'Calculator'}}
+    {{#if value '==' 'Surface'}}
     {{> components/custom/epoxy-calculator }}
+    {{/if}}
+    {{#if value '==' 'Deep'}}
+    {{> components/custom/deep-pour-calculator}}
+    {{/if}}
+    {{/if}}
+    {{/each}}
     <!-- <a class="scc-button" href="/calculator">Calculator</a> -->
   </div>
 </section>

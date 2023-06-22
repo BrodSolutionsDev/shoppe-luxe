@@ -347,7 +347,7 @@ export default class ProductDetails extends ProductDetailsBase {
      *
      */
     listenQuantityChange() {
-        this.$scope.on('click', '[data-quantity-change] button', event => {
+        this.$scope.on('click', '[data-quantity-change] .button--icon', event => {
             event.preventDefault();
             const $target = $(event.currentTarget);
             const viewModel = this.getViewModel(this.$scope);

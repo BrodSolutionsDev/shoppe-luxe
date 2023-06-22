@@ -13,6 +13,10 @@
     .card-body {
         padding:20px;
     }
+    .card-desc {
+        margin-bottom: 5px;
+        font-size: 14px;
+    }
     // unset hover effect
     &:hover {
         border-color: unset;

@@ -81,4 +81,17 @@
   const snackbar = document.querySelector(".snackbar");
 
   footer.style.bottom = `${snackbar.getBoundingClientRect().height - 7}px`;
+
+  if ("{{page_type}}" === "product") {
+    const incBtn = document.querySelector(".snackbar [data-action='inc']");
+    const decBtn = document.querySelector(".snackbar [data-action='dec']");
+
+    incBtn.addEventListener("click", function() {
+        incBtn.previousElementSibling.value = Number(incBtn.previousElementSibling.value) + 1;
+    });
+
+    decBtn.addEventListener("click", function() {
+        decBtn.nextElementSibling.value = Number(decBtn.nextElementSibling.value) - 1;
+    });
+  }
 </script>
