@@ -16,9 +16,6 @@ category:
 
 {{#partial "page"}}
 
-{{> components/common/breadcrumbs breadcrumbs=breadcrumbs}}
-
-{{{category.description}}}
     <div class="category-header">
         {{#if category.image}}
             {{> components/common/responsive-img
@@ -29,6 +26,7 @@ category:
             }}
         {{/if}}
     </div>
+{{{category.description}}}
 <div class="page">
     {{#if category.faceted_search_enabled}}
         <div class="page-sidebar faceted-search-container"  id="faceted-search-container">

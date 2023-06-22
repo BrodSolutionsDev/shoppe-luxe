@@ -23,6 +23,11 @@ body {
   @include mobile-container;
   max-width: $max-width;
   padding: 0;
+
+  @media only screen and (max-width:1280px) {
+      max-width: calc(100% - 80px) !important;
+      margin: 0 auto;
+  }
 }
 .container-overflow-none {
   overflow: hidden;
@@ -35,6 +40,8 @@ body {
   margin: 0 auto;
   z-index: 1;
   position: relative;
+
+
 }
 
 .page-content {

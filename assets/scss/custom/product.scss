@@ -8,6 +8,12 @@ $desktop-image-container-height: 480px;
     display: none;
   }
 
+  .price-section {
+      .price-now-label {
+          display: none !important;
+      }
+  }
+
   .product-options {
     padding-bottom: 0;
   }
@@ -209,7 +215,7 @@ $desktop-image-container-height: 480px;
     color: $black;
     padding: 2px 7px;
 
-    button {
+    .button--icon {
       border: none;
       
       span {

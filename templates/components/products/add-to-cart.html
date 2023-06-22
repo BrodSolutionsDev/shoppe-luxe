@@ -6,10 +6,10 @@
             <label class="form-label form-label--alternate"
                    for="qty[]">{{lang 'products.quantity'}}</label>
                 <div class="form-increment" data-quantity-change>
-                    <button class="button button--icon" data-action="dec">
+                    <span class="button button--icon" data-action="dec">
                         <span class="is-srOnly">{{lang 'products.quantity_decrease' name=product.title}}</span>
                         <span>&minus;</span>
-                    </button>
+                    </span>
                     <input class="form-input form-input--incrementTotal"
                            id="qty[]"
                            name="qty[]"
@@ -20,10 +20,10 @@
                            min="1"
                            pattern="[0-9]*"
                            aria-live="polite">
-                    <button class="button button--icon" data-action="inc">
+                    <span class="button button--icon" data-action="inc">
                         <span class="is-srOnly">{{lang 'products.quantity_increase' name=product.title}}</span>
                         <span>&plus;</span>
-                    </button>
+                    </span>
                 </div>
         </div>
 

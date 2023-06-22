@@ -90,7 +90,6 @@
 
     .icon {
         @include square(8px);
-        margin: -1px 0 0 spacing("eighth");
     }
 
     svg {
