@@ -24,7 +24,7 @@
     {{/if}}
     {{/each}}
 
-    <!-- <section class="productView-images" data-image-gallery>
+    <section class="productView-images" data-image-gallery>
         {{!--
         Note that these image sizes are coupled to image sizes used in /assets/js/theme/common/product-details.js
         for variant/rule image replacement
@@ -80,39 +80,30 @@
             </li>
             {{/each}}
         </ul>
-    </section> -->
+    </section>
 
-    <section class="productView-images">
-        <ul class="scc-slider-wide">
-            {{#each product.images}}
-            <li class="scc-slide">
-                <figure class="productView-image" data-image-gallery-main {{#if product.main_image}}
-                    data-zoom-image="{{getImageSrcset product.main_image (cdn theme_settings.default_image_product) 1x=theme_settings.zoom_size }}"
-                    {{/if}}>
-                    <div class="productView-img-container">
-                        {{!-- Remove the surrounding a-element if there is no main image. --}}
-                        {{#if product.main_image}}
-                        <a href="{{getImageSrcset product.main_image (cdn theme_settings.default_image_product) 1x=theme_settings.zoom_size}}"
-                            target="_blank">
-                            {{/if}}
-                            {{> components/common/responsive-img
+    <!-- <section class="productView-images"> -->
+    <!--     <ul class="scc-slider-wide"> -->
+    <!--         {{#each product.images}} -->
+    <!--         <li class="scc-slide"> -->
+    <!--             <figure class="productView-image" data-image-gallery-main {{#if product.main_image}} -->
+    <!--                 data-zoom-image="{{getImageSrcset product.main_image (cdn theme_settings.default_image_product) 1x=theme_settings.zoom_size }}" -->
+    <!--                 {{/if}}> -->
+    <!--                 <div class="productView-img-container" data-image-gallery-item> -->
+    <!--                         {{> components/common/responsive-img
                             image=this
                             class="productView-image--default"
-                            fallback_size=theme_settings.product_size
-                            lazyload=theme_settings.lazyload_mode
-                            default_image=theme_settings.default_image_product
-                            otherAttributes="data-main-image"
-                            }}
-                            {{!-- Remove the surrounding a-element if there is no main image. --}}
-                            {{#if product.main_image}}
-                        </a>
-                        {{/if}}
-                    </div>
-                </figure>
-            </li>
-            {{/each}}
-        </ul>
-    </section>
+                             fallback_size=theme_settings.product_size
+                             lazyload=theme_settings.lazyload_mode
+                             default_image=theme_settings.default_image_product
+                             otherAttributes="data-main-image"
+                             }} -->
+    <!--                 </div> -->
+    <!--             </figure> -->
+    <!--         </li> -->
+    <!--         {{/each}} -->
+    <!--     </ul> -->
+    <!-- </section> -->
 
     <section class="productView-details product-data">
         <div class="productView-product">

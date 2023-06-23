@@ -261,7 +261,7 @@ export default class ProductDetails extends ProductDetailsBase {
         }
 
         utils.api.productAttributes.optionChange(productId, $form.serialize(), 'products/bulk-discount-rates', (err, response) => {
-            console.log("Error:", err);
+            // console.log("Error:", err);
             const productAttributesData = response.data || {};
             const productAttributesContent = response.content || {};
             this.updateProductAttributes(productAttributesData);
