@@ -187,9 +187,9 @@ $desktop-image-container-height: 480px;
           overflow: hidden;
           padding: 0;
           border: none;
+          background: $white;
 
           img {
-              object-fit: cover;
               width: 100%;
           }
       }
