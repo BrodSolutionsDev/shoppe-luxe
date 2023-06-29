@@ -1,0 +1,110 @@
+
+<div id="tools" class="landing-page-grid">
+
+</div>
+<script>
+
+
+    // fetch the products from the GraphQL API
+  fetch("/graphql", {
+    method: "POST",
+    credentials: "same-origin",
+    headers: {
+      "Content-Type": "application/json",
+      Authorization: "Bearer {{ settings.storefront_api.token }}", // use auto-generated token
+    },
+    body: JSON.stringify({
+      query: `query CategoryByUrl {
+site {
+  route(path: "/shop/tools-supplies") {
+    node {
+      id
+      ... on Category {
+        name
+        entityId
+        description
+        products {
+          edges {
+            node {
+              name
+              availabilityV2 {
+                description
+              }
+              seo {
+                  metaDescription
+              }
+              path
+              inventory {
+                  isInStock
+              }
+
+              defaultImage {
+                url(width: 400, height: 400)
+              }
+              prices {
+                price {
+                  ...PriceFields
+                }
+                priceRange {
+                  min {
+                    ...PriceFields
+                  }
+                  max {
+                    ...PriceFields
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}
+}
+fragment PriceFields on Money {
+value
+currencyCode
+}`,
+    }),
+  })
+    .then((res) => res.json())
+    .then((data) => {
+            
+      // append the data to the #tools ul
+      const tools = document.getElementById("tools");
+      const products = data.data.site.route.node.products.edges;
+      products.forEach((product) => {
+        let gridItem = document.createElement("article");
+        gridItem.className = "card";
+        gridItem.innerHTML = `
+  <figure class="card-figure">
+    <div class="card-img-container">
+      <img src="${product.node.defaultImage.url}" alt="${product.node.seo.metaDescription}"
+      class="card-image lazyautosizes ls-is-cached lazyloaded"/>
+    </div>
+      <div class="card-body">
+      <h3 class="card-title">${product.node.name}</h3>
+      <p>${product.node.availabilityV2.description}</p>
+      <div class="card-text price-section">
+        {{#if product.prices.priceRange.max.value '!==' product.prices.priceRange.min.value}}
+          $${product.node.prices.priceRange.min.value.toFixed(2)} - $${product.node.prices.priceRange.max.value.toFixed(2)}
+        {{else}}
+          $${product.node.prices.price.value.toFixed(2)}
+        {{/if}}
+    </div>
+    </div>
+    <div class="product-card-button">
+      <a href="${product.node.path}" class="scc-button">View Product</a>
+    </div>
+  </figure>
+      `;
+      tools.appendChild(gridItem);
+
+        })
+      });
+
+          tools.className = "scc-slider"
+    .catch((error) => console.error(error));
+
+</script>

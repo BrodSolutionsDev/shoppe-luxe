@@ -51,7 +51,7 @@ $desktop-image-container-height: 480px;
       }
     }
 
-    
+       
 
     .scc-slide,
     .slick-track,
@@ -83,7 +83,8 @@ $desktop-image-container-height: 480px;
       }
     }
 
-
+    margin-bottom: 30px;
+    padding-top: 0;
     @media only screen and (min-width: 450px) {
         min-height: 350px;
         // max-height: 100%;
@@ -125,7 +126,8 @@ $desktop-image-container-height: 480px;
         }
     }
     @media only screen and (min-width: 800px) {
-        min-height: 338px;       
+        min-height: 338px;
+        margin-bottom: unset;
 
         .scc-slider-wide,
         .productView-img-container,
