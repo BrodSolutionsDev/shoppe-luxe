@@ -3,9 +3,11 @@
 .info-icon {
   display: flex;
   align-items: center;
-  max-width: 140px;
-  width: 140px;
+  max-width: 150px;
+  width: 150px;
   gap: 15px;
+  flex-direction: column;
+  text-align: center;
   
   &__img {
     @include flex-center;

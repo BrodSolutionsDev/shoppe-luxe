@@ -15,6 +15,17 @@
           </div>
         </div>
       {{/if}}
+      {{#if name '==' '1/2 Gallon Kit'}}
+        <div class="kit-size">
+          <img src="{{cdn 'img/info-icons/half_gallon_bucket.png'}}" alt="Half gallon kit">
+          <span class="equals">=</span>
+          <img src="{{cdn 'img/info-icons/square_footage.png'}}" alt="Square footage icon">
+          <div class="covers">
+            <p class="value">{{value}}</p>
+            <p>Sq Ft</p>
+          </div>
+        </div>
+      {{/if}}
     {{/each}}
 <div class="epoxy-calculator">
     <h4>Square Foot Calculator</h4>

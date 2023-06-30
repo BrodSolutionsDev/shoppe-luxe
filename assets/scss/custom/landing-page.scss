@@ -27,7 +27,8 @@
   .landing-page-grid {
       display: flex;
       gap: 20px;
-      flex-wrap: wrap;    
+      flex-wrap: wrap;
+      justify-content: center;
       
       .card {
           max-width: 300px;

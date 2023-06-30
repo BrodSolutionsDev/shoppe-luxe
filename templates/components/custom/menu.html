@@ -10,16 +10,19 @@
     {{/each}}
     </div>
   </div>
-  <!-- Projects & Resouces -->
+
+  {{#each pages}}
   <div class="nav-categories">
-    <h3>Projects & Resources</h3>
-    <div class="nav-list">
-    {{#each pages.[0].children}}
-      <a href="{{url}}">{{name}}</a>
-    {{/each}}
-    </div>
+    <h3>{{name}}</h3>
+            <div class="nav-list">
+                {{#each children}}
+                <a href="{{url}}">{{name}}</a>
+                {{/each}}
+            </div>
   </div>
-  <!-- Stone Coat Insiders -->
+  {{/each}}
+
+   <!-- Stone Coat Insiders -->
   <div class="nav-categories">
     <h3>Stone Coat Insiders</h3>
     <div class="nav-list-alt">
@@ -39,14 +42,5 @@
         <a href="#">Reorder</a>
       </div>
     </div>
-  </div>
-  <!-- our company -->
-  <div class="nav-categories">
-    <h3>Our Company</h3>
-    <div class="nav-list">
-    {{#each pages.[3].children}}
-    <a href="{{url}}">{{name}}</a>
-    {{/each}}
-  </div>
   </div>
 </div>

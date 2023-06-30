@@ -1,6 +1,11 @@
 <div class="info-icon">
   <div class="info-icon__img">
-    <p>{{value}}</p>
+      {{#if value '==' '1:1'}}
+          <img src="{{cdn 'img/info-icons/1-to-1.png'}}" alt="1:1 mix ratio icon">
+      {{/if}}
+      {{#if value '==' '2:1'}}
+          <img src="{{cdn 'img/info-icons/2-to-1.png'}}" alt="2:1 mix ratio icon">
+      {{/if}}
   </div>
   <p>Mix Ratio</p>
 </div>

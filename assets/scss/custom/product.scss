@@ -356,8 +356,12 @@ background-image: linear-gradient(to bottom,rgba($bg-soft,0),$bg-soft 90%);
   display: grid;
   grid-template-columns: repeat(4, 1fr);
   gap: 50px;
-  margin: 25px auto 75px auto;
+  margin-top: 25px;
+  margin-bottom: 75px;
   width: fit-content;
+  position: relative;
+  left: 50%;
+  transform: translateX(-50%);
 
   @media only screen and (max-width: 800px) {
       grid-template-columns: repeat(2, 1fr);
