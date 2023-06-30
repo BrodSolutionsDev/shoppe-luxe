@@ -3,14 +3,14 @@
     "brand": {},
     "category": {},
     "page": {
-      "countertops.html": "/countertops",
-      "showers.html": "/showers",
-      "flooring.html": "/flooring",
-      "artwork.html": "/artwork",
-      "woodworking.html": "/woodworking"
+      "artwork.html": "/projects/artwork-epoxy",
+      "countertops.html": "/projects/countertop-epoxy",
+      "flooring.html": "/projects/flooring-epoxy",
+      "showers.html": "/projects/shower-epoxy",
+      "woodworking.html": "/projects/woodworking-epoxy"
     },
     "product": {}
   },
-  "normalStoreUrl": "https://scc-development.mybigcommerce.com/.",
+  "normalStoreUrl": "https://stonecoatcountertops.com/",
   "port": 3000
 }
