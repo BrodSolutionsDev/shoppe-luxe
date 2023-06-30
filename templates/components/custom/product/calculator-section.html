@@ -1,32 +1,16 @@
 <section class="calculator-section">
-  <div class="calculator-section-heading">
-    <h3>How much do I need?</h3>
-  </div>
-  <div class="calculator-section-coverage">
-    {{#each product.custom_fields}}
-      {{#if name '==' '1 Gallon Kit'}}
-        <div class="kit-size">
-          <img src="{{cdn 'img/info-icons/one_gallon_bucket.png'}}" alt="One gallon kit">
-          <span class="equals">=</span>
-          <img src="{{cdn 'img/info-icons/square_footage.png'}}" alt="Square footage icon">
-          <div class="covers">
-            <p class="value">{{value}}</p>
-            <p>Sq Ft</p>
-          </div>
-        </div>
-      {{/if}}
-    {{/each}}
+  <!-- <div class="calculator-section-coverage"> -->
     {{#each product.custom_fields}}
     {{#if name '==' 'Calculator'}}
     {{#if value '==' 'Surface'}}
-    {{> components/custom/epoxy-calculator }}
+    {{> components/custom/epoxy-calculator fields=../product.custom_fields}}
     {{/if}}
     {{#if value '==' 'Deep'}}
-    {{> components/custom/deep-pour-calculator}}
+    {{> components/custom/deep-pour-calculator fields=../product.custom_fields}}
     {{/if}}
     {{/if}}
     {{/each}}
     <!-- <a class="scc-button" href="/calculator">Calculator</a> -->
-  </div>
+  <!-- </div> -->
 </section>
 

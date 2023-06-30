@@ -1,8 +1,5 @@
 .stonecoat-landing {
   .page-hero {
-    //   position: relative;
-    //   z-index: 10000;
-    //   margin: -15px 0 50px 0;
     margin:25px 0;
     margin-top: 0;
       img {
@@ -26,6 +23,53 @@
       font-weight: bold;
       font-size: 1.5rem;
       font-family: $montserrat;
+  }
+  .landing-page-grid {
+      display: flex;
+      gap: 20px;
+      flex-wrap: wrap;    
+      
+      .card {
+          max-width: 300px;
+          min-width: 200px;
+          padding: 15px;
+          margin-bottom: 0;
+
+          .card-body p {
+              margin-bottom: 5px;
+          }
+
+          .card-figure {
+              overflow: visible;
+              height: 100%;
+              padding-bottom: 40px;
+
+              .card-img-container {
+                  &::after {
+                    content: unset;
+                }
+
+                  .card-image {
+                      position: relative;
+                  }
+              }
+
+              .product-card-button {
+                  position: absolute;
+                  width: 100%;
+                  bottom: 0;
+              }
+
+              .scc-button {
+                  width: 100%;
+              }
+          }
+
+          @media only screen and (max-width: 600px) {
+              max-width: unset;
+              width: 100%;
+          }
+      }
   }
   .page-steps {
       .step {
@@ -60,7 +104,14 @@
                   width: 30px;
                   height: 30px;
               }
+          } 
+
+          @media only screen and (max-width: 600px) {
+              flex-direction: column-reverse;
+              text-align: center;
           }
       }
   }
 }
+
+

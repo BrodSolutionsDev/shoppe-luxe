@@ -1,4 +1,6 @@
 export default function () {
+    // window.addEventListener("load", function() {
+
     $('.scc-slider').slick({
         draggable: true,
         infinite: true,
@@ -33,4 +35,6 @@ export default function () {
         mobileFirst: true,
         swipeToSlide: true,
     });
+
+    // })
 }

@@ -1,7 +1,9 @@
-<div id="colorants" class="scc-slider">
+<div id="colorants" class="landing-page-grid">
 
 </div>
 <script>
+
+
     // fetch the products from the GraphQL API
   fetch("/graphql", {
     method: "POST",
@@ -24,6 +26,9 @@ site {
           edges {
             node {
               name
+              availabilityV2 {
+                description
+              }
               seo {
                   metaDescription
               }
@@ -64,15 +69,14 @@ currencyCode
   })
     .then((res) => res.json())
     .then((data) => {
+            
       // append the data to the #colorants ul
       const colorants = document.getElementById("colorants");
       const products = data.data.site.route.node.products.edges;
       products.forEach((product) => {
-        var slide = document.createElement("li");
-        slide.classList.add("scc-slide");
-
-        slide.innerHTML = `
-      <article class="card">
+        let gridItem = document.createElement("article");
+        gridItem.className = "card";
+        gridItem.innerHTML = `
   <figure class="card-figure">
     <div class="card-img-container">
       <img src="${product.node.defaultImage.url}" alt="${product.node.seo.metaDescription}"
@@ -80,23 +84,26 @@ currencyCode
     </div>
       <div class="card-body">
       <h3 class="card-title">${product.node.name}</h3>
+      <p>${product.node.availabilityV2.description}</p>
       <div class="card-text price-section">
         {{#if product.prices.priceRange.max.value '!==' product.prices.priceRange.min.value}}
-          ${product.node.prices.priceRange.min.value} - ${product.node.prices.priceRange.max.value}
+          $${product.node.prices.priceRange.min.value.toFixed(2)} - $${product.node.prices.priceRange.max.value.toFixed(2)}
         {{else}}
-          ${product.node.prices.price.value}
+          $${product.node.prices.price.value.toFixed(2)}
         {{/if}}
     </div>
     </div>
     <div class="product-card-button">
-      <a href="${product.path}" class="scc-button">View Product</a>
+      <a href="${product.node.path}" class="scc-button">View Product</a>
     </div>
   </figure>
-</article>
       `;
-      colorants.appendChild(slide);
+      colorants.appendChild(gridItem);
+
+        })
       });
-    })
+
+          colorants.className = "scc-slider"
     .catch((error) => console.error(error));
 
 </script>

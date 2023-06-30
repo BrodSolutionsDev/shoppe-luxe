@@ -10,14 +10,14 @@ export default class ImageGallery {
 
     init() {
         this.bindEvents();
-        // this.setImageZoom();
+        this.setImageZoom();
     }
 
     setMainImage(imgObj) {
         this.currentImage = { ...imgObj };
 
         this.setActiveThumb();
-        // this.swapMainImage();
+        this.swapMainImage();
     }
 
     setAlternateImage(imgObj) {
@@ -61,16 +61,19 @@ export default class ImageGallery {
 
     swapMainImage() {
         const isBrowserIE = navigator.userAgent.includes('Trident');
-
+        
         this.easyzoom.data('easyZoom').swap(
             this.currentImage.mainImageUrl,
             this.currentImage.zoomImageUrl,
             this.currentImage.mainImageSrcset,
         );
 
+        console.log(this.$mainImageNested)
+
         this.$mainImage.attr({
             'data-zoom-image': this.currentImage.zoomImageUrl,
         });
+
         this.$mainImageNested.attr({
             alt: this.currentImage.mainImageAlt,
             title: this.currentImage.mainImageAlt,
@@ -97,7 +100,7 @@ export default class ImageGallery {
         const $image = this.easyzoom.data('easyZoom').$zoom;
         const height = $image.height();
         const width = $image.width();
-
+        
         if (height < containerHeight || width < containerWidth) {
             this.easyzoom.data('easyZoom').hide();
         }

@@ -8,6 +8,11 @@ $desktop-image-container-height: 480px;
     display: none;
   }
 
+  .productView-subTitle {
+      font-size: 16px;
+      margin: 0;
+  }
+
   .price-section {
       .price-now-label {
           display: none !important;
@@ -24,6 +29,10 @@ $desktop-image-container-height: 480px;
     border-radius: $border-radius-lg;
     background: $bg-soft;
     border-color: $bg-soft;
+    height: fit-content;
+    margin-bottom: 0;
+    max-width: 90%;
+    margin: 0 auto;
 
     .scc-slider-wide {
       max-height: $mobile-image-container-height;
@@ -42,7 +51,7 @@ $desktop-image-container-height: 480px;
       }
     }
 
-    
+       
 
     .scc-slide,
     .slick-track,
@@ -74,7 +83,8 @@ $desktop-image-container-height: 480px;
       }
     }
 
-
+    margin-bottom: 30px;
+    padding-top: 0;
     @media only screen and (min-width: 450px) {
         min-height: 350px;
         // max-height: 100%;
@@ -105,7 +115,7 @@ $desktop-image-container-height: 480px;
 
     @media only screen and (min-width: 700px) {
         min-height: 650px;
-
+        max-width: 100%;
         .scc-slider-wide,
         .productView-img-container,
         .scc-slider-wide .slick-slide {
@@ -116,7 +126,8 @@ $desktop-image-container-height: 480px;
         }
     }
     @media only screen and (min-width: 800px) {
-        min-height: 338px;       
+        min-height: 338px;
+        margin-bottom: unset;
 
         .scc-slider-wide,
         .productView-img-container,
@@ -163,6 +174,51 @@ $desktop-image-container-height: 480px;
             margin: unset;
         }
     }
+  }
+
+  .productView-thumbnails {
+      width: 100%;
+      margin: 0 auto;
+
+      .productView-thumbnail:first-of-type {
+          padding-left: 0;
+      }
+
+      .productView-thumbnail-link {
+          border-radius: $border-radius-lg;
+          overflow: hidden;
+          padding: 0;
+          border: none;
+          background: $white;
+
+          img {
+              width: 100%;
+          }
+      }
+
+      @media only screen and (min-width: 450px) {
+          width: 350px;
+      }
+
+      @media only screen and (min-width: 500px) {
+          width: 450px;
+      }
+ 
+      @media only screen and (min-width: 700px) {
+          width: 650px;
+      }
+
+      @media only screen and (min-width: 800px) {
+          width: 338px;
+      }
+
+      @media only screen and (min-width: 900px) {
+          width: 400px;
+      }
+
+      @media only screen and (min-width: 1000px) {
+          width: 450px
+      }
   }
 
   .form-field {

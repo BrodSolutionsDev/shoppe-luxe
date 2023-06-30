@@ -8,7 +8,8 @@
     </div>
       <div class="card-body">
       <h3 class="card-title">{{product.name}}</h3>
-      <p><small>hello</small></p>
+      <script>console.log("{{product.availabilityV2.description}}")</script>
+      <p>{{product.availabilityV2.description}}</p>
       <div class="card-text price-section">
         {{#if product.prices.priceRange.max.value '!==' product.prices.priceRange.min.value}}
           ${{product.prices.priceRange.min.value}} - ${{product.prices.priceRange.max.value}}
