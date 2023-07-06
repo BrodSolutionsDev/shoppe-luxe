@@ -1,3 +1,69 @@
+---
+gql: 'query CategoryByUrl {
+  site {
+    route(path: "/products/artwork-epoxy") {
+      node {
+        id
+        ... on Category {
+          name
+          entityId
+          path
+          description
+          products {
+            edges {
+              node {
+                name
+                availabilityV2 {
+                  description
+                }
+                id
+                path
+                addToCartUrl
+                seo {
+                    metaDescription
+                }
+                inventory {
+                    isInStock
+                }
+                categories {
+                    edges {
+                        node {
+                            name
+                            path
+                            id
+                            entityId
+                        }
+                    }
+                }
+                defaultImage {
+                  url(width: 400, height: 400)
+                }
+                prices {
+                  price {
+                    ...PriceFields
+                  }
+                  priceRange {
+                    min {
+                      ...PriceFields
+                    }
+                    max {
+                      ...PriceFields
+                    }
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+  }
+  fragment PriceFields on Money {
+  value
+  currencyCode
+  }'
+---
 {{#partial "page"}}
 
 <!--
@@ -12,81 +78,82 @@
 
 <section class="page container stonecoat-landing">
     <div class="page-hero">
-        <img src="https://cdn11.bigcommerce.com/s-19qfhxpoud/images/stencil/original/image-manager/gray-and-red-rock-epoxy-kits-bg.jpg" alt="countertop epoxy" />
+        <img src="https://cdn11.bigcommerce.com/s-fy21dwtsxg/images/stencil/original/image-manager/art-category.jpg?t=1688653654&_gl=1*14c0rw*_ga*MTkxMjc4NTk4OC4xNjQ1MzA0Nzcz*_ga_WS2VZYPC6G*MTY4ODY1MzI0Ni45NTYuMS4xNjg4NjUzNjc5LjYwLjAuMA.." alt="artwork epoxy" />
     </div>
 
     
         <div class="page-title">
             <h1 class="page-heading">{{ page.title }}</h1>
-            <img src="/assets/icons/admin-tooltip.svg" alt="submenu" style="fill:black;"/>
         </div>
-        <p class="page-meta">{{ head.meta_tags }}</h1>
         
-            {{{region name="countertops_top"}}}
+            {{{region name="artwork_top"}}}
 
-        <div class="page-content">
+        <div class="scc-page-content">
             <p>{{{page.content}}}</p>
         </div>
 
         <div class="page-videos">
-            {{{region name="countertops_videos"}}}
+            {{{region name="artwork_videos"}}}
         </div>
     
-    {{{region name="countertops_middle"}}}
+    {{{region name="artwork_middle"}}}
 
     <div class="page-steps">
         <div class="step">
             <div class="step-head">
             <h3 class="step-title">Choose Epoxy & Amount Needed</h3>
-            <span>Step <span class="step-icon">1</span></span></div>
+            <span class="step-icon-heading">Step <span class="step-icon">1</span></span></div>
             <div class="step-description">
                 <p>Find the epoxy that works for your project, then calculate how much you need.</p>
             </div>
+            {{> components/custom/deep-pour-calculator }}
             <div class="step-products">
-                {{{region name="countertops_step1"}}}
+                {{{region name="artwork_step1"}}}
             </div>
+            <div id="epoxy" class="landing-page-grid">
+              {{#if gql.data.site}}
+                {{#each gql.data.site.route.node.products.edges}}
+                  {{> components/custom/product/product-card-page product=node}}
+                {{/each}}
+              {{/if}}
+            </div>
+            {{{region name="artwork_step1_bottom"}}}
         </div>
 
         <div class="step">
             <div class="step-head">
-                <h3 class="step-title">Choose Colorants</h3>
-                <span class="step-icon">2</span>
-            </div>
+                <h3 class="step-title">Choose Colorants & Additives</h3>
+            <span class="step-icon-heading">Step <span class="step-icon">2</span></span></div>
             <div class="step-description">
-                <p>Use spray paint, powders, dusts and dyes to your epoxy countertops.</p>
+                <p>Use spray paint, powders, dusts and dyes to your epoxy artwork.</p>
             </div>
             <div class="step-products">
-                {{{region name="countertops_step2"}}}
+                {{{region name="artwork_step2"}}}
             </div>
+            {{> components/custom/colorant-products }}
         </div>
 
         <div class="step">
             <div class="step-head">
-            <h3 class="step-title">Choose Additives</h3>
-            <span class="step-icon">3</span></div>
+            <h3 class="step-title">Choose Tools & Accessories</h3>
+            <span class="step-icon-heading">Step <span class="step-icon">3</span></span></div>
             <div class="step-description">
                 <p>Need anything to add? Find it here.</p>
             </div>
             <div class="step-products">
-                {{{region name="countertops_step3"}}}
+                {{{region name="artwork_step3"}}}
             </div>
+            {{> components/custom/tool-products }}
         </div>
 
-        <div class="step">
-            <div class="step-head">
-            <h3 class="step-title">Choose Tools & Acccessories</h3>
-            <span class="step-icon">4</span></div>
-            <div class="step-description">
-                <p>Get the supplies to make your project a success!</p>
-            </div>
-            <div class="step-products">
-                {{{region name="countertops_step4"}}}
-            </div>
+
+    {{{region name="artwork_bottom"}}}
+
+    <div class="page-related-products">
+      {{{region name="artwork_related"}}}
     </div>
 
-    {{{region name="countertops_bottom"}}}
-
-    
+    {{> components/custom/categories title="More Categories"}}
     
 </section>
 
