@@ -77,23 +77,37 @@ gql: 'query CategoryByUrl {
 
 <section class="page stonecoat-landing">
     <div class="page-hero">
-        <img src="https://cdn11.bigcommerce.com/s-19qfhxpoud/images/stencil/original/image-manager/epoxy-shower-step-by-step.jpg?t=1643915373&_gl=1*mg75kb*_ga*MTkxMjc4NTk4OC4xNjQ1MzA0Nzcz*_ga_WS2VZYPC6G*MTY4ODA0NzUzMy45NDIuMS4xNjg4MDQ4MzIxLjYwLjAuMA.." alt="shower epoxy" />
-    </div>
-
-    
-        <div class="page-title">
-            <h1 class="page-heading">{{ page.title }}</h1>
-        </div>
+      <img src="https://cdn11.bigcommerce.com/s-19qfhxpoud/images/stencil/original/image-manager/epoxy-shower-step-by-step.jpg?t=1643915373&_gl=1*mg75kb*_ga*MTkxMjc4NTk4OC4xNjQ1MzA0Nzcz*_ga_WS2VZYPC6G*MTY4ODA0NzUzMy45NDIuMS4xNjg4MDQ4MzIxLjYwLjAuMA.." alt="shower epoxy" />
+      
+      <div class="page-title">
+        <h1 class="page-heading">{{ page.title }}</h1>
+      </div>
         
-            {{{region name="showers_top"}}}
-
-        <div class="scc-page-content">
-            <p>{{{page.content}}}</p>
-        </div>
-
-        <div class="page-videos">
-            {{{region name="showers_videos"}}}
-        </div>
+      {{{region name="showers_top"}}}
+  
+      <div class="scc-page-content">
+        <p>{{{page.content}}}</p>
+      </div>
+  
+      <script>
+        (function() {
+          const paragraphs = Array.from(document.querySelector(".scc-page-content").children);
+          let index = 0;
+          for (let paragraph of paragraphs) {
+            if (paragraph.innerHTML.length === 0) {
+              paragraph.style.display = "none";
+            } else {
+              index++;
+            }
+          }
+          paragraphs[index].style.marginBottom = 0;
+        })();
+      </script>
+  
+      <div class="page-videos">
+        {{{region name="showers_videos"}}}
+      </div>
+    </div>
     
     {{{region name="showers_middle"}}}
 
