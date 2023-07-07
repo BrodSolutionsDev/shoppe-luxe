@@ -79,11 +79,9 @@ gql: 'query CategoryByUrl {
 <section class="page container stonecoat-landing">
     <div class="page-hero">
         <img src="https://cdn11.bigcommerce.com/s-fy21dwtsxg/images/stencil/original/image-manager/art-category.jpg?t=1688653654&_gl=1*14c0rw*_ga*MTkxMjc4NTk4OC4xNjQ1MzA0Nzcz*_ga_WS2VZYPC6G*MTY4ODY1MzI0Ni45NTYuMS4xNjg4NjUzNjc5LjYwLjAuMA.." alt="artwork epoxy" />
-    </div>
-
     
         <div class="page-title">
-            <h1 class="page-heading">{{ page.title }}</h1>
+          <h1 class="page-heading">{{ page.title }}</h1>
         </div>
         
             {{{region name="artwork_top"}}}
@@ -92,9 +90,28 @@ gql: 'query CategoryByUrl {
             <p>{{{page.content}}}</p>
         </div>
 
+        <script>
+          (function() {
+            const paragraphs = Array.from(document.querySelector(".scc-page-content").children);
+            let index = 0;
+            for (let paragraph of paragraphs) {
+              if (paragraph.innerHTML.length === 0) {
+                paragraph.style.display = "none";
+              } else {
+                index++;
+              }
+            }
+            paragraphs[index].style.marginBottom = 0;
+          })();
+        </script>
+
         <div class="page-videos">
             {{{region name="artwork_videos"}}}
         </div>
+      </div>
+
+    
+        
     
     {{{region name="artwork_middle"}}}
 
