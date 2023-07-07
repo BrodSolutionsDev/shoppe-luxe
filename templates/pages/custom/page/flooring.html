@@ -1,7 +1,7 @@
 ---
 gql: 'query CategoryByUrl {
   site {
-    route(path: "/shop/flooring-epoxy") {
+    route(path: "/products/flooring-epoxy") {
       node {
         id
         ... on Category {
@@ -134,26 +134,28 @@ gql: 'query CategoryByUrl {
 
         <div class="step">
             <div class="step-head">
-            <h3 class="step-title">Choose Additives</h3>
-            <span class="step-icon">3</span></div>
+            <h3 class="step-title">Choose Colorants & Additives</h3>
+            <span class="step-icon">2</span></div>
             <div class="step-description">
-                <p>Need anything to add? Find it here.</p>
+                <p>Use spray paint, powders, dusts and dyes to your epoxy artwork.</p>
             </div>
             <div class="step-products">
                 {{{region name="flooring_step3"}}}
             </div>
+            {{> components/custom/colorant-products }}
         </div>
 
         <div class="step">
             <div class="step-head">
             <h3 class="step-title">Choose Tools & Acccessories</h3>
-            <span class="step-icon">4</span></div>
+            <span class="step-icon">3</span></div>
             <div class="step-description">
                 <p>Get the supplies to make your project a success!</p>
             </div>
             <div class="step-products">
                 {{{region name="flooring_step4"}}}
             </div>
+            {{> components/custom/tool-products }}
     </div>
 
     {{{region name="flooring_bottom"}}}

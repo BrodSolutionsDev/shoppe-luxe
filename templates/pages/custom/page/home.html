@@ -1,0 +1,78 @@
+---
+products:
+  new:
+    limit: { { theme_settings.homepage_new_products_count } }
+  featured:
+    limit: { { theme_settings.homepage_featured_products_count } }
+  top_sellers:
+    limit: { { theme_settings.homepage_top_products_count } }
+carousel: { { theme_settings.homepage_show_carousel } }
+blog:
+  recent_posts:
+    limit: { { theme_settings.homepage_blog_posts_count } }
+---
+
+{{#partial "hero"}} 
+
+<div class="section">
+  {{#and carousel carousel.slides.length}} 
+  {{> components/carousel arrows=theme_settings.homepage_show_carousel_arrows play_pause_button=theme_settings.homepage_show_carousel_play_pause_button}}
+  {{/and}}
+</div>
+{{/partial}} {{#partial "page"}} {{#each shipping_messages}} {{> components/common/alert/alert-info message}} {{/each}}
+
+<div class="main full">
+  <!-- Region 1 Home Below Carousel -->
+  <div class="section">{{{region name="home_below_carousel"}}}</div>
+  <!-- 1) Projects -->
+  <div class="section">{{> components/custom/home-projects }}</div>
+<!-- 2) Featured -->
+  {{#if products.featured}}
+  <div class="section">
+    {{> components/custom/home-featured products=products.featured columns=theme_settings.homepage_featured_products_column_count}} 
+  </div>
+    {{/if}}
+    <!-- Region 1 Home Below Featured -->
+  <div class="section">
+    {{{region name="home_below_featured_products"}}}
+</div>
+<!-- 3) New -->
+    {{#if products.new}}
+    <div class="section">
+      {{> components/custom/home-new products=products.new columns=theme_settings.homepage_new_products_column_count}}</div>
+     {{/if}}
+
+     <!-- Region Home Below Bottom Products -->
+  <div id="home-below-bottom-products_region" class="section">
+    {{{region name="home_below_bottom_products"}}}
+  </div>
+
+  <!-- 2 -->
+  <div class="section">
+    {{> components/custom/categories title="Shop By Category" }}
+  </div>
+
+  <!-- Region Home Category Below -->
+  <div id="home-category-below_region" class="section">
+    {{{region name="home_category_below"}}}
+</div>
+
+  
+  </div>
+ 
+
+  <!-- 6) Tutorials -->
+  {{#if settings.blog_enabled}}
+  <div class="section">
+    {{> components/blog/post posts=blog.recent_posts}}
+  </div>
+  {{/if}}
+
+  <!-- Region Home Below Blog -->
+  <div id="home-below-blog_region" class="section">
+    {{{region name="home_below_blog"}}}
+</div>
+
+  
+</div>
+{{/partial}} {{> layout/base}}
