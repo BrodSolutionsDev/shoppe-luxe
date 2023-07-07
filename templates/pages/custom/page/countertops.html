@@ -110,15 +110,13 @@ gql: 'query CategoryByUrl {
             <div class="step-products">
                 {{{region name="countertops_step1"}}}
             </div>
-            <ul id="epoxy" class="scc-slider">
+            <div id="epoxy" class="landing-page-grid">
               {{#if gql.data.site}}
-                {{#each gql.data.site.route.node.products.edges}}
-                  <li class="scc-slide">
-                    {{> components/custom/product/product-card-page product=node}}
-                  </li>           
-              {{/each}}
-            {{/if}}
-            </ul>
+                  {{#each gql.data.site.route.node.products.edges}}
+                      {{> components/custom/product/product-card-page product=node}}
+                  {{/each}}
+              {{/if}}
+          </div>
         </div>
 
         <div class="step">
