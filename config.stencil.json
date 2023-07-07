@@ -3,6 +3,7 @@
     "brand": {},
     "category": {},
     "page": {
+      "home.html": "/dev/home",
       "artwork.html": "/projects/artwork-epoxy",
       "countertops.html": "/projects/countertop-epoxy",
       "flooring.html": "/projects/flooring-epoxy",
