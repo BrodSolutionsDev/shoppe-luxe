@@ -75,28 +75,38 @@ gql: 'query CategoryByUrl {
 
 <section class="page container stonecoat-landing">
     <div class="page-hero">
-        <img src="https://cdn11.bigcommerce.com/s-19qfhxpoud/images/stencil/original/image-manager/unnamed-1-.png" alt="flooring epoxy" />
+      <img src="https://cdn11.bigcommerce.com/s-19qfhxpoud/images/stencil/original/image-manager/unnamed-1-.png" alt="flooring epoxy" />
+
+      <div class="page-title">
+        <h1 class="page-heading">{{ page.title }}</h1>
+      </div>
+      
+      {{{region name="flooring_top"}}}
+
+      <div class="scc-page-content">
+        <p>{{{page.content}}}</p>
+      </div>
+
+      <script>
+        (function() {
+          const paragraphs = Array.from(document.querySelector(".scc-page-content").children);
+          let index = 0;
+          for (let paragraph of paragraphs) {
+            if (paragraph.innerHTML.length === 0) {
+              paragraph.style.display = "none";
+            } else {
+              index++;
+            }
+          }
+          paragraphs[index].style.marginBottom = 0;
+        })();
+      </script>
+
+      <div class="page-videos">
+        {{{region name="flooring_videos"}}}
+      </div>
     </div>
 
-    
-        <div class="page-title">
-            <h1 class="page-heading">{{ page.title }}</h1>
-            <!-- <svg class="scc-button-icon">
-              <use xlink:href="#icon-admin-tooltip" />
-            </svg> -->
-        </div>
-        
-        
-            {{{region name="flooring_top"}}}
-
-            <div class="scc-page-content">
-                <p>{{{page.content}}}</p>
-            </div>
-
-        <div class="page-videos">
-            {{{region name="flooring_videos"}}}
-        </div>
-    
     {{{region name="flooring_middle"}}}
 
     <div class="page-steps">

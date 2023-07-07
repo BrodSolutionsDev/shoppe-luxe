@@ -2,26 +2,29 @@
   .page-hero {
     margin:25px 0;
     margin-top: 0;
+    background: #fff;
+    border-radius: $border-radius-lg;
+
       img {
           width: 100%;
-          border-radius: 15px;
+          border-radius: $border-radius-lg;
       }
   }
   .page-title {
       display: flex;
-      justify-content: space-between;
+      flex-direction: column;
       img {
           fill: #222;
           width: 50px;
           height: 50px;
       }
+      .page-heading {
+        margin-bottom: 0;
+      }
   }
   .scc-page-content {
-      margin: 50px 0;
-      background-color: $medium-grey;
       padding: 20px;
-      font-weight: bold;
-      font-size: 1.5rem;
+      font-size: $font-size-16;
       font-family: $montserrat;
   }
   .landing-page-grid {
