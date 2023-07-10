@@ -1,0 +1,22 @@
+.accordion-faq {
+    .accordion {
+        border: none;
+        .option {
+            border-radius: $border-radius-lg;
+            list-style: decimal;
+            position: relative;
+            margin-bottom: 20px;
+            display: list-item;
+
+            padding: 10px;
+            background: $white;
+            font-weight: bold;
+            input {
+                display: none;
+            }
+            .content {
+                font-weight: normal;
+            }
+        }
+    }
+}
