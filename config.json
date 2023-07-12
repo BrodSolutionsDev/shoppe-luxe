@@ -1,5 +1,5 @@
 {
-  "name": "StoneCoat 7/7",
+  "name": "StoneCoatDEV 7/10",
   "version": "6.11.0",
   "template_engine": "handlebars_v4",
   "meta": {
@@ -437,7 +437,7 @@
         "paymentbuttons-provider-sorting": [
           "paypal"
         ],
-        "optimizedCheckout-header-backgroundColor": "#F8F8F8",
+        "optimizedCheckout-header-backgroundColor": "#221F20",
         "optimizedCheckout-show-logo": "custom",
         "optimizedCheckout-logo": "https://cdn11.bigcommerce.com/s-19qfhxpoud/images/stencil/{:size}/stonecoatcountertops_logo_1685877514__88712.png",
         "optimizedCheckout-body-backgroundColor": "#F8F8F8",
