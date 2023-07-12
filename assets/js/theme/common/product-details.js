@@ -572,7 +572,6 @@ export default class ProductDetails extends ProductDetailsBase {
                     optionId: Number(name.match(/\d+/g)[0]),
                     optionValue: value,
                 };
-
                 productDetails.optionSelections = productDetails?.optionSelections
                     ? [...productDetails.optionSelections, productOption]
                     : [productOption];
