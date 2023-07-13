@@ -5,3 +5,22 @@
         {{> components/products/reviews reviews=product.reviews product=product urls=urls}}
     {{/all}}
 </div>
+
+<script type="text/javascript">
+    gtag("event", "view_item", {
+        currency: "{{currency_selector.active_currency_code}}",
+        value: {{#or customer (unless theme_settings.restrict_to_login)}}{{#if product.price.with_tax}}parseFloat({{product.price.with_tax.value}}){{else}}parseFloat({{product.price.without_tax.value}}){{/if}}{{else}}"{{lang 'common.login_for_pricing'}}"{{/or}},
+        items: [
+            {
+                item_id: "{{#if product.sku}}{{product.sku}}{{else}}{{product.id}}{{/if}}",
+                item_name: "{{product.title}}",
+                currency: "{{currency_selector.active_currency_code}}",
+                discount: parseFloat({{product.price.saved.value}}),
+                item_brand: "{{product.brand.name}}",
+                price: {{#or customer (unless theme_settings.restrict_to_login)}}{{#if product.price.with_tax}}parseFloat({{product.price.with_tax.value}}){{else}}parseFloat({{product.price.without_tax.value}}){{/if}}{{else}}"{{lang 'common.login_for_pricing'}}"{{/or}},
+                quantity: 1,
+                {{#each product.category}}{{#if @first}}item_category:"{{this}}"{{else}},item_category{{@index}}:"{{this}}"{{/if}}{{/each}}
+            }
+        ]
+    });
+</script>

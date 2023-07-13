@@ -74,3 +74,18 @@ cart: true
 </div>
 {{/partial}}
 {{> layout/base}}
+
+<!-- ECI : START – Google DRC code - Standard Event - For Cart pages-->
+<script> 
+	var productidArray = productidArray || [];
+    {{#each cart.items}}
+        productidArray.push({{product_id}});
+    {{/each}}
+	gtag('event', 'page_view', {
+		'send_to': 'AW-863988378',
+		'ecomm_prodid': productidArray,
+		'ecomm_pagetype': 'cart',
+		'ecomm_totalvalue': '{{cart.sub_total.formatted}}',
+	});
+</script>
+<!-- ECI : START – Google DRC code - Standard Event - For Cart pages -->

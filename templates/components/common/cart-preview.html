@@ -87,3 +87,21 @@
         {{/if}}
     </div>
 </div>
+
+<script>
+    gtag("event", "view_cart", {
+        currency: "{{currency_selector.active_currency_code}}",
+        value: parseFloat({{cart.sub_total.value}}),
+        items: [
+            {{#each cart.items}}
+                {
+                    item_id: "{{#if sku}}{{sku}}{{else}}{{product_id}}{{/if}}",
+                    item_name: "{{name}}",
+                    item_brand: "{{brand.name}}",                    
+                    price: parseFloat({{price.value}}),
+                    quantity: parseInt({{quantity}})
+                },
+            {{/each}}                                        
+        ]
+    });
+</script>

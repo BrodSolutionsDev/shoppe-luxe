@@ -9,9 +9,29 @@
 
 {{{head.scripts}}}
 
+<script>
+  window.dataLayer = window.dataLayer || [];
+  window.dataLayer.push({ 'event':'orderComplete', 'orderValue': 1250.50, 'orderId': 'ABC123', 'orderCurrency': 'USD'});
+</script>
+<!-- Google Tag Manager -->
+<script>
+(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+})(window,document,'script','dataLayer','GTM-P4NF2GB');</script>
+<!-- End Google Tag Manager -->
+<!-- Event snippet for Purchase conversion page --> <script> gtag('event', 'conversion', { 'send_to': 'AW-863988378/a5oxCNulhq0BEJrV_ZsD', 'value': 1.0, 'currency': 'USD', 'transaction_id': '' }); </script>
+
+
 {{/partial}}
 
 {{#partial "page"}}
+ <!-- Google Tag Manager (noscript) -->
+<noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-P4NF2GB"
+height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+<!-- End Google Tag Manager (noscript) -->
+
 <header class="checkoutHeader optimizedCheckout-header">
     <div class="checkoutHeader-content">
         <h1 class="is-srOnly">{{lang 'checkout.title'}}</h1>

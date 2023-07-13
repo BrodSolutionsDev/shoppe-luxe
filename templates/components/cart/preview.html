@@ -114,3 +114,19 @@
     {{/if}}
 </div>
 {{{remote_api_scripts}}}
+<script>
+    gtag("event", "add_to_cart", {
+        currency: "{{currency_selector.active_currency_code}}",
+        value: parseFloat({{cart.added_item.price.value}}) * parseInt({{cart.added_item.quantity}}),
+        items: [
+            {
+                item_id: "{{#if cart.added_item.sku}}{{cart.added_item.sku}}{{else}}{{cart.added_item.id}}{{/if}}",
+                item_name: "{{cart.added_item.name}}",
+                currency: "{{currency_selector.active_currency_code}}",
+                item_brand: "{{cart.added_item.brand.name}}",
+                price: parseFloat({{cart.added_item.price.value}}),
+                quantity: parseInt({{cart.added_item.quantity}})
+            }
+        ]
+    });
+</script>
