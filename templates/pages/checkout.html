@@ -8,7 +8,6 @@
     window.language = {{{langJson 'optimized_checkout'}}};
 </script>
 
-{{{head.scripts}}}
 <style>
     .dynamic-form-field--field_26 {
         display: none!important;
@@ -20,9 +19,12 @@
         background-color: rgba(255, 0, 0, 0.1);
     }
     .alert p {
-            margin-bottom: 0;
-        }
+        margin-bottom: 0;
+    }
 </style>
+
+{{{head.scripts}}}
+
 {{/partial}}
 
 {{#partial "page"}}
@@ -45,6 +47,126 @@
 
 {{{ footer.scripts }}}
 
+<footer optimized-checkout-footer>
+    <div class="container">
+        <div class="footer-copy-right">&copy; {{moment format="YYYY"}} {{settings.store_name}}</div>
+    </div>
+</footer>
+<script>
+    (function(win) {
+        'use strict';
+        var listeners = [], 
+        doc = win.document, 
+        MutationObserver = win.MutationObserver || win.WebKitMutationObserver,
+        observer;
+        function ready(selector, fn) {
+            // Store the selector and callback to be monitored
+            listeners.push({
+                selector: selector,
+                fn: fn
+            });
+            if (!observer) {
+                // Watch for changes in the document
+                observer = new MutationObserver(check);
+                observer.observe(doc.documentElement, {
+                    childList: true,
+                    subtree: true
+                });
+            }
+            // Check if the element is currently in the DOM
+            check();
+        }
+        function check() {
+            // Check the DOM for elements matching a stored selector
+            for (var i = 0, len = listeners.length, listener, elements; i < len; i++) {
+                listener = listeners[i];
+                // Query for elements matching the specified selector
+                elements = doc.querySelectorAll(listener.selector);
+                for (var j = 0, jLen = elements.length, element; j < jLen; j++) {
+                    element = elements[j];
+                    // Make sure the callback isn't invoked with the 
+                    // same element more than once
+                    if (!element.ready) {
+                        element.ready = true;
+                        // Invoke the callback with the element
+                        listener.fn.call(element, element);
+                    }
+                }
+            }
+        }
+        // Expose `ready`
+        win.ready = ready; 
+    })(this);    
+    ready('#cityInput', function(element) {
+        $('#cityInput').change(function(){
+            var cityInput = $('#cityInput')[0].value;
+            if(checkZip(cityInput)){
+                $('.dynamic-form-field--city').append("<div class='error-message_city' style='color:red;font-size:14px;'>Cannot contain postal code: <b style='color:black;'>"+cityInput+"</b>, must remove.</div>");
+                $('#checkout-shipping-continue').hide();
+            } else {
+                $('.error-message_city').remove();
+                $('#checkout-shipping-continue').show();
+            }
+        });
+    });
+    ready('#postCodeInput', function(element) {
+        $('#billingAddresses').remove();
+        $('#postCodeInput').change(function(){
+            var shipSavedZip = $('.postal-code')[0].innerHTML.slice(0,-3);
+            var billEnteredZip = $('#postCodeInput')[0].value;
+            if(billEnteredZip !== shipSavedZip){
+                $('.dynamic-form-field--postCode').append("<p class='error-message_postcode' style='color:red;font-size:12px;'>Postal Code must be: <b style='color:black;'>"+shipSavedZip+"</b></p>");
+                $('#checkout-billing-continue').hide();
+            } else {
+                $('.error-message_postcode').remove();
+                $('#checkout-billing-continue').show();
+            }
+        });   
+    });
+    function checkZip(string) {
+        return /[0-9]{5}(?:-[0-9]{4})?/.test(string);
+    }
+</script>
+
 {{/partial}}
 
 {{> layout/empty}}
+
+<script>
+$(document).ready(function() {
+    setTimeout(function() {
+        $(".productList .productList-item").each(function () {
+            masterPrice = $(this).find(".product-price").text();
+            if (masterPrice == "$0.00") {
+                secureCartFreeAdditivePromo();
+                return false;
+            }
+        });
+        function secureCartFreeAdditivePromo() {
+            $(".productList .productList-item").each(function () {
+                stoneCoatGallonEpoxyKit = $(this).find(".product-title").text();
+                itemPrice = $(this).find(".product-price").text();
+                if (stoneCoatGallonEpoxyKit === "1 x Stone Coat Gallon Epoxy Kits") {
+                    $(this).find(".product-title").append("<p style='font-size:14px;color:dodgerblue;'><b>Free Additive Promo</b></p>");
+                }
+                if (itemPrice == "$0.00") {
+                    $(this).find(".productitem-title").append("<p style='font-size:14px;color:dodgerblue;'><b>Free Additive Promo</b></p>");
+                    $('.redeemable-label').html("<p style='font-size:14px;color:dodgerblue;'><b>No Coupons for Free Additive Promo</b></p>");
+                    $('.optimizedCheckout-orderSummary-cartSection > a').replaceWith(function() {
+                        return $('<div/>', {html: this.innerHTML });
+                    });
+                }
+            });
+        }
+    }, 3000);
+});
+</script>
+
+<!-- ECI : START – Google DRC code - Standard Event - For home pages -->
+<script> 
+	gtag('event', 'page_view', {
+        'send_to': 'AW-863988378',
+        'ecomm_pagetype': 'checkout'
+    });
+</script>
+<!-- ECI : START – Google DRC code - Standard Event - For home pages -->

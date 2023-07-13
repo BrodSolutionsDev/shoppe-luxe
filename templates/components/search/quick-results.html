@@ -20,3 +20,15 @@
         {{{lang 'search.results.quick_count' count=pagination.product_results.total search_query=(sanitize forms.search.query) }}}
     </p>
 {{/if}}
+
+<script>
+    pintrk('track', 'search', {
+    search_query: 'boots'
+});
+</script>
+<!-- File Path for Cornerstone Theme: /templates/components/search/quick-results.html -->
+<script>
+    gtag("event", "search", {
+        search_term: "{{sanitize forms.search.query}}"
+    });
+</script>

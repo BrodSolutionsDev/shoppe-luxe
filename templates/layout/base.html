@@ -8,7 +8,17 @@
         {{#block "head"}} {{/block}}
 
         <link href="{{ head.favicon }}" rel="shortcut icon">
-        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=3.0, minimum-scale=1">
+        <meta name="google-site-verification" content="IAWJZOPEJ6rieQx8wzZcWNeHn3fNemK_Zo5XqxzC_nQ">
+        <meta name="facebook-domain-verification" content="dn6qbdue56fh5guhieh52w5uz5klja" />
+
+        <!-- Google Tag Manager -->
+        <script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+        new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+        j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+        'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+        })(window,document,'script','dataLayer','GTM-PTLT8WT');</script>
+        <!-- End Google Tag Manager -->
 
         <script>
             {{!-- Change document class from no-js to js so we can detect this in css --}}
@@ -34,6 +44,8 @@
 
         {{{head.scripts}}}
 
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+
         {{~inject 'zoomSize' theme_settings.zoom_size}}
         {{~inject 'productSize' theme_settings.product_size}}
         {{~inject 'genericError' (lang 'common.generic_error')}}
@@ -47,6 +59,30 @@
         {{~inject 'carouselArrowAndDotAriaLabel' (lang 'carousel.arrow_and_dot_aria_label')}}
         {{~inject 'carouselActiveDotAriaLabel' (lang 'carousel.active_dot_aria_label')}}
         {{~inject 'carouselContentAnnounceMessage' (lang 'carousel.content_announce_message')}}
+
+        {{#contains (first (split (last (split head.meta_tags "href='")) "'")) 'complete-kits'}}
+            <link rel="stylesheet" href="https://cdn.getshogun.com/5f46eae2b76ebe0051574bfe.css" />
+            <style>
+                .cc-prom-category-list-71122618 {
+                    z-index: 1 !important;
+                }
+                input#search_query{
+                        z-index: 9999999999999999 !important;
+                }
+            </style>
+        {{/contains}}
+
+        <!-- ECI : START – Google DRC code - Standard Event - For home pages -->
+        <script>
+            {{#if settings.request.absolute_path '===' '/home'}}
+                gtag('event','page_view',{
+                    'send_to':'AW-863988378',
+                    'ecomm_pagetype':'home'
+                })
+            {{/if}}
+        </script>
+        <!-- ECI : END – Google DRC code - Standard Event - For home pages -->
+
     </head>
     <body>
         <svg data-src="{{cdn 'img/icon-sprite.svg'}}" class="icons-svg-sprite"></svg>
