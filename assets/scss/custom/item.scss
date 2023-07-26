@@ -6,7 +6,7 @@
   .item {
       background-color: $black;
       border: 1px solid $black;
-      border-radius: $border-radius-lg;
+      border-radius: $border-radius-sm;
       width: 250px;
       min-width: 250px;
       max-width: 250px;
@@ -14,7 +14,7 @@
       margin: 10px 0;
       text-align: center;
       .item-image {
-          border-radius: $border-radius-lg;
+          border-radius: $border-radius-sm;
       }
       .item-title {
           color:$white;

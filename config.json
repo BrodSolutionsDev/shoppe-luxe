@@ -1,5 +1,5 @@
 {
-  "name": "StoneCoatDEV 7/20",
+  "name": "StoneCoatDEV Elevated 7/25",
   "version": "6.11.0",
   "template_engine": "handlebars_v4",
   "meta": {
@@ -150,7 +150,7 @@
     "color-greyLighter": "#cccccc",
     "color-greyLightest": "#e5e5e5",
     "banner--deafault-backgroundColor": "#221f20",
-    "button--default-color": "#FFFFFF",
+    "button--default-color": "#221F20",
     "button--default-colorHover": "#221F20",
     "button--default-colorActive": "#221F20",
     "button--default-borderColor": "#221f20",

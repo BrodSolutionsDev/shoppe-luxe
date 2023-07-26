@@ -36,5 +36,31 @@ export default function () {
         swipeToSlide: true,
     });
 
+    $('.scc-slider-six').slick({
+        draggable: true,
+        infinite: true,
+        slidesToShow: 2,
+        slidesToScroll: 2,
+        mobileFirst: true,
+        swipeToSlide: true,
+        responsive: [
+            {
+                breakpoint: 600,
+                settings: {
+                    slidesToShow: 4,
+                    slidesToScroll: 2,
+                },
+            },
+            {
+                breakpoint: 800,
+                settings: {
+                    slidesToShow: 6,
+                    slidesToScroll: 2,
+                },
+            },
+
+        ],
+    });
+
     // })
 }

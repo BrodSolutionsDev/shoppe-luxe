@@ -1,18 +1,19 @@
 .heroCarousel{
+        max-width: $max-width;
         z-index: 9999;
         position: relative;
         aspect-ratio: 2/1 !important;
         //overflow: hidden;
-        border-radius: $border-radius-lg;
-    margin: 0; 
+        // border-radius: $border-radius-sm;
+    margin: -20px 0 0 0; 
     margin-bottom: 80px;
     &.slick-initialized{
         max-height: 600px; 
-        margin-bottom: 80px;
+        margin-bottom: 0;
     }
     .heroCarousel-image-wrapper{
         max-height: 600px;
-        border-radius: $border-radius-lg;
+        //border-radius: $border-radius-sm;
     }
     .carousel-tooltip{
         display: none;
@@ -118,7 +119,7 @@
     }
     .heroCarousel-image{
         object-fit: cover;
-        border-radius: $border-radius-lg;
+        //border-radius: $border-radius-sm;
         @include mobile-container{
             object-position: 100% 0%;
         }
@@ -197,7 +198,7 @@
     text-align: left;
     width: 50%;
     padding: 10px;
-    border-radius: $border-radius-lg;
+    border-radius: $border-radius-sm;
     margin: 0 auto;
 
     .heroCarousel-title {

@@ -3,27 +3,52 @@
     padding: 0;
     transition: all .15s;
     box-shadow: none;
-    .card-figure, .card-body {
-        border-radius: $border-radius-lg;
+    margin-bottom: 24px;
+    border: 1px solid $black;
+    .price-section {
+        font-weight: bold;
+        font-size: 1.2rem;
+        text-align: center;
+    }
+    .card-figure {
+        border-radius: $border-radius-sm;
     }
     .card-figcaption {
         display: none!important;
         opacity: 0!important;
     }
     .card-body {
-        padding:20px;
+        border-top: 1px solid $black;
+        text-align: center;
+        padding:10px;
+    }
+    .card-figure {
+        padding:5px;
+    }
+    .card-img-container::after {
+        padding-bottom: 5px;
+    }
+    .card-image {
+        position: inherit;
+        height: 364px;
     }
     .card-desc {
-        margin-bottom: 5px;
+        margin-bottom: 1px;
         font-size: 14px;
+        color: $orange;
+        text-align: center;
+        font-weight: 500;
     }
     // unset hover effect
     &:hover {
         border-color: unset;
-        box-shadow: none;
+        transition: all .5s;
+    box-shadow: 0px 0px 3px 3px rgba(31,31,31,0.3);
     }
 }
 .card-title {
+    font-weight: light;
+    font-size: 1.5rem;
     > a {
         &:hover {
             color: $black;

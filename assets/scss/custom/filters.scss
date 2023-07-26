@@ -1,5 +1,5 @@
 .page-sidebar + .page-content {
-    width: 100%;
+    // width: 100%;
     
 
     @media only screen and (max-width: 699px) {
@@ -28,8 +28,8 @@
 }
 .faceted-search-container {
      position: fixed;
-     border-top-right-radius: $border-radius-lg;
-     border-top-left-radius: $border-radius-lg;
+     border-top-right-radius: $border-radius-sm;
+     border-top-left-radius: $border-radius-sm;
      width: 100%;
      max-width: 1200px;
      height: 100vh;
@@ -53,7 +53,7 @@
         }
         .accordion-block {
             background: $bg-white;
-            border-radius: $border-radius-lg;
+            border-radius: $border-radius-sm;
             margin-bottom: 5px;
             padding: 5px;
         }
