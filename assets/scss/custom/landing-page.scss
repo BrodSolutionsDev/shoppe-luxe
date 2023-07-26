@@ -3,11 +3,11 @@
     margin:25px 0;
     margin-top: 0;
     background: #fff;
-    border-radius: $border-radius-lg;
+    border-radius: $border-radius-sm;
 
       img {
           width: 100%;
-          border-radius: $border-radius-lg;
+          border-radius: $border-radius-sm;
       }
   }
   .page-title {
@@ -78,7 +78,7 @@
   .page-steps {
       .step {
           margin: 50px 0;
-          border-radius: $border-radius-lg;
+          border-radius: $border-radius-sm;
             background-color: $white;
             padding: 20px;
       }

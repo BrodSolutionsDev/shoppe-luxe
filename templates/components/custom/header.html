@@ -4,7 +4,7 @@
     <div class="header-container">
         <!-- menu button and search button -->
         <div class="buttons">
-            <button class="mobileMenu-toggle">
+            <button class="mobileMenu-toggle" title="main menu navigation" aria-label="main menu navigation">
                 <span class="toggle-bar"></span>
                 <span class="toggle-bar"></span>
                 <span class="toggle-bar"></span>
@@ -15,6 +15,7 @@
                data-search="quickSearch"
                aria-controls="quickSearch"
                aria-label="{{lang 'common.search'}}"
+               title="{{lang 'common.search'}} our store"
             >
             <svg class="icon">
                 <use xlink:href="#icon-search" />
@@ -30,6 +31,7 @@
             <a class="navUser-action"
                    href="{{urls.account.index}}"
                    aria-label="{{lang 'common.account'}}"
+                   title="{{lang 'common.account'}}"
                 ><button class="account-toggle header-button-alt">
                 <svg class="icon">
                     <use xlink:href="#icon-user" />
@@ -40,7 +42,9 @@
             data-cart-preview
             data-dropdown="cart-preview-dropdown"
             href="{{urls.cart}}"
-            aria-label="{{lang 'cart.nav_aria_label'}}">
+            aria-label="{{lang 'cart.nav_aria_label'}}"
+            title="{{lang 'cart.nav_aria_label'}}"
+            >
                 <span id="cart-button-qty" class="countPill cart-quantity"></span>
                 <svg class="icon">
                     <use xlink:href="#icon-cart" />

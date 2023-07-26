@@ -16,42 +16,38 @@ category:
 
 {{#partial "page"}}
 
-    <div class="category-header">
-        {{#if category.image}}
-            {{> components/common/responsive-img
-                image=category.image
-                fallback_size=theme_settings.zoom_size
-                lazyload=theme_settings.lazyload_mode
-                class="category-header-image"
-            }}
-        {{/if}}
-    </div>
+{{> components/common/breadcrumbs breadcrumbs=breadcrumbs}}
+{{#if category.image}}
+    {{> components/common/responsive-img
+        image=category.image
+        fallback_size=theme_settings.zoom_size
+        lazyload=theme_settings.lazyload_mode
+        class="category-header-image"
+    }}
+{{/if}}
+{{#unless theme_settings.hide_category_page_heading }}
+    <h1 class="page-heading">{{category.name}}</h1>
+    {{{region name="category_below_header"}}}
+{{/unless}}
 {{{category.description}}}
 <div class="page">
     {{#if category.faceted_search_enabled}}
-        <div class="page-sidebar faceted-search-container"  id="faceted-search-container">
-            {{> components/products/filter sort=pagination.category.sort}}
+        <aside class="page-sidebar" id="faceted-search-container">
             {{> components/category/sidebar}}
-        </div>
+        </aside>
     {{else if category.subcategories}}
-        <div class="page-sidebar faceted-search-container" style="display: none" id="faceted-search-container">
-            {{> components/products/filter sort=pagination.category.sort}}
+        <aside class="page-sidebar" id="faceted-search-container">
             {{> components/category/sidebar}}
-        </div>
+        </aside>
     {{else if category.shop_by_price}}
         {{#if theme_settings.shop_by_price_visibility}}
-             <div class="page-sidebar faceted-search-container" style="display: none" id="faceted-search-container">
-            {{> components/products/filter sort=pagination.category.sort}}
-                {{> components/category/sidebar }}
-            </div>
+             <aside class="page-sidebar" id="faceted-search-container">
+                {{> components/category/sidebar}}
+            </aside>
         {{/if}}
     {{/if}}
 
     <div class="page-content" id="product-listing-container">
-        {{#unless theme_settings.hide_category_page_heading }}
-            <h1 class="page-heading">{{category.name}}</h1>
-            {{{region name="category_below_header"}}}
-        {{/unless}}
         {{> components/category/product-listing}}
         {{{region name="category_below_content"}}}
     </div>
@@ -59,27 +55,3 @@ category:
 
 {{/partial}}
 {{> layout/base}}
-
-<script>
-    let isCategory = false;
-    if ("{{page_type}}" === "category") isCategory = true;
-
-    if (isCategory) {
-        const facetsContainer = document.querySelector(".faceted-search-container");
-        const filtersButton = document.querySelector(".snackbar .scc-button");
-        const snackbar = document.querySelector(".snackbar");
-        filtersButton.addEventListener("click", function(e) {
-            e.preventDefault();
-            facetsContainer.classList.toggle("facets-open");
-        })
-    }
-</script>
-
-<!-- ECI : START – Google DRC code - Standard Event - For Category pages -->
-<script>
-    gtag('event', 'page_view', {
-        'send_to': 'AW-863988378',
-        'ecomm_pagetype': "category"
-    });
-</script>
-<!-- ECI: END - Google DRC code - Standard Event - For Category pages -->

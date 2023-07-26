@@ -1,0 +1,18 @@
+{{#if category.faceted_search_enabled}}
+        <div class="page-sidebar faceted-search-container"  id="faceted-search-container">
+            {{> components/products/filter sort=pagination.category.sort}}
+            {{> components/category/sidebar}}
+        </div>
+    {{else if category.subcategories}}
+        <div class="page-sidebar faceted-search-container" style="display: none" id="faceted-search-container">
+            {{> components/products/filter sort=pagination.category.sort}}
+            {{> components/category/sidebar}}
+        </div>
+    {{else if category.shop_by_price}}
+        {{#if theme_settings.shop_by_price_visibility}}
+             <div class="page-sidebar faceted-search-container" style="display: none" id="faceted-search-container">
+            {{> components/products/filter sort=pagination.category.sort}}
+                {{> components/category/sidebar }}
+            </div>
+        {{/if}}
+    {{/if}}

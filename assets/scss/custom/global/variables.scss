@@ -13,7 +13,7 @@ $bg-soft: #F9F9F9;
 $bg-white: #FFFFFF;
 
 // radius
-$border-radius-lg: 15px;
+$border-radius-sm: 15px;
 $border-radius-sm: 7px;
 $border-radius-full: 100px; // full rounded edges
 
@@ -194,7 +194,7 @@ $bebas-neue: 'Bebas Neue', sans-serif;
 }
 @mixin card {
   background: $white;
-  border-radius: $border-radius-lg;
+  border-radius: $border-radius-sm;
   box-shadow: $box-shadow;
   padding: $padding-medium;
   width: 100%;

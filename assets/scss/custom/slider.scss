@@ -1,6 +1,6 @@
 .scc-slider {
     .scc-slide {
-        margin: 0px 15px;
+        margin: 0px 10px;
     }
 }
 ul.scc-slider-wide {
@@ -8,15 +8,15 @@ ul.scc-slider-wide {
 }
 .scc-slider-wide {
     background: $black;
-    border-radius: $border-radius-lg;
+    border-radius: $border-radius-sm;
     .scc-slide {
-        border-radius: $border-radius-lg;
+        border-radius: $border-radius-sm;
         margin: 0;
         img {
             width: 100%;
             height: 500px;
             object-fit: cover;
-            border-radius: $border-radius-lg;
+            border-radius: $border-radius-sm;
         }
         a {
             text-decoration: none;
@@ -41,7 +41,7 @@ ul.scc-slider-wide {
         width: 300px;
         background: rgba($black, .1);
         text-align: center;
-        border-radius: $border-radius-lg;
+        border-radius: $border-radius-sm;
         backdrop-filter: blur(10px);
         padding: 20px 0;
         text-shadow: 3px 3px 5px rgba($black, .25);
@@ -55,4 +55,17 @@ ul.scc-slider-wide {
             font-size: 35px;
         }
     }
+}
+.slick-next, .slick-prev {
+	background-color: transparent;
+	border: none; 
+	height: 5rem;
+	margin-top: 1rem;
+	padding: 0.625rem;
+	width: 2.5rem;
+	z-index: 1;
+}
+.slick-next:hover, .slick-prev:hover {
+    background-color: transparent;
+	border: none; 
 }

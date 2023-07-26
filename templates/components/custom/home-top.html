@@ -1,9 +1,10 @@
-<div id="home-featured">
+<div id="home-bestsellers">
     <div class="flex-row-heading">
-        <h2>Featured Products</h2>
-        <a href="/products/?sort=featured">Show All ></a>
+        <h2>Top Products</h2>
+        <h4>Our Best Sellers</h4>
+        <a href="/products/?sort=top_sellers">Show All ></a>
       </div>
-<ul class="scc-slider" data-product-type="featured" {{#if settings.data_tag_enabled}} data-list-name="Featured Products" {{/if}}>
+<ul class="scc-slider" data-product-type="top_sellers" {{#if settings.data_tag_enabled}} data-list-name="Most Popular Products" {{/if}}>
     {{#each products}}
         <li class="product scc-slide">
                 {{>components/products/card settings=../settings theme_settings=../theme_settings customer=../customer event="list" position=(add @index 1)}}

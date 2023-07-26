@@ -5,15 +5,15 @@ body {
 }
 
 .body {
-  margin-top: -30px;
+  margin-top: 0px;
   background: $bg-soft;
   margin-bottom: 150px;
 
   .container {
     z-index: 2;
     background: $bg-soft;
-    border-top-left-radius: $border-radius-lg !important;
-    border-top-right-radius: $border-radius-lg !important;
+    border-top-left-radius: $border-radius-sm !important;
+    border-top-right-radius: $border-radius-sm !important;
     //padding: 0 5%;
   }
 }
@@ -25,8 +25,11 @@ body {
   padding: 0;
 
   @media only screen and (max-width:1280px) {
-      max-width: calc(100% - 80px) !important;
+      max-width: calc(100% - 40px) !important;
       margin: 0 auto;
+      .breadcrumbs {
+        display: block;
+      }
   }
 }
 .container-overflow-none {
@@ -58,7 +61,8 @@ body {
 }
 
 a {
-  text-decoration: none;
+  // text-decoration: none;
+  font-weight: 500;
   &:hover {
     text-decoration: none;
   }

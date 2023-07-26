@@ -1,0 +1,26 @@
+{{#if category.faceted_search_enabled}}
+
+<div class="sidebarBlock">
+    <h2 class="sidebarBlock-heading">Shop By Category</h2>
+    <ul class="navList">
+        {{#each categories}}
+        <li class="navList-item">
+            <a class="navList-action" href="{{url}}" title="{{name}}">{{name}}</a>
+        </li>
+        {{/each}}
+    </ul>
+</div>
+        <aside class="page-sidebar" id="faceted-search-container">
+            {{> components/category/sidebar}}
+        </aside>
+    {{else if category.subcategories}}
+        <aside class="page-sidebar" id="faceted-search-container">
+            {{> components/category/sidebar}}
+        </aside>
+    {{else if category.shop_by_price}}
+        {{#if theme_settings.shop_by_price_visibility}}
+             <aside class="page-sidebar" id="faceted-search-container">
+                {{> components/category/sidebar}}
+            </aside>
+        {{/if}}
+    {{/if}}

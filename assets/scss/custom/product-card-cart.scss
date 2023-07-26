@@ -6,7 +6,7 @@
     "image priceAndQty";
   grid-template-columns: 100px auto;
   box-shadow: $box-shadow;
-  border-radius: $border-radius-lg;
+  border-radius: $border-radius-sm;
   padding: $padding-small;
   background: $white;
 
@@ -18,7 +18,7 @@
       object-fit: contain;
       height: 100%;
       min-height: 100px;
-      border-radius: $border-radius-lg;
+      border-radius: $border-radius-sm;
     }
   }
 
