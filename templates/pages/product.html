@@ -86,7 +86,7 @@ product:
 <script>
   pintrk('track', 'pagevisit', {
     product_name:'{{product.title}}',
-    product_id: {{product.id}}
+    product_id: "{{product.id}}"
   });
 </script>
 <!-- end Pinterest pageVisit -->
@@ -101,3 +101,44 @@ product:
     });
 </script>
 <!-- ECI: END - Google DRC code - Standard Event - For PP pages -->
+
+<!-- hide snackbar while add to cart button is visible -->
+<script>
+    (function(){
+        const addToCartBtn = document.getElementById("form-action-addToCart");
+        const productSnackbar = document.querySelector(".snackbar");
+        const snackbarHeight = productSnackbar.getBoundingClientRect().height;
+        let bottom = 0;
+
+        // on initial load, check position of addToCartBtn
+        if (addToCartBtn.getBoundingClientRect().top < 0) {
+            // show snackbar
+            productSnackbar.style.bottom = "0px";
+        } else {
+            // hide snackbar
+            productSnackbar.style.bottom = `-${Math.ceil(productSnackbar.getBoundingClientRect().height)}px`;
+        }
+
+        window.addEventListener("scroll", function() {
+            if (addToCartBtn.getBoundingClientRect().top < 0) {
+                if (bottom <= -snackbarHeight) { // is hidden
+                    let showSnackbar = setInterval(() => {
+                        if (bottom >= 0) clearInterval(showSnackbar);
+                        productSnackbar.style.bottom = `${bottom}px`;
+                        bottom += 2;
+        
+                    }, 1);
+                }
+            } else {
+                if (bottom >= 0) { // is visible
+                    let hideSnackbar = setInterval(() => {
+                        if (bottom <= -snackbarHeight) clearInterval(hideSnackbar);
+                        productSnackbar.style.bottom = `${bottom}px`;
+                        bottom -= 2;
+        
+                    }, 1);
+                }
+            }
+        })
+    })();
+</script>
