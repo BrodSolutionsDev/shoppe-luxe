@@ -16,20 +16,31 @@ category:
 
 {{#partial "page"}}
 
-{{> components/common/breadcrumbs breadcrumbs=breadcrumbs}}
-{{#if category.image}}
-    {{> components/common/responsive-img
-        image=category.image
-        fallback_size=theme_settings.zoom_size
-        lazyload=theme_settings.lazyload_mode
-        class="category-header-image"
-    }}
-{{/if}}
-{{#unless theme_settings.hide_category_page_heading }}
-    <h1 class="page-heading">{{category.name}}</h1>
-    {{{region name="category_below_header"}}}
-{{/unless}}
-{{{category.description}}}
+<div class="category-header">
+    <div class="category-image">
+        {{#if category.image}}
+        {{> components/common/responsive-img
+            image=category.image
+            fallback_size=theme_settings.zoom_size
+            lazyload=theme_settings.lazyload_mode
+            class="category-header-image"
+        }}
+    {{/if}}
+    </div>
+    <div class="category-text-overlay">
+        {{#unless theme_settings.hide_category_page_heading }}
+        <h1 class="page-heading">{{category.name}}</h1>
+        {{> components/common/breadcrumbs breadcrumbs=breadcrumbs}}
+    {{/unless}}
+    
+</div>
+</div>
+<div class="category-description">
+    {{{category.description}}}
+</div>
+{{{region name="category_below_header"}}}
+
+
 <div class="page">
     {{#if category.faceted_search_enabled}}
         <aside class="page-sidebar" id="faceted-search-container">

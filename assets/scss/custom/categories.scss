@@ -5,7 +5,7 @@
 }
 .category-header {
     margin-bottom: 30px;
-    //position: relative;
+    position: relative;
   .category-image {
     //border-radius: $border-radius-sm;
     //min-width: 250px;
@@ -17,17 +17,12 @@
   }
   .category-text-overlay {
     position: absolute;
-    top: 15%;
+    bottom: 0;
     left: 50%;
-    transform: translate(-50%, -50%);
+    transform: translateX(-50%);
     color: $white;
-    text-align: center;
-    background-color: rgba($black, 0);
     backdrop-filter: blur(50px);
-    width: 50%;
-    padding: 10px;
-    border-radius: $border-radius-sm;
-    margin: 0 auto;
+    width: 100%;
     h1 {
       margin-bottom: 5px;
     }
@@ -84,4 +79,9 @@
   background: $bg-white;
   box-shadow: 0 0 0 100vmax $bg-white;
   clip-path: inset(0 -100vmax); 
+}
+.sidebarBlock {
+  .navList-action {
+    font-size: 16px;
+  }
 }
