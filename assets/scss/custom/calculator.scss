@@ -2,22 +2,19 @@
     padding: 15px;
     background: $orange;
     max-width: 100%;
-
     label, p, h4, h5 {
         color: $white;
     }
-    h4 {
+    h4, h5 {
         text-align: center;
+        margin: 2px 0;
     }
-
     @media only screen and (max-width: 700px) {
         width: 100%;
-
         .epoxy-calculator-inputs {
             flex-direction: column;
             gap: 15px;
         }
-
         .epoxy-calculator-results {
             flex-direction: column;
         }

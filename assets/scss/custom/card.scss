@@ -31,9 +31,12 @@
     .card-image {
         position: inherit;
         height: 325px;
-        // @include mobile-container {
-        //     min-height: 275px;
-        // }
+        @include tablet-container {
+            height: 200px;
+        }
+        @include mobile-container {
+            height: 250px;
+        }
     }
     .card-desc {
         margin-bottom: 1px;

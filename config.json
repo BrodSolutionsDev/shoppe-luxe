@@ -1,5 +1,5 @@
 {
-  "name": "StoneCoatDEV Elevated 7/28 optimized",
+  "name": "StoneCoatDEV Elevated 7/28 best",
   "version": "6.11.0",
   "template_engine": "handlebars_v4",
   "meta": {
@@ -465,7 +465,8 @@
         "optimizedCheckout-step-borderColor": "#D1D1D1",
         "optimizedCheckout-header-borderColor": "#D1D1D1",
         "optimizedCheckout-loadingToaster-backgroundColor": "#3E6855",
-        "optimizedCheckout-link-hoverColor": "#526D9D"
+        "optimizedCheckout-link-hoverColor": "#526D9D",
+        "optimizedCheckout-logo-position": "center"
       }
     }
   ]
