@@ -1,5 +1,5 @@
 {
-  "name": "StoneCoatDEV Elevated 7/25",
+  "name": "StoneCoatDEV Elevated 7/28",
   "version": "6.11.0",
   "template_engine": "handlebars_v4",
   "meta": {
@@ -347,7 +347,7 @@
       "paypal",
       "bank"
     ],
-    "lazyload_mode": "lazyload+lqip",
+    "lazyload_mode": "lazyload",
     "checkout-paymentbuttons-paypal-color": "black",
     "checkout-paymentbuttons-paypal-shape": "rect",
     "checkout-paymentbuttons-paypal-size": "large",

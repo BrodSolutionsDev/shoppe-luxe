@@ -6,9 +6,11 @@
   width: 100%;
   background: $black;
   position: relative;
-  padding: 0 5%;
+  // padding: 0 5%;
+  @media only screen and (max-width: $max-width) {
+    padding: 0 5%;
+  }
   z-index: 1;
-
   &-container {
     @include mobile-container;
     max-width: $max-width;
@@ -233,7 +235,7 @@
 #desktop-menu {
   background-color: $black;
   color: $white;
-  padding: 0 5%;
+  //padding: 0 5%;
   width: 100%;
   .navPages {
     font-size: $font-size-14;

@@ -34,6 +34,8 @@
     grid-gap: 10px;
     .scc-button {
       max-width: 120px;
+      background-color: $white;
+      color: $black;
     }
     .category-title {
       max-width: 130px;
@@ -42,13 +44,9 @@
       text-shadow: 2px 2px 2px $black;
       color: $white;
     }
-    .scc-button {
-      background-color: $white;
-      color: $black;
-    }
     .section-content-first {
-      grid-column: 1 / span 2;
-      grid-row: 1 / span 3;
+      grid-column: 1 / span 1;
+      grid-row: 1 / span 4;
       .category-subcontent {
         position: absolute;
         top: 35px;
@@ -56,8 +54,8 @@
       }
     }
     .section-content-second {
-      grid-column: 3 / span 2;
-      grid-row: 1 / span 3;
+      grid-column: 2 / span 2;
+      grid-row: 1 / span 4;
       .category-subcontent {
         position: absolute;
         top: 45px;
@@ -65,8 +63,8 @@
       }
     }
     .section-content-third {
-      grid-column: 5 / span 1;
-      grid-row: 1;
+      grid-column: 4 / span 2;
+      grid-row: 1 / span 2;
       .category-subcontent {
         position: absolute;
         top: 45px;
@@ -74,20 +72,20 @@
       }
     }
     .section-content-fourth {
-      grid-column: 5 / span 1;
-      grid-row: 2;
+      grid-column: 4 / span 1;
+      grid-row: 3 / span 2;
       .category-subcontent {
         position: absolute;
-        top: 45px;
+        top: -30px;
         left: 25px;
       }
     }
     .section-content-fifth {
       grid-column: 5 / span 1;
-      grid-row: 3;
+      grid-row: 3 / span 2;
       .category-subcontent {
         position: absolute;
-        top: 45px;
+        top: -30px;
         left: 25px;
       }
     }
@@ -143,10 +141,21 @@
     }
   }
   .scc-button {
-    background-color: red;
-    &:hover {
-      background-color: red;
-      color: $white;
+    background-color: $orange;
+    color: $white;
+  }
+  @include mobile-container {
+    .flex-row {
+      flex-direction: column;
+      .our-story-sub-content {
+        padding: 40px 24px 40px 72px;
+        margin-bottom: 20px;
+        text-align: left;
+        position: relative;
+        &::before {
+          display: none;
+        }
+      }
     }
   }
 }
@@ -169,6 +178,11 @@
     margin-bottom: 20px;
     text-align: left;
     position: relative;
+  }
+  @include mobile-container {
+    .flex-row {
+      flex-direction: column;
+    }
   }
 }
 .section-heading {
