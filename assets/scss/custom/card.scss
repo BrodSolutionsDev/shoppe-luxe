@@ -30,7 +30,10 @@
     }
     .card-image {
         position: inherit;
-        height: 364px;
+        height: 325px;
+        // @include mobile-container {
+        //     min-height: 275px;
+        // }
     }
     .card-desc {
         margin-bottom: 1px;

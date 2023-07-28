@@ -1,12 +1,16 @@
+#home-carousel {
+    padding-bottom: 0;
+}
 .heroCarousel{
+    margin-top: 0;
         max-width: $max-width;
         z-index: 9999;
         position: relative;
         aspect-ratio: 2/1 !important;
         //overflow: hidden;
         // border-radius: $border-radius-sm;
-    margin: -20px 0 0 0; 
-    margin-bottom: 80px;
+    //margin: -20px 0 0 0; 
+    //margin-bottom: 80px;
     &.slick-initialized{
         max-height: 600px; 
         margin-bottom: 0;
@@ -121,7 +125,7 @@
         object-fit: cover;
         //border-radius: $border-radius-sm;
         @include mobile-container{
-            object-position: 100% 0%;
+            object-position: left;
         }
     }
     .slick-active{
@@ -274,7 +278,7 @@
 
 @media only screen and (max-width: 550px) {
     .heroCarousel .slick-dots {
-        bottom: -20px !important;
+        bottom: 2px !important;
 
         li:not(.slick-active) {
             top: 2px !important;

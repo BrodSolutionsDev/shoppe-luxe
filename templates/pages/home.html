@@ -16,7 +16,7 @@ blog:
 
 
   {{#and carousel carousel.slides.length}} 
-  <div class="section">
+  <div class="section" id="home-carousel">
   {{> components/carousel arrows=theme_settings.homepage_show_carousel_arrows play_pause_button=theme_settings.homepage_show_carousel_play_pause_button}}
 </div>  
 {{/and}}
@@ -25,10 +25,10 @@ blog:
 
 <div class="main full">
   <!-- 1) Projects -->
-  <div class="section">{{> components/custom/home-projects-masonry }}</div>
+  <div class="section" id="home-desktop-categories">{{> components/custom/home-projects-masonry }}</div>
 
   <!-- 2 -->
-  <div class="section">
+  <div class="section" id="home-mobile-categories" style="display: none;">
     {{> components/custom/categories title="Shop By Category" }}
   </div>
 
@@ -55,24 +55,31 @@ blog:
     {{> components/custom/home-featured products=products.featured columns=theme_settings.homepage_featured_products_column_count}} 
   </div>
     {{/if}}
-    <!-- Region 1 Home Below Featured -->
-  <div class="section">
-    {{{region name="home_below_featured_products"}}}
-</div>
+    
 <!-- 3) New -->
     {{#if products.new}}
     <div class="section">
-      {{> components/custom/home-new products=products.new columns=theme_settings.homepage_new_products_column_count}}</div>
+      {{> components/custom/home-new products=products.new columns=theme_settings.homepage_new_products_column_count}}
+    </div>
      {{/if}}
 
      <!-- 4) Top Sellers -->
     {{#if products.top_sellers}}
     <div class="section">
-      {{> components/custom/home-top products=products.top_sellers columns=theme_settings.homepage_top_products_column_count}}</div>
+      {{> components/custom/home-top products=products.top_sellers columns=theme_settings.homepage_top_products_column_count}}
+    </div>
      {{/if}}
+     
+<!-- Region 1 Home Below Featured -->
+<div class="section">
+  {{{region name="home_below_featured_products"}}}
+</div>
 
 <!-- About Us Home -->
 {{> components/custom/home-about }}
+
+<!-- Calculator Region -->
+{{> components/custom/home-calculator }}
 
      <!-- Region Home Below Bottom Products -->
   <div id="home-below-bottom-products_region" class="section">

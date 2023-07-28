@@ -86,7 +86,7 @@ gql: 'query CategoryByUrl {
             <p>{{{page.content}}}</p>
           </div>
 
-          <script>
+          <!-- <script>
             (function() {
               const paragraphs = Array.from(document.querySelector(".scc-page-content").children);
               let index = 0;
@@ -99,13 +99,27 @@ gql: 'query CategoryByUrl {
               }
               paragraphs[index].style.marginBottom = 0;
             })();
-          </script>
+          </script> -->
   
           
       </div>
     </div>
 
-    
+    <div class="videos-list__video">
+      <iframe
+          id="player"
+          class="lazyload"
+          type="text/html"
+          width="640"
+          height="390"
+          frameborder="0"
+          webkitallowfullscreen
+          mozallowfullscreen
+          allowfullscreen
+          data-src="//www.youtube.com/embed/_xNAWMtEt98"
+          data-video-player>
+      </iframe>
+  </div>
         
         
         {{{region name="countertops_top"}}}

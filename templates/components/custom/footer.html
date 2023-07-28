@@ -28,20 +28,19 @@
     {{/if}}
 
     <!-- Page:  Shop By Category -->
-    {{#if page_type '===' 'page'}}
-
-    <!-- TODO use handlebars to get title and match to category-->
-    {{#if page.title '===' 'Countertops' }}
-    <a id="scc-button-page" class="scc-button" href="/shop/countertops">
-      <svg class="scc-button-icon"><use href="#icon-cart"></use></svg>
-      Shop {{ page.title }}
-    </a>
-    {{/if}} {{#if page.title '===' 'Flooring' }}
-    <a id="scc-button-page" class="scc-button" href="/shop/flooring">
-      <svg class="scc-button-icon"><use href="#icon-cart"></use></svg>
-      Shop {{ page.title }}
-    </a>
-    {{/if}} {{/if}}
+    <!-- {{#if page_type '===' 'page'}}
+      {{#if page.title '===' 'Countertop Epoxy' }}
+      <a id="scc-button-page" class="scc-button" href="/products/countertops">
+        <svg class="scc-button-icon"><use href="#icon-cart"></use></svg>
+        Shop {{ page.title }}
+      </a>
+      {{/if}} {{#if page.title '===' 'Flooring' }}
+      <a id="scc-button-page" class="scc-button" href="/shop/flooring">
+        <svg class="scc-button-icon"><use href="#icon-cart"></use></svg>
+        Shop {{ page.title }}
+      </a>
+      {{/if}} 
+    {{/if}} -->
 
     <!-- Category:  Filters -->
     {{#if page_type '===' 'category'}}
@@ -49,7 +48,6 @@
       <svg class="scc-button-icon"><use href="#icon-search"></use></svg>
       Filter & Sort</a
     > -->
-    {{> components/custom/categories-simple}}
     {{/if}}
 
     <!-- Product: Add to Cart -->
