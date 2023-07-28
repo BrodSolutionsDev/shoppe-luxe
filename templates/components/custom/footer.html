@@ -45,10 +45,11 @@
 
     <!-- Category:  Filters -->
     {{#if page_type '===' 'category'}}
-    <a class="scc-button" href="#">
+    <!-- <a class="scc-button" href="#">
       <svg class="scc-button-icon"><use href="#icon-search"></use></svg>
       Filter & Sort</a
-    >
+    > -->
+    {{> components/custom/categories-simple}}
     {{/if}}
 
     <!-- Product: Add to Cart -->

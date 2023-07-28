@@ -11,7 +11,6 @@
 
   &-container {
     @include mobile-container;
-
     max-width: $max-width;
     width: 100%;
     display: flex;
@@ -110,9 +109,9 @@
   z-index: 99999;
   width: 100%;
   overflow-y: scroll;
-  background: $light-grey; 
+  background: $light-grey;
   padding-bottom: 100px;
-  height: 100%; 
+  height: 100%;
 }
 
 #close-mobile-menu {
@@ -227,4 +226,52 @@
   z-index: 99999;
   position: absolute;
   padding: 15px;
+}
+#desktop-menu {
+  background-color: $black;
+  color: $white;
+  padding: 0 5%;
+  width: 100%;
+  .navPages {
+    font-size: $font-size-14;
+  }
+  .navPage-subMenu {
+    z-index: 99999;
+  }
+  li.navPages-item:hover > a + div.navPage-subMenu {
+    display: block;
+    left: 0;
+    width: 100%;
+  }
+  ul {
+    max-width: $max-width;
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    position: relative;
+
+    li {
+      list-style-type: none;
+      display: inline-block;
+      padding: 0 10px;
+      a {
+        color: $white;
+        text-decoration: none;
+        font-size: $font-size-14;
+        font-weight: bold;
+        cursor: finger;
+        &:hover, &:focus, &:active, .active {
+          color: $yellow;
+        }
+      }
+    }
+  }
+  .navPage-subMenu.is-open {
+    z-index: 9;
+  }
+
+  @media only screen and (max-width: 1000px) {
+    display: none;
+  }
 }

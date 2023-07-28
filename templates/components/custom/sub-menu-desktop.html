@@ -1,0 +1,162 @@
+
+<div id="desktop-menu">
+  <div class="container">
+    <!-- <ul class="navPages-list{{#if theme_settings.navigation_design '!==' 'simple'}} navPages-list-depth-max{{/if}}">
+      <a class="navPages-action has-subMenu is-root{{#if is_active}} activePage{{/if}}"
+       href="/products"
+       data-collapsible="navPages-77"
+       aria-label="Products"
+    >
+        Products
+        <i class="icon navPages-action-moreIcon" aria-hidden="true">
+            <svg><use href="#icon-chevron-down" /></svg>
+        </i>
+    </a>
+    <div class="navPage-subMenu navPage-subMenu-horizontal" id="navPages-77" aria-hidden="true" tabindex="-1">
+      <ul class="navPage-subMenu-list">
+          {{#each categories}}
+              <li class="navPage-subMenu-item-child">
+                      <a class="navPage-subMenu-action navPages-action{{#if is_active}} activePage{{/if}}" href="{{url}}">{{name}}</a>
+              </li>
+          {{/each}}
+      </ul>
+  </div>
+  </ul> -->
+    <ul class="navPages-list">
+    <!-- Products -->
+    <li class="navPages-item">
+      <a class="navPages-action has-subMenu{{#if is_active}} active{{/if}}" href="#" data-collapsible="navPages-1988">
+      Products
+      <i class="icon navPages-action-moreIcon" aria-hidden="true">
+        <svg><use href="#icon-chevron-down" /></svg>
+      </i>
+    </a>
+    <div class="navPage-subMenu" id="navPages-1988" aria-hidden="true" tabindex="-1">
+      <ul class="navPage-subMenu-list">
+        {{#each categories}}
+        <li class="navPage-subMenu-item">
+          {{#if children}}
+          <a class="navPage-subMenu-action navPages-action has-subMenu{{#if is_active}} active{{/if}}" href="{{url}}" aria-label="{{name}}">
+            {{name}}
+            <span
+              class="collapsible-icon-wrapper"
+              data-collapsible="navPages-{{id}}"
+              data-collapsible-disabled-breakpoint="medium"
+              data-collapsible-disabled-state="open"
+              data-collapsible-enabled-state="closed"
+            >
+              <i class="icon navPages-action-moreIcon" aria-hidden="true">
+                <svg><use href="#icon-chevron-down" /></svg>
+              </i>
+            </span>
+          </a>
+          <ul class="navPage-childList" id="navPages-{{id}}">
+            {{#each children}}
+            <li class="navPage-childList-item">
+              <a class="navPage-childList-action navPages-action{{#if is_active}} active{{/if}}" href="{{url}}" aria-label="{{name}}"> {{name}} </a>
+            </li>
+            {{/each}}
+          </ul>
+          {{else}}
+          <a class="navPage-subMenu-action navPages-action{{#if is_active}} active{{/if}}" href="{{url}}" aria-label="{{name}}"> {{name}} </a>
+          {{/if}}
+        </li>
+        {{/each}}
+      </ul>
+    </div>
+  </li>
+    <!-- Webpages -->
+    <!-- Training -->
+    <li class="navPages-item">
+    <a class="navPages-action has-subMenu{{#if is_active}} active{{/if}}" href="#" data-collapsible="navPages-1989">
+      Training
+      <i class="icon navPages-action-moreIcon" aria-hidden="true">
+        <svg><use href="#icon-chevron-down" /></svg>
+      </i>
+    </a>
+    <div class="navPage-subMenu" id="navPages-1988" aria-hidden="true" tabindex="-1">
+      <ul class="navPage-subMenu-list">
+        <li class="navPage-subMenu-item">
+          <a class="navPage-subMenu-action navPages-action{{#if is_active}} active{{/if}}" href="/tutorials" aria-label="{{name}}"> Tutorials </a>
+        </li>
+        <li class="navPage-subMenu-item">
+          <a class="navPage-subMenu-action navPages-action{{#if is_active}} active{{/if}}" href="/color-recipes" aria-label="{{name}}"> Color Recipes </a>
+        </li>
+        <li class="navPage-subMenu-item">
+          <a class="navPage-subMenu-action navPages-action{{#if is_active}} active{{/if}}" href="/faq" aria-label="{{name}}"> FAQ </a>
+        </li>
+      </ul>
+    </div>
+  </li>
+    <!-- Projects -->
+    <li class="navPages-item">
+    <a class="navPages-action has-subMenu{{#if is_active}} active{{/if}}" href="#" data-collapsible="navPages-1989">
+      Projects
+      <i class="icon navPages-action-moreIcon" aria-hidden="true">
+        <svg><use href="#icon-chevron-down" /></svg>
+      </i>
+    </a>
+    <div class="navPage-subMenu" id="navPages-1988" aria-hidden="true" tabindex="-1">
+      <ul class="navPage-subMenu-list">
+        <li class="navPage-subMenu-item">
+          <a class="navPage-subMenu-action navPages-action{{#if is_active}} active{{/if}}" href="/projects/countertops" aria-label="{{name}}"> Countertops </a>
+        </li>
+        <li class="navPage-subMenu-item">
+          <a class="navPage-subMenu-action navPages-action{{#if is_active}} active{{/if}}" href="/projects/flooring-epoxy" aria-label="{{name}}"> Flooring </a>
+        </li>
+        <li class="navPage-subMenu-item">
+          <a class="navPage-subMenu-action navPages-action{{#if is_active}} active{{/if}}" href="/projects/shower-epoxy" aria-label="{{name}}"> Showers </a>
+        </li>
+        <li class="navPage-subMenu-item">
+          <a class="navPage-subMenu-action navPages-action{{#if is_active}} active{{/if}}" href="/projects/artwork-epoxy" aria-label="{{name}}"> Artwork </a>
+        </li>
+        <li class="navPage-subMenu-item">
+          <a class="navPage-subMenu-action navPages-action{{#if is_active}} active{{/if}}" href="/projects/woodworking-epoxy" aria-label="{{name}}"> Woodworking </a>
+        </li>
+      </ul>
+    </div>
+  </li>
+    <!-- Resources -->
+    <!-- <li class="navPages-item">
+    <a class="navPages-action has-subMenu{{#if is_active}} active{{/if}}" href="#" data-collapsible="navPages-1989">
+      Resources
+      <i class="icon navPages-action-moreIcon" aria-hidden="true">
+        <svg><use href="#icon-chevron-down" /></svg>
+      </i>
+    </a>
+    <div class="navPage-subMenu" id="navPages-1988" aria-hidden="true" tabindex="-1">
+      <ul class="navPage-subMenu-list">
+        <li class="navPage-subMenu-item">
+          <a class="navPage-subMenu-action navPages-action{{#if is_active}} active{{/if}}" href="/projects/countertops" aria-label="{{name}}"> Countertop Calculator </a>
+        </li>
+        <li class="navPage-subMenu-item">
+          <a class="navPage-subMenu-action navPages-action{{#if is_active}} active{{/if}}" href="/projects/flooring-epoxy" aria-label="{{name}}"> Flooring Calculator </a>
+        </li>
+        <li class="navPage-subMenu-item">
+          <a class="navPage-subMenu-action navPages-action{{#if is_active}} active{{/if}}" href="/projects/shower-epoxy" aria-label="{{name}}"> Showers </a>
+        </li>
+        <li class="navPage-subMenu-item">
+          <a class="navPage-subMenu-action navPages-action{{#if is_active}} active{{/if}}" href="/epoxy-affiliate" aria-label="Affiliate Program">Affiliate Program</a>
+        </li>
+        <li class="navPage-subMenu-item">
+          <a class="navPage-subMenu-action navPages-action{{#if is_active}} active{{/if}}" href="/account.php" aria-label="Stone Coat Insiders">Stone Coat Insiders</a>
+        </li>
+      </ul>
+    </div>
+  </li> -->
+  <li class="navPages-item">
+    <a class="navPage-subMenu-action navPages-action{{#if is_active}} active{{/if}}" href="/epoxy-affiliate" aria-label="Affiliate Program">Affiliate Program</a>
+  </li>
+    <li class="navPages-item">
+    <a class="navPage-subMenu-action navPages-action{{#if is_active}} active{{/if}}" href="/account.php" aria-label="Stone Coat Insiders">Stone Coat Insiders</a>
+  </li>
+    </ul>
+    <!-- <ul>
+        {{#each categories}}
+            <li>
+                <a class="navPages-action{{#if is_active}} active{{/if}}" href="{{url}}" title="{{name}} product category">{{name}}</a>
+            </li>
+        {{/each}}
+    </ul> -->
+  </div>
+</div>
