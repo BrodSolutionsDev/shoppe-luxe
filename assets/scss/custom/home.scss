@@ -160,7 +160,7 @@
   }
 }
 #home-calculator {
-  background-color: $orange;
+  background-color: $yellow;
   color: $white !important;
   padding: 10px;
   .section-heading {
@@ -178,6 +178,9 @@
     margin-bottom: 20px;
     text-align: left;
     position: relative;
+    h4 {
+      color: $white !important;
+    }
   }
   @include mobile-container {
     .flex-row {
