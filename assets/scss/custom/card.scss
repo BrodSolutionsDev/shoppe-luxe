@@ -30,7 +30,13 @@
     }
     .card-image {
         position: inherit;
-        height: 364px;
+        height: 325px;
+        @include tablet-container {
+            height: 200px;
+        }
+        @include mobile-container {
+            height: 250px;
+        }
     }
     .card-desc {
         margin-bottom: 1px;

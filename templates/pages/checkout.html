@@ -3,7 +3,7 @@
 {{{ checkout.checkout_head }}}
 {{{ stylesheet '/assets/css/optimized-checkout.css' }}}
 {{ getFontsCollection }}
-
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script> 
 <script type="text/javascript">
     window.language = {{{langJson 'optimized_checkout'}}};
 </script>
@@ -20,6 +20,9 @@
     }
     .alert p {
         margin-bottom: 0;
+    }
+    #logoImage {
+        max-width: 150px;
     }
 </style>
 
@@ -131,36 +134,6 @@
 {{/partial}}
 
 {{> layout/empty}}
-
-<script>
-$(document).ready(function() {
-    setTimeout(function() {
-        $(".productList .productList-item").each(function () {
-            masterPrice = $(this).find(".product-price").text();
-            if (masterPrice == "$0.00") {
-                secureCartFreeAdditivePromo();
-                return false;
-            }
-        });
-        function secureCartFreeAdditivePromo() {
-            $(".productList .productList-item").each(function () {
-                stoneCoatGallonEpoxyKit = $(this).find(".product-title").text();
-                itemPrice = $(this).find(".product-price").text();
-                if (stoneCoatGallonEpoxyKit === "1 x Stone Coat Gallon Epoxy Kits") {
-                    $(this).find(".product-title").append("<p style='font-size:14px;color:dodgerblue;'><b>Free Additive Promo</b></p>");
-                }
-                if (itemPrice == "$0.00") {
-                    $(this).find(".productitem-title").append("<p style='font-size:14px;color:dodgerblue;'><b>Free Additive Promo</b></p>");
-                    $('.redeemable-label').html("<p style='font-size:14px;color:dodgerblue;'><b>No Coupons for Free Additive Promo</b></p>");
-                    $('.optimizedCheckout-orderSummary-cartSection > a').replaceWith(function() {
-                        return $('<div/>', {html: this.innerHTML });
-                    });
-                }
-            });
-        }
-    }, 3000);
-});
-</script>
 
 <!-- ECI : START – Google DRC code - Standard Event - For home pages -->
 <script> 

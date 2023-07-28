@@ -1,0 +1,94 @@
+---
+gql: 'query CategoryByUrl {
+  site {
+    route(path: "/products/flooring-epoxy") {
+      node {
+        id
+        ... on Category {
+          name
+          entityId
+          path
+          description
+          products {
+            edges {
+              node {
+                name
+                id
+                path
+                addToCartUrl
+                seo {
+                    metaDescription
+                }
+                inventory {
+                    isInStock
+                }
+                categories {
+                    edges {
+                        node {
+                            name
+                            path
+                            id
+                            entityId
+                        }
+                    }
+                }
+                defaultImage {
+                  url(width: 400, height: 400)
+                }
+                prices {
+                  price {
+                    ...PriceFields
+                  }
+                  priceRange {
+                    min {
+                      ...PriceFields
+                    }
+                    max {
+                      ...PriceFields
+                    }
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+  }
+  fragment PriceFields on Money {
+  value
+  currencyCode
+  }'
+---
+{{#partial "page"}}
+<section class="page container stonecoat-landing">
+      <div class="page-title">
+        <h1 class="page-heading">{{ page.title }}</h1>
+      </div>
+      {{{region name="flooring_calculator_top"}}}
+      <div class="scc-page-content">
+        <p>{{{page.content}}}</p>
+      </div>
+      {{> components/custom/flooring-calculator }}
+
+      {{{region name="flooring_calculator_middle"}}}
+
+    
+      {{#if gql.data.site}}
+        <div class="section">
+          <h2>Our Flooring Epoxy Products</h2>
+            <div class="landing-page-grid">
+              {{#each gql.data.site.route.node.products.edges}}
+                  {{> components/custom/product/product-card-page product=node}}
+              {{/each}}
+          </div>
+        </div>
+      {{/if}}
+  
+
+  {{{region name="flooring_calculator_bottom"}}}
+
+</section>
+{{/partial}}
+{{> layout/base}}

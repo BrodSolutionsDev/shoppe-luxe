@@ -8,10 +8,12 @@
       "countertops.html": "/projects/countertop-epoxy",
       "flooring.html": "/projects/flooring-epoxy",
       "showers.html": "/projects/shower-epoxy",
-      "woodworking.html": "/projects/woodworking-epoxy"
+      "woodworking.html": "/projects/woodworking-epoxy",
+      "calculator.html": "/calculator",
+      "calculator-flooring.html": "/calculator/flooring"
     },
     "product": {}
   },
-  "normalStoreUrl": "https://store-19qfhxpoud.mybigcommerce.com",
+  "normalStoreUrl": "https://store-fy21dwtsxg.mybigcommerce.com",
   "port": 3000
 }

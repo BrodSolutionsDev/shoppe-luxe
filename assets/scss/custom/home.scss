@@ -1,17 +1,14 @@
 .home-categories {
   text-align: center;
-
   h2 {
     padding-bottom: $padding-small;
   }
-
   ul {
     list-style: none;
     display: grid;
     grid-template-columns: repeat(2, 1fr);
     gap: 10px;
     margin: 0;
-
     .category-pill {
       @include flex-center;
       padding: 5px;
@@ -19,7 +16,6 @@
       border-radius: $border-radius-full;
       transition: all $transition-fast;
       background: $white;
-
       &:hover {
         a {
           color: $orange;
@@ -31,7 +27,6 @@
     }
   }
 }
-
 #home-categories-masonry {
   .cat-layout-5 {
     display: grid;
@@ -39,16 +34,19 @@
     grid-gap: 10px;
     .scc-button {
       max-width: 120px;
+      background-color: $white;
+      color: $black;
     }
     .category-title {
       max-width: 130px;
       font-weight: bold;
       font-size: 34px;
-      text-shadow: 2px 2px 2px $white;
+      text-shadow: 2px 2px 2px $black;
+      color: $white;
     }
     .section-content-first {
       grid-column: 1 / span 1;
-      grid-row: 1 / span 2;
+      grid-row: 1 / span 4;
       .category-subcontent {
         position: absolute;
         top: 35px;
@@ -57,7 +55,7 @@
     }
     .section-content-second {
       grid-column: 2 / span 2;
-      grid-row: 1 / span 2;
+      grid-row: 1 / span 4;
       .category-subcontent {
         position: absolute;
         top: 45px;
@@ -66,7 +64,7 @@
     }
     .section-content-third {
       grid-column: 4 / span 2;
-      grid-row: 1;
+      grid-row: 1 / span 2;
       .category-subcontent {
         position: absolute;
         top: 45px;
@@ -75,19 +73,19 @@
     }
     .section-content-fourth {
       grid-column: 4 / span 1;
-      grid-row: 2;
+      grid-row: 3 / span 2;
       .category-subcontent {
         position: absolute;
-        top: 45px;
+        top: -30px;
         left: 25px;
       }
     }
     .section-content-fifth {
       grid-column: 5 / span 1;
-      grid-row: 2;
+      grid-row: 3 / span 2;
       .category-subcontent {
         position: absolute;
-        top: 45px;
+        top: -30px;
         left: 25px;
       }
     }
@@ -110,12 +108,11 @@
     }
   }
 }
-
 #home-about {
   background-color: $black;
   color: $white !important;
   padding: 10px;
-  border-radius: $border-radius-sm;
+  margin-bottom: 20px;
   .section-heading {
     h2,
     h4 {
@@ -144,14 +141,53 @@
     }
   }
   .scc-button {
-    background-color: red;
-    &:hover {
-      background-color: red;
-      color: $white;
+    background-color: $orange;
+    color: $white;
+  }
+  @include mobile-container {
+    .flex-row {
+      flex-direction: column;
+      .our-story-sub-content {
+        padding: 40px 24px 40px 72px;
+        margin-bottom: 20px;
+        text-align: left;
+        position: relative;
+        &::before {
+          display: none;
+        }
+      }
     }
   }
 }
-
+#home-calculator {
+  background-color: $yellow;
+  color: $white !important;
+  padding: 10px;
+  .section-heading {
+    h2,
+    h4 {
+      color: $white !important;
+    }
+  }
+  .our-story-img {
+    width: 100%;
+    max-width: 600px;
+  }
+  .our-story-sub-content {
+    padding: 40px 24px 40px 72px;
+    margin-bottom: 20px;
+    text-align: left;
+    position: relative;
+    h4 {
+      color: $white !important;
+    }
+  }
+  @include mobile-container {
+    .flex-row {
+      flex-direction: column;
+    }
+  }
+}
 .section-heading {
   text-align: center;
   .section-title {
@@ -161,5 +197,16 @@
   .section-subtitle {
     font-weight: normal;
     margin: 0;
+  }
+}
+
+@media only screen and (max-width: 1000px) {
+  
+  #home-desktop-categories {
+    display: none;
+  }
+  #home-mobile-categories {
+    display: block!important;
+    padding-top:0;
   }
 }

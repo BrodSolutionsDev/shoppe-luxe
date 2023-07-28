@@ -6,9 +6,11 @@
   width: 100%;
   background: $black;
   position: relative;
-  padding: 0 5%;
+  // padding: 0 5%;
+  @media only screen and (max-width: $max-width) {
+    padding: 0 5%;
+  }
   z-index: 1;
-
   &-container {
     @include mobile-container;
     max-width: $max-width;
@@ -104,7 +106,7 @@
 /* MENU */
 #mobile-menu {
   position: fixed;
-  top: 80px;
+  top: 110px;
   left: 0;
   z-index: 99999;
   width: 100%;
@@ -133,8 +135,8 @@
   background: $light-grey;
   display: flex;
   flex-direction: column;
-  gap: 20px;
-  padding: 20px;
+  gap: 10px;
+  padding: 10px;
   height: fit-content;
   border-radius: $border-radius-sm;
   padding-bottom: 100px;
@@ -219,6 +221,9 @@
   text-align: center;
   border-radius: $border-radius-full;
   box-shadow: $box-shadow;
+  @include mobile-container {
+    top: 8px;
+  }
 }
 
 // Quick Search
@@ -230,7 +235,7 @@
 #desktop-menu {
   background-color: $black;
   color: $white;
-  padding: 0 5%;
+  //padding: 0 5%;
   width: 100%;
   .navPages {
     font-size: $font-size-14;
@@ -247,8 +252,8 @@
     max-width: $max-width;
     width: 100%;
     display: flex;
-    justify-content: space-between;
-    align-items: center;
+    justify-content: flex-start;
+    align-items: normal;
     position: relative;
 
     li {
@@ -258,7 +263,7 @@
       a {
         color: $white;
         text-decoration: none;
-        font-size: $font-size-14;
+        font-size: $font-size-16;
         font-weight: bold;
         cursor: finger;
         &:hover, &:focus, &:active, .active {

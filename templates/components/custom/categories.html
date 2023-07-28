@@ -6,7 +6,10 @@
     <a class="product-card-alt" href="{{url}}">
       {{#if image}}
       <div class="product-card-img">
-        {{> components/common/responsive-img image=image fallback_size=theme_settings.thumbnail lazyload=theme_settings.lazyload_mode }}
+        {{> components/common/responsive-img image=image 
+          fallback_size=theme_settings.blog_size
+          lazyload=theme_settings.lazyload_mode
+          default_image=theme_settings.default_image_product }}
       </div>
       {{/if}}
       <div class="product-card-details">
